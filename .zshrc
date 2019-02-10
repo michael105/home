@@ -9,6 +9,7 @@ alias b='source ~/prog/scripts/cdbookmark'
 alias gtam='git commit -a -m "minor changes"'
 alias gtamp='git commit -a -m "minor changes" & git push'
 alias gta='git commit -a'
+alias gts='git status -uno'
 
 export PATH=$PATH:~/prog/scripts
 
@@ -152,7 +153,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
+plugins=(git)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -189,8 +190,10 @@ source $ZSH/oh-my-zsh.sh
 
 #misc my settings, again
 
-#export PROMPT="$US$i1$AT$HO$PA$LI"
-export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+###export PROMPT="$US$i1$AT$HO$PA$LI"
+#${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
+#
+export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI${ret_status}%{$fg[cyan]%}%{$reset_color%} $(git_prompt_info)"
 
 
 export CLICOLOR=1
