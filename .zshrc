@@ -83,5 +83,7 @@ fi
 #export PROMPT="$US$i1$AT$HO$PA$LI"
 export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 
 
