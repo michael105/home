@@ -1,33 +1,4 @@
 
-alias bl='source ~/.shellbookmarks'
-source ~/.shellbookmarks
-alias rb='rmbookmark'
-alias lb='listbookmarks'
-alias sb='source ~/prog/scripts/setbookmark'
-alias b='source ~/prog/scripts/cdbookmark'
-
-alias gtam='git commit -a -m "minor changes"'
-alias gtamp='git commit -a -m "minor changes" & git push'
-alias gta='git commit -a'
-alias gts='git status -uno'
-
-export PATH=$PATH:~/prog/scripts
-
-alias l='ls -lh'
-
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias md='mkdir'
-alias rd='rmdir'
-
-alias pf='perldoc -f'
-
-export CLICOLOR=1
-export LSCOLORS="eaEafaDaca"
-
-
 BLACK="%{"$'\033[30m'"%}"
 GRAY="%{"$'\033[01;30m'"%}"
 LGREEN="%{"$'\033[01;32m'"%}"
@@ -65,10 +36,17 @@ then
 		TITLESTART="%{"$'\033]0;'"%}"
 		TITLEEND="%{"$'\007\033'"%}"
 		#TITLE="$USER@$HOST:"
-		TITLE="$USER@$HOST: %-2d"
 else
 		#. /etc/zsh/zprofile
 fi
+
+if [ $HOST = "Michaels-MacBook-Pro.local" ]
+then
+		TITLE="$USER@osx-m: %-2d"
+else
+		TITLE="$USER@$HOST d: %-2d"
+fi
+
 
 
 if test $USER = "micha"
@@ -83,6 +61,7 @@ fi
 
 #export PROMPT="$US$i1$AT$HO$PA$LI"
 export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -99,7 +78,8 @@ export ZSH="/Users/micha/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="junkfood"
+#ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -135,7 +115,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -190,15 +170,77 @@ source $ZSH/oh-my-zsh.sh
 
 #misc my settings, again
 
+
+# set the title
+if [ ! -z "$BASH" ]
+then
+		TITLESTART="%{"$'\033]0;'"%}"
+		TITLEEND="%{"$'\007\033'"%}"
+		#TITLE="$USER@$HOST:"
+else
+		#. /etc/zsh/zprofile
+fi
+
+if test $USER = "micha"
+then
+		US="$LCYAN"
+fi
+
+if test $USER = "root"
+then
+		US="$RED"
+fi
+
+
+
+if [ $HOST = "Michaels-MacBook-Pro.local" ]
+then
+		TITLE="$USER@${GREEN}osx-m $"
+else
+		TITLE="$USER@$HOST d: %-2d"
+fi
+
+
+
 ###export PROMPT="$US$i1$AT$HO$PA$LI"
 #${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
 #
-export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI${ret_status}%{$fg[cyan]%}%{$reset_color%} $(git_prompt_info)"
+#export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI${ret_status}%{$fg[cyan]%}%{$reset_color%} $(git_prompt_info)"
+export PROMPT="$YELLOW${ret_status}%{$fg[cyan]%}%{$reset_color%} $(git_prompt_info) $US $TITLESTART$TITLE$TITLEEND $PA$LI"
 
 
 export CLICOLOR=1
 export LSCOLORS="eaEafaDaca"
 
 export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+
+
+alias bl='source ~/.shellbookmarks'
+source ~/.shellbookmarks
+alias rb='rmbookmark'
+alias lb='listbookmarks'
+alias sb='source ~/prog/scripts/setbookmark'
+alias b='source ~/prog/scripts/cdbookmark'
+
+alias gtam='git commit -a -m "minor changes"'
+alias gtamp='git commit -a -m "minor changes" & git push'
+alias gta='git commit -a'
+alias gts='git status -uno'
+
+export PATH=$PATH:~/prog/scripts
+
+alias l='ls -lh'
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias md='mkdir'
+alias rd='rmdir'
+
+alias pf='perldoc -f'
+
+export CLICOLOR=1
+export LSCOLORS="eaEafaDaca"
 
 
