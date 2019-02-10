@@ -3,12 +3,12 @@ alias bl='source ~/.shellbookmarks'
 source ~/.shellbookmarks
 alias rb='rmbookmark'
 alias lb='listbookmarks'
-alias sb='source /Users/micha/term/scripts/setbookmark'
-alias b='source /Users/micha/term/scripts/cdbookmark'
+alias sb='source ~/scripts/setbookmark'
+alias b='source ~/term/scripts/cdbookmark'
 
-alias giam='git commit -a -m "minor changes"'
-alias giamp='git commit -a -m "minor changes" & git push'
-alias gca='git commit -a'
+alias gtam='git commit -a -m "minor changes"'
+alias gtamp='git commit -a -m "minor changes" & git push'
+alias gta='git commit -a'
 
 export PATH=$PATH:/Users/micha/term/scripts
 
