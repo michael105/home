@@ -1,0 +1,41 @@
+# run with source
+
+
+# test for help
+if ( [[ $1 == "--help" ]] || [[ -z $1 ]] )
+then
+	echo 'b BOOKMARK [ARG]
+the shortcut b sets the bookmark BOOKMARK to the current path or, 
+if supplied, to ARG.
+The Variable $BOOKMARK is also exported.'
+
+else
+
+	bookmarkalias=$1;
+
+#append and export new bookmark
+		if [ -n "$2" ]
+		then
+			if [ -n "$3" ] 
+			then
+				shift
+				bookmark="$*"
+				#bookmark="execute $*" # doesn't work yet.:(
+			else
+				bookmark="$2"
+			fi
+		else
+			bookmark=$PWD
+		fi
+
+
+# expand ./ ../ ~/ to the current dir context
+		bookmark=`perl -e '$ARGV[0]=~s/^\.\//$ARGV[1]\//;$ARGV[0]=~s/^\.\.\//$ARGV[1]\/\.\.\//;$ARGV[0]=~s/^\~\//$ARGV[1]\//;print $ARGV[0]' "$bookmark" $PWD`
+
+		export $bookmarkalias="$bookmark"
+
+# insert new bookmark, sort alphabetically
+		perl -e 'open (F,$ARGV[0]);@f=<F>;close F;@f = grep(!/^export $ARGV[1]=/,@f);push @f,"export $ARGV[1]=".chr(39)."$ARGV[2]".chr(39)."\n";@f=sort @f;open(F,">",$ARGV[0]);print F @f;close F;' ~/.shellbookmarks $bookmarkalias "$bookmark"
+
+
+fi
