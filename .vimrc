@@ -204,11 +204,11 @@ map <C-w> :w<CR>
 let mapleader="^"
 map ^w :w<CR>
 map! ^w <ESC>:w<CR>i
-map! ^   
-map! ^^ ^ 
+"map! ^   
+"map! ^^ ^ 
 
-map! ^s <ESC>:source ~/.vimrc<CR>i
-map! ^+ ~
+"map! ^s <ESC>:source ~/.vimrc<CR>i
+"map! ^+ ~
 
 map  f $
 map! f <ESC>$a
@@ -377,6 +377,6 @@ map! <F6> <ESC>:DBSelectFromTable<CR> i
 "OSX
 
 
-
+source ~/.vim/mapping
 
 
