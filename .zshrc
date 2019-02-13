@@ -223,7 +223,7 @@ alias sb='source ~/prog/scripts/setbookmark'
 alias b='source ~/prog/scripts/cdbookmark'
 
 alias gtam='git commit -a -m "minor changes"'
-alias gtamp='git commit -a -m "minor changes" & git push'
+alias gtamp='git commit -a -m "minor changes" && git push'
 alias gta='git commit -a'
 alias gts='git status -uno'
 
