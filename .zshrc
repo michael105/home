@@ -63,7 +63,7 @@ fi
 export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(/usr/local/share/zsh-completions $fpath)
 
 # merging oh-my-zsh ..
 #
@@ -72,7 +72,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/micha/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -133,10 +133,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
 
 
-source $ZSH/oh-my-zsh.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
@@ -176,7 +176,7 @@ if [ ! -z "$BASH" ]
 then
 		TITLESTART="%{"$'\033]0;'"%}"
 		TITLEEND="%{"$'\007\033'"%}"
-		#TITLE="$USER@$HOST:"
+		TITLE="$USER@$HOST:"
 else
 		#. /etc/zsh/zprofile
 fi
@@ -197,8 +197,12 @@ if [ $HOST = "Michaels-MacBook-Pro.local" ]
 then
 		TITLE="$USER@${GREEN}osx-m $"
 else
-		TITLE="$USER@$HOST d: %-2d"
+		TITLE="${US}$USER"
 fi
+
+export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+
 
 
 
@@ -206,13 +210,14 @@ fi
 #${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
 #
 #export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI${ret_status}%{$fg[cyan]%}%{$reset_color%} $(git_prompt_info)"
-export PROMPT="$YELLOW${ret_status}%{$fg[cyan]%}%{$reset_color%} $(git_prompt_info) $US $TITLESTART$TITLE$TITLEEND $PA$LI"
+#export PROMPT="%{$fg[cyan]%}%{$reset_color%} $US $TITLESTART$TITLE$TITLEEND $PA$LI"
 
 
 export CLICOLOR=1
 export LSCOLORS="eaEafaDaca"
 
-export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+#export LESSOPEN="~/bin/lesspipe.sh %s" 
+#export LESSOPEN="~/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
 
 alias bl='source ~/.shellbookmarks'
@@ -228,7 +233,8 @@ alias gta='git commit -a'
 alias gts='git status -uno'
 
 export PATH=$PATH:~/prog/scripts
-
+#export PATH=~/bin:$PATH:~/prog/scripts:~/bin
+alias ls='ls --color'
 alias l='ls -lh'
 
 alias ..='cd ..'
@@ -243,6 +249,7 @@ alias pf='perldoc -f'
 export CLICOLOR=1
 export LSCOLORS="eaEafaDaca"
 
+alias vi='vim'
 
 
 # Colors, again. Colors defined top are defined for the prompt.

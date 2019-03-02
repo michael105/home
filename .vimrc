@@ -180,10 +180,10 @@ map m \mbe
 map! m \mbe
 
 "LINUX
-"map <PageDown> :bn<CR>
-"map <PageUp> :bp<CR>
-"map! <PageDown> <ESC>:bn<CR>i
-"map! <PageUp> <ESC>:bp<CR>i
+map [1;3C :bn<CR>
+map [1;3D :bp<CR>
+map! [1;3C <ESC>:bn<CR>i
+map! [1;3D <ESC>:bp<CR>i
 "ELINUX
 
 "OSX
