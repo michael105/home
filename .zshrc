@@ -232,8 +232,8 @@ alias gtamp='git commit -a -m "minor changes" && git push'
 alias gta='git commit -a'
 alias gts='git status -uno'
 
-export PATH=$PATH:~/prog/scripts
-#export PATH=~/bin:$PATH:~/prog/scripts:~/bin
+#export PATH=$PATH:~/prog/scripts
+export PATH=~/bin:$PATH:~/prog/scripts:~/bin
 alias ls='ls --color'
 alias l='ls -lh'
 

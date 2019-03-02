@@ -175,15 +175,23 @@ map! x <ESC>:confirm qa<CR>
 map <F5> :e<CR>
 map! <F5> <ESC>:e<CR>
 
+
+"moving
+"(lin)
+map [1;5C $
+map! [1;5C <ESC>$i
+map [1;5D ^OD 
+map! [1;5D <ESC>^ODi 
+
 " minibufexplorer shortcuts
 map m \mbe
 map! m \mbe
 
 "LINUX
-map [1;3C :bn<CR>
-map [1;3D :bp<CR>
-map! [1;3C <ESC>:bn<CR>i
-map! [1;3D <ESC>:bp<CR>i
+"map [1;3C :bn<CR>
+"map [1;3D :bp<CR>
+"map! [1;3C <ESC>:bn<CR>i
+"map! [1;3D <ESC>:bp<CR>i
 "ELINUX
 
 "OSX
@@ -192,10 +200,10 @@ map! [1;3D <ESC>:bp<CR>i
 "map! [1;2C <ESC>:bn<CR>i
 "map! [1;2D <ESC>:bp<CR>i
 
-map [1;2C :bn<CR>
-map [1;2D :bp<CR>
-map! [1;2C <ESC>:bn<CR>i
-map! [1;2D <ESC>:bp<CR>i
+"map [1;2C :bn<CR>
+"map [1;2D :bp<CR>
+"map! [1;2C <ESC>:bn<CR>i
+"map! [1;2D <ESC>:bp<CR>i
 
 
 map! <C-w> <ESC>:w<CR>i
@@ -222,10 +230,17 @@ map! b <ESC>0i
 :let g:miniBufExplMapWindowNavArrows=1
 
 " bindings for terminal
-map [6~ :bn<CR>
-map [5~ :bp<CR>
-map! [6~ <ESC>:bn<CR>i
-map! [5~ <ESC>:bp<CR>i
+"map [6~ :bn<CR>
+"map [5~ :bp<CR>
+"map! [6~ <ESC>:bn<CR>i
+"map! [5~ <ESC>:bp<CR>i
+
+" Alt + Up / Down
+map [1;3B :bn<CR>
+map [1;3A :bp<CR>
+map! [1;3B <ESC>:bn<CR>i
+map! [1;3A <ESC>:bp<CR>i
+
 
 
 map <M-PageDown> :bn<CR>
