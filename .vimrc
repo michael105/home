@@ -23,6 +23,27 @@ map! <C-L> /* ------------------------------------------------------------------
 map! <C-B> /* ------------------------------------------------------------------------- */<CR>/**<CR><CR>**//* ---------------------------------------------------------------------- */<UP><SPACE><SPACE><SPACE><SPACE><SPACE><SPACE>
 
 
+"  TreeExplorer
+map <F8> :call VTreeToggle()<CR>
+map - :call VTreeToggle()<CR><C-w>h
+map! - <ESC>:call VTreeToggle()<CR><C-w>h
+map + <C-w>l
+map! + <C-w>l
+
+let vtree_is_open=0
+function! VTreeToggle()
+    if g:vtree_is_open
+        "let g:vtree_is_open = 
+    else
+				:30vsplit
+				:VTreeExplore
+        let g:vtree_is_open = 1
+    endif
+endfunction
+
+
+
+
 
 colorscheme torte
 
@@ -171,15 +192,37 @@ set ai
 map x :confirm qa<CR>
 map! x <ESC>:confirm qa<CR>
 
-"Reload
-map <F5> :e<CR>
-map! <F5> <ESC>:e<CR>
+"Quickfix
+map <F4> :cp<CR>
+map! <F4> <ESC>:cp<CR>
+map <F5> :cn<CR>
+map! <F5> <ESC>:cn<CR>
+
+map c :make<CR>
+map! c <ESC>:make<CR>
+
+
+nnoremap <f6> :call QuickfixToggle()<cr>
+
+let g:quickfix_is_open = 0
+
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+        execute g:quickfix_return_to_window . "wincmd w"
+    else
+        let g:quickfix_return_to_window = winnr()
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
 
 
 "moving
 "(lin)
 map [1;5C $
-map! [1;5C <ESC>$i
+map! [1;5C <ESC>$a
 map [1;5D ^OD 
 map! [1;5D <ESC>^ODi 
 
@@ -206,8 +249,8 @@ map! m \mbe
 "map! [1;2D <ESC>:bp<CR>i
 
 
-map! <C-w> <ESC>:w<CR>i
-map <C-w> :w<CR>
+"map! <C-w> <ESC>:w<CR>i
+":map <C-w> :w<CR>
 
 let mapleader="^"
 map ^w :w<CR>
@@ -330,8 +373,8 @@ map <C-Up> O
 "perl commands..
 "						\ro
 "Run Script of current buffer
-map <F5> \rr   
-map <F5> <ESC>\rr i
+"map <F5> \rr   
+"map <F5> <ESC>\rr i
 
 
 "Just a template..
@@ -384,10 +427,10 @@ let g:dbext_default_profile_PGSQL_va = 'type=PGSQL:user=micha:passwd=mister:dbna
 let g:dbext_default_profile_MYSQL_Unternehmen = 'type=MYSQL:user=micha:passwd=mister:dbname=Unternehmen'
 
 
-map <F8> :DBExecSQLUnderCursor<CR>
-map! <F8> <ESC>:DBExecSQLUnderCursor<CR> i
-map <F6> :DBSelectFromTable<CR>
-map! <F6> <ESC>:DBSelectFromTable<CR> i
+"map <F8> :DBExecSQLUnderCursor<CR>
+"map! <F8> <ESC>:DBExecSQLUnderCursor<CR> i
+"map <F6> :DBSelectFromTable<CR>
+"map! <F6> <ESC>:DBSelectFromTable<CR> i
 
 "OSX
 

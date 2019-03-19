@@ -1,8 +1,7 @@
-This git contains the skeleton, I'm used to work with.
+---------- 
 
-
-
-
+Atm this git contains a skeleton, 
+I'm used to work with.
 
 
 
@@ -10,11 +9,28 @@ This git contains the skeleton, I'm used to work with.
 
 packages needed (maybe compile them static?::)
 
-lesspipe
 vim
 zsh
-zsh-lovers
 git
 
+
+---------- thoughts
+
+Notes for terminal
+oneliners
+  (gist?) 
+	vim?
+	expandable / movable trees
+	vim + filebrowser + git ?
+
+bountysource - funding platform
+
+
+
+-----------
+
+interessante distros:
+	lxle (lightweight)
+	Manjaro
 
 
