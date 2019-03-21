@@ -214,8 +214,8 @@ export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 
 
 
-export LESSOPEN="/usr/bin/lesspipe.sh %s" 
-#export LESSOPEN="~/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+#export LESSOPEN="/usr/bin/lesspipe.sh %s" 
+export LESSOPEN="|/usr/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
 export PATH=$PATH:~/scripts
 #export PATH=~/bin:$PATH:~/scripts:~/bin
@@ -224,5 +224,7 @@ export LSCOLORS="eaEafaDaca"
 
 source ~/scripts/alias.sh
 
+export PATH=$PATH:~/scripts
+#export PATH=~/bin:$PATH:~/scripts:~/bin
 
 

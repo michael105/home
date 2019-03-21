@@ -1,9 +1,5 @@
 
-export CLICOLOR=1
-export LSCOLORS="eaEafaDaca"
-
-#export LESSOPEN="~/bin/lesspipe.sh %s" 
-#export LESSOPEN="~/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+alias listalias='highlight --style' 
 
 
 alias bl='source ~/.shellbookmarks'
@@ -14,12 +10,12 @@ alias sb='source ~/scripts/setbookmark'
 alias b='source ~/scripts/cdbookmark'
 
 alias gtam='git commit -a -m "minor changes"'
+alias gtamu='git commit -a -m "update"'
 alias gtamp='git commit -a -m "minor changes" && git push'
+alias gtamup='git commit -a -m "update" && git push'
 alias gta='git commit -a'
 alias gts='git status -uno'
 
-export PATH=$PATH:~/scripts
-#export PATH=~/bin:$PATH:~/scripts:~/bin
 alias ls='ls --color'
 alias l='ls -lh'
 
@@ -32,8 +28,6 @@ alias rd='rmdir'
 
 alias pf='perldoc -f'
 
-export CLICOLOR=1
-export LSCOLORS="eaEafaDaca"
 
 alias vi='vim'
 
