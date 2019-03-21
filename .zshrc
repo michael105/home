@@ -228,3 +228,29 @@ export PATH=$PATH:~/scripts
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 
+# Colors, again. Colors defined top are defined for the prompt.
+#
+
+
+BLACK=""$'\033[30m'""
+GRAY=""$'\033[01;30m'""
+LGREEN=""$'\033[01;32m'""
+GREEN=""$'\033[32m'""
+LRED=""$'\033[01;31m'""
+RED=""$'\033[31m'""
+YELLOW=""$'\033[01;33m'""
+BROWN=""$'\033[33m'""
+LBLUE=""$'\033[01;34m'""
+BLUE=""$'\033[34m'""
+BOLD=""$'\033[01;39m'""
+NORM=""$'\033[00m'""
+PINK=""$'\033[01;35m'""
+MAGENTA=""$'\033[00;35m'""
+LMAGENTA=""$'\033[01;35m'""
+CYAN=""$'\033[36m'""
+LCYAN=""$'\033[01;36m'""
+WHITE=""$'\033[01;37m'""
+LGRAY=""$'\033[37m'""
+
+
+
