@@ -1,6 +1,7 @@
 export br='/hd/sda13/src/arch64/buildroot-image'
 export c='/hd/sda13/isos'
 export et='/home/micha/src/dietlibc-0.34/bin-x86_64'
+export g='/home/micha/git'
 export gi='/home/micha/git/init'
 export gm='/home/micha/git/michael105'
 export h='/hd/sda13/src/arch64/buildroot-root/usr/include'

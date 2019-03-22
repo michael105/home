@@ -11,10 +11,10 @@ alias sb='source ~/scripts/setbookmark'
 alias b='source ~/scripts/cdbookmark'
 
 # Git
-alias gtam='git commit -a -m "minor changes"'
-alias gtamu='git commit -a -m "update"'
-alias gtamp='git commit -a -m "minor changes" && git push'
-alias gtamup='git commit -a -m "update" && git push'
+alias gtamm='git commit -a -m "minor changes"'
+alias gtam='git commit -a -m "update"'
+alias gtammp='git commit -a -m "minor changes" && git push'
+alias gtamp='git commit -a -m "update" && git push'
 alias gta='git commit -a'
 alias gts='git status -uno'
 
@@ -35,3 +35,4 @@ alias vi='vim'
 
 
 
+alias make=colormake.sh
