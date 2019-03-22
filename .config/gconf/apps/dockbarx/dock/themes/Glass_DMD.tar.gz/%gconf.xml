@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="bar2_bg_alpha" mtime="1551723850" type="int" value="127"/>
+	<entry name="bar2_bg_color" mtime="1551723850" type="string">
+		<stringvalue>#111111</stringvalue>
+	</entry>
+	<entry name="bg_color" mtime="1551723863" type="string">
+		<stringvalue>#260202</stringvalue>
+	</entry>
+	<entry name="bg_alpha" mtime="1551723875" type="int" value="205"/>
+</gconf>
