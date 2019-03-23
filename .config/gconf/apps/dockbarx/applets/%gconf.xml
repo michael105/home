@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="applet_list" mtime="1553285822" type="list" ltype="string">
+	<entry name="applet_list" mtime="1553299053" type="list" ltype="string">
 		<li type="string">
 			<stringvalue>DockbarX</stringvalue>
 		</li>
 		<li type="string">
-			<stringvalue>AppIndicator</stringvalue>
+			<stringvalue>Cardapio</stringvalue>
 		</li>
 		<li type="string">
 			<stringvalue>Volume Control</stringvalue>
 		</li>
 		<li type="string">
-			<stringvalue>Cardapio</stringvalue>
+			<stringvalue>AppIndicator</stringvalue>
 		</li>
 		<li type="string">
 			<stringvalue>Namebar</stringvalue>

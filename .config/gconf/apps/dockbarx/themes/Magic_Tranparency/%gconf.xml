@@ -21,7 +21,7 @@
 		<stringvalue>#00ffff</stringvalue>
 	</entry>
 	<entry name="color2_alpha" mtime="1551724335" type="int" value="255"/>
-	<entry name="popup_style_file" mtime="1551724335" type="string">
+	<entry name="popup_style_file" mtime="1553302282" type="string">
 		<stringvalue>Magic_trans.tar.gz</stringvalue>
 	</entry>
 	<entry name="color2" mtime="1551724335" type="string">

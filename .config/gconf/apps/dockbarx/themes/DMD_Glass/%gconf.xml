@@ -28,7 +28,7 @@
 	<entry name="color1" mtime="1551724318" type="string">
 		<stringvalue>#000000</stringvalue>
 	</entry>
-	<entry name="popup_style_file" mtime="1551724318" type="string">
+	<entry name="popup_style_file" mtime="1553302358" type="string">
 		<stringvalue>DMD_Glass.tar.gz</stringvalue>
 	</entry>
 </gconf>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="launchers" mtime="1553296549" type="list" ltype="string">
+	<entry name="launchers" mtime="1553308902" type="list" ltype="string">
 		<li type="string">
 			<stringvalue>lxtask;/usr/share/applications/lxtask.desktop</stringvalue>
 		</li>
@@ -139,7 +139,7 @@
 		<stringvalue>show menu</stringvalue>
 	</entry>
 	<entry name="separate_ooo_apps" mtime="1551692405" type="bool" value="true"/>
-	<entry name="theme" mtime="1551724401" type="string">
+	<entry name="theme" mtime="1553302416" type="string">
 		<stringvalue>DockXYZ</stringvalue>
 	</entry>
 	<entry name="windowbutton_shift_and_middle_click_action" mtime="1551692405" type="string">

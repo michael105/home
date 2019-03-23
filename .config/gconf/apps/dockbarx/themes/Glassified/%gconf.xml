@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="popup_style_file" mtime="1551723615" type="string">
-		<stringvalue>gradent.tar.gz</stringvalue>
+	<entry name="popup_style_file" mtime="1553302317" type="string">
+		<stringvalue>Magic_trans.tar.gz</stringvalue>
 	</entry>
 	<entry name="color8" mtime="1551692411" type="string">
 		<stringvalue>#000000</stringvalue>
