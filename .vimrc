@@ -350,12 +350,16 @@ endfunction
 
 "Split window movement
 map <M-Left> :wincmd h<CR>
+map , :wincmd h<CR>
 map <M-Right> :wincmd l<CR>
+map . :wincmd l<CR>
 map <M-Up> :wincmd k<CR>
 map <M-Down> :wincmd j<CR>
 
 map! <M-Left> <ESC>:wincmd h<CR>i
+map! , <ESC>:wincmd h<CR>i
 map! <M-Right> <ESC>:wincmd l<CR>i
+map! . <ESC>:wincmd l<CR>i
 map! <M-Up> <ESC>:wincmd k<CR>i
 map! <M-Down> <ESC>:wincmd j<CR>i
 

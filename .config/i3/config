@@ -175,10 +175,12 @@ bindsym $mod+m bar mode toggle
 
 font pango: Monospace Bold 9
 #the focused window       frame titlebar | bgtitlebar,border  | schrift titlebar  | ?    
-client.focused          #000000 #000000 #7bff00 #ffff00
+client.focused          #000000 #202222 #7bff00 #ffff00
 # the container
 client.focused_inactive #000000 #202218 #7bff00 #ffff00
+#client.focused_inactive #000000 #202218 #7bff00 #ffff00
 client.unfocused        #000000 #000000 #00b49f #292d2e
+#client.unfocused        #000000 #000000 #00b49f #292d2e
 client.urgent           #ffff00 #900000 #ffffff #900000
 
 

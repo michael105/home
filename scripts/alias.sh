@@ -36,3 +36,10 @@ alias vi='vim'
 
 
 alias make=colormake.sh
+
+# ever mistyped, and found yourself in your home?
+# Now: hit p-
+# and you'll be back .. ;)
+alias p-="cd \$OLDPWD"
+
+
