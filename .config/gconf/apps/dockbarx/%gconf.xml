@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="launchers" mtime="1553545483" type="list" ltype="string">
+	<entry name="launchers" mtime="1553922956" type="list" ltype="string">
 		<li type="string">
 			<stringvalue>lxtask;/usr/share/applications/lxtask.desktop</stringvalue>
 		</li>
@@ -8,16 +8,16 @@
 			<stringvalue>pamac-manager;/home/micha//.local/share/dockbarx/launchers/pamac-manager.desktop</stringvalue>
 		</li>
 		<li type="string">
-			<stringvalue>dbx_preference;/usr/share/applications/dbx_preference.desktop</stringvalue>
+			<stringvalue>pale moon;/home/micha//.local/share/dockbarx/launchers/userapp-Pale Moon-BF3OXZ.desktop</stringvalue>
 		</li>
 		<li type="string">
 			<stringvalue>lxterminal;/usr/share/applications/lxterminal.desktop</stringvalue>
 		</li>
 		<li type="string">
-			<stringvalue>pale moon;/home/micha//.local/share/applications/userapp-Pale Moon-BF3OXZ.desktop</stringvalue>
+			<stringvalue>nemo;/home/micha//.local/share/dockbarx/launchers/nemo.desktop</stringvalue>
 		</li>
 		<li type="string">
-			<stringvalue>nemo;/home/micha//.local/share/dockbarx/launchers/nemo.desktop</stringvalue>
+			<stringvalue>opera;/home/micha//.local/share/dockbarx/launchers/opera.desktop</stringvalue>
 		</li>
 	</entry>
 	<entry name="groupbutton_left_click_double" mtime="1551692406" type="bool" value="false"/>
@@ -44,8 +44,8 @@
 	<entry name="badge_bg_color" mtime="1551692406" type="string">
 		<stringvalue>#CDCDCD</stringvalue>
 	</entry>
-	<entry name="groupbutton_attention_notification_type" mtime="1551724449" type="string">
-		<stringvalue>blink</stringvalue>
+	<entry name="groupbutton_attention_notification_type" mtime="1553716172" type="string">
+		<stringvalue>red</stringvalue>
 	</entry>
 	<entry name="windowbutton_shift_and_left_click_action" mtime="1551692406" type="string">
 		<stringvalue>select or minimize window</stringvalue>
@@ -172,7 +172,7 @@
 	<entry name="windowbutton_close_popup_on_right_click" mtime="1551692405" type="bool" value="false"/>
 	<entry name="opacify" mtime="1551692405" type="bool" value="false"/>
 	<entry name="show_only_current_desktop" mtime="1551692405" type="bool" value="false"/>
-	<entry name="reorder_window_list" mtime="1551692405" type="bool" value="true"/>
+	<entry name="reorder_window_list" mtime="1553715756" type="bool" value="false"/>
 	<entry name="gkeys_select_previous_window" mtime="1551692405" type="bool" value="false"/>
 	<entry name="show_only_current_monitor" mtime="1551692405" type="bool" value="false"/>
 	<entry name="select_next_activate_immediately" mtime="1551692405" type="bool" value="false"/>

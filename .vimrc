@@ -65,6 +65,7 @@ map <S-F2> :mks! .vimsession<CR>
 map! <S-F2> <ESC>:mks! .vimsession<CR>
 "set ssop="blank,buffers,curdir,folds,help,tabpages,winsize" 
 
+set nofoldenable
 
 
 " Scroll up and down
@@ -148,10 +149,10 @@ endfunction
 
 "Quickfix..
 "
-map <F11> :cn<CR>
-map <F12> :cp<CR>
-map! <F11> <ESC>:cn<CR>i
-map! <F12> <ESC>:cp<CR>i
+"map <F11> :cn<CR>
+"map <F12> :cp<CR>
+"map! <F11> <ESC>:cn<CR>i
+"map! <F12> <ESC>:cp<CR>i
 
 
 map <M-F11> :cw<CR>
@@ -440,5 +441,17 @@ let g:dbext_default_profile_MYSQL_Unternehmen = 'type=MYSQL:user=micha:passwd=mi
 
 
 source ~/.vim/mapping
+
+
+autocmd BufRead,BufNewFile *.asciidoc map <F12> mz<ESC>:w<CR>:execute "%!cat - && asciidoc -b html % && xdotool windowraise ".wid." && xdotool windowfocus ".wid." && xdotool key --window ".wid." F5 && xdotool windowfocus ".vimid<CR>'z
+autocmd BufRead,BufNewFile *.asciidoc map! <F12> <ESC>mz:w<CR>:execute "%!cat - && asciidoc -b html % && xdotool windowraise ".wid." && xdotool windowfocus ".wid." && xdotool key --window ".wid." F5 && xdotool windowfocus ".vimid<CR>'zi
+
+"map <F12> mz:w<CR>:execute "%!cat - && asciidoc -b html % && xdotool windowraise ".wid." && xdotool windowfocus ".wid." && xdotool key --window ".wid." F5 && xdotool windowfocus ".vimid<CR>'z
+"map! <F12> <ESC>mz:w<CR>:execute "%!cat - && asciidoc -b html % && xdotool windowraise ".wid." && xdotool windowfocus ".wid." && xdotool key --window ".wid." F5 && xdotool windowfocus ".vimid<CR>'zi
+
+let wid=0x2400007
+let vimid=0x1800003
+
+
 
 

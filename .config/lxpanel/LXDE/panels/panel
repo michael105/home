@@ -116,6 +116,15 @@ Plugin {
   }
 }
 Plugin {
+  type=monitors
+  Config {
+    DisplayCPU=1
+    DisplayRAM=1
+    CPUColor=#2135a5
+    RAMColor=#26dde6
+  }
+}
+Plugin {
   type=dclock
   Config {
     ClockFmt=%R
@@ -128,6 +137,9 @@ Plugin {
 Plugin {
   type=launchbar
   Config {
+    Button {
+      id=deepin-screenshot.desktop
+    }
     Button {
       id=lxhotkey-gtk.desktop
     }

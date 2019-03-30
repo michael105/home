@@ -1,0 +1,611 @@
+[begin] (FluxBox)
+    [submenu] (Development)
+        [submenu] (KDevelop)
+            [exec] (KDevelop) {kdevelop}
+            [exec] (KDevelop [Pick Session]) {kdevelop --ps}
+        [end]
+        [exec] (Cervisia) {cervisia}
+        [exec] (CMake) {cmake-gui}
+        [exec] (CMake curses GUI [ccmake]) {xterm -e ccmake}
+        [exec] (Code) {io.elementary.code}
+        [exec] (Cuttlefish) {cuttlefish}
+        [exec] (DB Browser for SQLite) {sqlitebrowser}
+        [exec] (Fluid) {fluid}
+        [exec] (GdaBrowser) {gda-browser-5.0}
+        [exec] (GDB) {xterm -e gdb}
+        [exec] (gitg) {gitg}
+        [exec] (IDLE [Python IDE]) {idle}
+        [exec] (KAppTemplate) {kapptemplate}
+        [exec] (KCachegrind) {kcachegrind}
+        [exec] (KImageMapEditor) {kimagemapeditor}
+        [exec] (Kirigami Gallery) {kirigami2gallery}
+        [exec] (Kompare) {kompare}
+        [exec] (KUIViewer) {kuiviewer}
+        [exec] (Lokalize) {lokalize}
+        [exec] (Plasma Engine Explorer) {plasmaengineexplorer}
+        [exec] (Plasma Look And Feel Explorer) {lookandfeelexplorer}
+        [exec] (Plasma Theme Explorer) {plasmathemeexplorer}
+        [exec] (Python) {xterm -e python}
+        [exec] (Python [v2.7]) {xterm -e python2.7}
+        [exec] (qgit) {qgit}
+        [exec] (Qt Assistant) {assistant}
+        [exec] (Qt Designer) {designer}
+        [exec] (Qt Linguist) {linguist}
+        [exec] (Qt QDbusViewer) {qdbusviewer}
+        [exec] (Qt4 Assistant) {assistant-qt4}
+        [exec] (Qt4 Designer) {designer-qt4}
+        [exec] (Qt4 Linguist) {linguist-qt4}
+        [exec] (Qt4 QDbusViewer) {qdbusviewer-qt4}
+        [exec] (SuperCollider IDE) {scide}
+        [exec] (Tclsh8.6) {xterm -e tclsh8.6}
+        [exec] (TkWish8.6) {x-terminal-emulator -e /usr/bin/wish8.6}
+        [exec] (Umbrello) {umbrello5}
+    [end]
+    [submenu] (Editors)
+        [exec] (AA Fire) {xterm -e aafire -driver slang}
+        [exec] (dedit) {dedit}
+        [exec] (Deepin Editor) {deepin-editor}
+        [exec] (hexedit) {xterm -e hexedit}
+        [exec] (Kate) {kate}
+        [exec] (KWrite) {kwrite}
+        [exec] (Mousepad) {mousepad}
+        [exec] (Nano) {xterm -e nano}
+        [exec] (Pluma) {pluma}
+        [exec] (Text Editor) {gedit}
+        [exec] (Vi) {xterm -e vi}
+        [exec] (Vim) {xterm -e vim}
+    [end]
+    [submenu] (Education)
+        [exec] (Artikulate) {artikulate}
+        [exec] (Blinken) {blinken}
+        [exec] (Kanagram) {kanagram}
+        [exec] (KGeography) {kgeography}
+        [exec] (KHangMan) {khangman}
+        [exec] (Kiten) {kiten}
+        [exec] (KLettres) {klettres}
+        [exec] (KTouch) {ktouch}
+        [exec] (KTurtle) {kturtle}
+        [exec] (KWordQuiz) {kwordquiz}
+        [exec] (Minuet) {minuet}
+        [exec] (Parley) {parley}
+    [end]
+    [submenu] (Games)
+        [submenu] (Adventure)
+            [exec] (Sclient) {sclient}
+        [end]
+        [submenu] (Amusement)
+            [exec] (Potato Guy) {ktuberling}
+        [end]
+        [submenu] (Arcade)
+            [exec] (Bomber) {bomber}
+            [exec] (Granatier) {granatier}
+            [exec] (Kapman) {kapman}
+            [exec] (KBlocks) {kblocks}
+            [exec] (KBounce) {kbounce}
+            [exec] (KBreakOut) {kbreakout}
+            [exec] (KGoldrunner) {kgoldrunner}
+            [exec] (Kolf) {kolf}
+            [exec] (Kollision) {kollision}
+            [exec] (KSnakeDuel) {ksnakeduel}
+            [exec] (KSpaceDuel) {kspaceduel}
+            [exec] (PacMan) {pacman}
+        [end]
+        [submenu] (Board)
+            [exec] (Bovo) {bovo}
+            [exec] (GNU Go) {xterm -e gnugo}
+            [exec] (Kajongg) {kajongg}
+            [exec] (KBlackBox) {kblackbox}
+            [exec] (KFourInLine) {kfourinline}
+            [exec] (Kigo) {kigo}
+            [exec] (Kiriki) {kiriki}
+            [exec] (KMahjongg) {kmahjongg}
+            [exec] (Knights) {knights}
+            [exec] (KReversi) {kreversi}
+            [exec] (KSquares) {ksquares -qwindowicon ksquares}
+            [exec] (KSquares) {ksquares}
+            [exec] (Shisen-Sho) {kshisen}
+        [end]
+        [submenu] (Card)
+            [exec] (KPatience) {kpat}
+            [exec] (LSkat) {lskat}
+        [end]
+        [submenu] (Puzzle)
+            [exec] (KDE Sudoku) {ksudoku}
+            [exec] (KDiamond) {kdiamond}
+            [exec] (KSudoku) {ksudoku -qwindowicon ksudoku}
+            [exec] (Kubrick) {kubrick}
+            [exec] (Palapeli) {palapeli}
+            [exec] (picmi) {picmi}
+        [end]
+        [submenu] (Strategy)
+            [exec] (KAtomic) {katomic}
+            [exec] (Killbots) {killbots}
+            [exec] (KJumpingCube) {kjumpingcube}
+            [exec] (Klickety) {klickety}
+            [exec] (KMines) {kmines}
+            [exec] (KNetWalk) {knetwalk}
+            [exec] (Kolor Lines) {klines}
+            [exec] (Konquest) {konquest}
+            [exec] (KsirK) {ksirk}
+            [exec] (KsirK Skin Editor) {ksirkskineditor}
+            [exec] (Naval Battle) {knavalbattle}
+            [exec] (SameGame) {klickety --KSameMode}
+        [end]
+        [exec] (Critical Mass) {critter}
+        [exec] (Dosbox) {dosbox}
+    [end]
+    [submenu] (Graphics)
+        [exec] (Darktable) {darktable}
+        [exec] (Deepin Image Viewer) {deepin-image-viewer}
+        [exec] (Deepin Picker) {deepin-picker}
+        [exec] (Document Viewer) {xreader}
+        [exec] (dotty) {dotty}
+        [exec] (Eye of MATE Image Viewer) {eom}
+        [exec] (GraphicsMagick) {gm display logo:}
+        [exec] (Gwenview) {gwenview}
+        [exec] (ida) {ida}
+        [exec] (Image Viewer) {eog}
+        [exec] (Image Viewer) {gpicview}
+        [exec] (Inkscape) {inkscape}
+        [exec] (KColorChooser) {kcolorchooser}
+        [exec] (KolourPaint) {kolourpaint}
+        [exec] (KRuler) {kruler}
+        [exec] (lefty) {lefty}
+        [exec] (MATE Color Selection) {mate-color-select}
+        [exec] (Photos) {gnome-photos}
+        [exec] (Photos) {io.elementary.photos}
+        [exec] (Ristretto Image Viewer) {ristretto}
+        [exec] (scanimage) {xterm -e scanimage}
+        [exec] (Simple Scan) {simple-scan}
+        [exec] (XGlyph) {xglyph}
+    [end]
+    [submenu] (Multimedia)
+        [exec] (aliki) {aliki}
+        [exec] (ALSA mixer) {xterm -e alsamixer}
+        [exec] (Alsa Modular Synth) {ams}
+        [exec] (amsynth) {amsynth}
+        [exec] (Ardour) {ardour5}
+        [exec] (Audacity) {audacity}
+        [exec] (Cadence) {cadence}
+        [exec] (Calf Plugin Pack for JACK) {calfjackhost}
+        [exec] (Carla) {carla}
+        [exec] (Carla Control) {carla-control}
+        [exec] (Catia) {catia}
+        [exec] (Cheese) {cheese}
+        [exec] (Deepin Movie) {deepin-movie}
+        [exec] (Deepin Music) {deepin-music}
+        [exec] (Deepin Screen Recorder) {deepin-screen-recorder}
+        [exec] (Deepin Voice Recorder) {deepin-voice-recorder}
+        [exec] (DGEdit) {dgedit}
+        [exec] (DIN Is Noise) {din}
+        [exec] (Dragon Player) {dragon}
+        [exec] (DragonflyReverb) {DragonflyReverb}
+        [exec] (drumkv1) {drumkv1_jack}
+        [exec] (Drumstick Drum Grid) {drumstick-drumgrid}
+        [exec] (Drumstick MIDI Player) {drumstick-guiplayer}
+        [exec] (Drumstick Virtual Piano) {drumstick-vpiano}
+        [exec] (Freewheeling) {fweelin}
+        [exec] (Giada) {giada}
+        [exec] (Gigedit) {gigedit}
+        [exec] (GNU Solfege) {solfege}
+        [exec] (guitarix) {guitarix}
+        [exec] (Helm) {helm}
+        [exec] (Hydrogen Drum Machine) {hydrogen}
+        [exec] (JACK meterbridge) {meterbridge -t vu alsa_pcm:playback_1 alsa_pcm:playback_2}
+        [exec] (JAPA) {japa}
+        [exec] (JSampler) {jsampler}
+        [exec] (JSampler Classic) {jsampler-classic}
+        [exec] (JuK) {juk}
+        [exec] (K3b) {k3b}
+        [exec] (Kamoso) {kamoso}
+        [exec] (Kdenlive) {kdenlive}
+        [exec] (Kwave Sound Editor) {kwave}
+        [exec] (LMMS) {lmms}
+        [exec] (Luppp) {luppp}
+        [exec] (LXMusic simple music player) {lxmusic}
+        [exec] (Mixxx) {mixxx}
+        [exec] (mpv Media Player) {mpv}
+        [exec] (Music) {io.elementary.music}
+        [exec] (Music) {gnome-music}
+        [exec] (Non Mixer) {non-mixer}
+        [exec] (Non Sequencer) {non-sequencer}
+        [exec] (Non Session Manager) {non-session-manager}
+        [exec] (Non Timeline) {non-timeline}
+        [exec] (OBS) {obs}
+        [exec] (padthv1) {padthv1_jack}
+        [exec] (Parole Media Player) {parole}
+        [exec] (PatchMatrix) {patchmatrix}
+        [exec] (Paulstretch) {paulstretch}
+        [exec] (pd) {x-terminal-emulator -e /usr/bin/pd}
+        [exec] (Pure Data) {pd}
+        [exec] (QasConfig) {qasconfig}
+        [exec] (QasHctl) {qashctl}
+        [exec] (QasMixer) {qasmixer}
+        [exec] (QjackCtl) {qjackctl}
+        [exec] (QMidiArp) {qmidiarp}
+        [exec] (QmidiCtl) {qmidictl}
+        [exec] (QmidiNet) {qmidinet}
+        [exec] (QMidiRoute) {qmidiroute}
+        [exec] (Qsampler) {qsampler}
+        [exec] (Qsynth) {qsynth}
+        [exec] (Qt V4L2 test Utility) {qv4l2}
+        [exec] (Qt V4L2 video capture utility) {qvidcap}
+        [exec] (Qtractor) {qtractor}
+        [exec] (QXGEdit) {qxgedit}
+        [exec] (Rosegarden) {rosegarden}
+        [exec] (samplv1) {samplv1_jack}
+        [exec] (setBfree) {setBfreeUI}
+        [exec] (Snd) {snd}
+        [exec] (Sonic Visualiser) {sonic-visualiser}
+        [exec] (Sound) {mate-volume-control}
+        [exec] (ssr) {ssr}
+        [exec] (ssr-aap) {ssr-aap}
+        [exec] (ssr-binaural) {ssr-binaural}
+        [exec] (ssr-brs) {ssr-brs}
+        [exec] (ssr-dca) {ssr-dca}
+        [exec] (ssr-generic) {ssr-generic}
+        [exec] (ssr-vbap) {ssr-vbap}
+        [exec] (ssr-wfs) {ssr-wfs}
+        [exec] (Sweep) {sweep}
+        [exec] (synthv1) {synthv1_jack}
+        [exec] (TiMidity++) {timidity -ia}
+        [exec] (Videos) {io.elementary.videos}
+        [exec] (Videos) {totem}
+        [exec] (VLC media player) {vlc}
+        [exec] (VLC media player) {qvlc}
+        [exec] (VMPK) {vmpk}
+        [exec] (Wolf-shaper) {wolf-shaper}
+        [exec] (x42-fat1) {x42-fat1}
+        [exec] (x42-fil4) {x42-fil4}
+        [exec] (x42-meter) {x42-meter}
+        [exec] (x42-mixtri) {x42-mixtri}
+        [exec] (x42-scope) {x42-scope}
+        [exec] (x42-spectr) {x42-spectr}
+        [exec] (x42-stepseq) {x42-stepseq}
+        [exec] (x42-tuna) {x42-tuna}
+        [exec] (x42-whirl) {x42-whirl}
+        [exec] (Xfburn) {xfburn}
+        [exec] (YASS) {yass}
+        [exec] (Yoshimi) {yoshimi}
+        [exec] (zita-at1) {zita-at1}
+        [exec] (zita-bls1) {zita-bls1}
+        [exec] (zita-dpl1) {zita-dpl1}
+        [exec] (zita-mu1) {zita-mu1}
+        [exec] (zita-rev1) {zita-rev1}
+        [exec] (ZynAddSubFX - Alsa) {zynaddsubfx -I alsa -O alsa}
+        [exec] (ZynAddSubFX - Jack) {zynaddsubfx -I jack -O jack}
+        [exec] (ZynAddSubFX - OSS) {zynaddsubfx -I OSS -O OSS}
+    [end]
+    [submenu] (Network)
+        [exec] (Avahi SSH Server Browser) {bssh}
+        [exec] (Avahi VNC Server Browser) {bvnc}
+        [exec] (Browse Mirrored Websites) {webhttrack browse}
+        [exec] (ELinks) {xterm -e elinks}
+        [exec] (FTP) {xterm -e ftp}
+        [exec] (IM Contacts) {ktp-contactlist}
+        [exec] (KDE IM Log Viewer) {ktp-log-viewer}
+        [exec] (KGet) {kget}
+        [exec] (Konqueror) {konqueror}
+        [exec] (Kopete) {kopete}
+        [exec] (KRDC) {krdc}
+        [exec] (Krfb) {krfb}
+        [exec] (LFTP) {xterm -e lftp}
+        [exec] (Links) {xterm -e links}
+        [exec] (Links) {xlinks -g}
+        [exec] (Lynx) {xterm -e lynx}
+        [exec] (Mail) {xterm -e mail}
+        [exec] (Mail Reader) {exo-open --launch MailReader}
+        [exec] (Midori) {midori}
+        [exec] (NetSurf Web Browser) {netsurf}
+        [exec] (Opera) {opera}
+        [exec] (Pale Moon) {palemoon}
+        [exec] (Talk) {xterm -e talk}
+        [exec] (Telnet) {xterm -e telnet}
+        [exec] (TkVNC) {xterm -e tkvnc}
+        [exec] (W3m) {xterm -e w3m}
+        [exec] (w3m) {xterm -e w3m /usr/share/doc/w3m/MANUAL.html}
+        [exec] (Web) {epiphany}
+        [exec] (Web Browser) {exo-open --launch WebBrowser}
+        [exec] (WebHTTrack Website Copier) {webhttrack}
+    [end]
+    [submenu] (Office)
+        [exec] (Atril Document Viewer) {atril}
+        [exec] (BasKet Note Pads) {basket}
+        [exec] (Calendar) {io.elementary.calendar}
+        [exec] (Contacts) {gnome-contacts}
+        [exec] (Deepin Calendar) {dde-calendar}
+        [exec] (Dictionary) {gnome-dictionary}
+        [exec] (Dictionary) {xfce4-dict}
+        [exec] (Document Viewer) {evince}
+        [exec] (MATE Dictionary) {mate-dictionary}
+        [exec] (Okular) {okular}
+        [exec] (Orage Calendar) {orage}
+        [exec] (Orage Globaltime) {globaltime}
+        [exec] (PDF Arranger) {pdfarranger}
+        [exec] (qpdfview) {qpdfview}
+        [exec] (Zathura) {zathura}
+        [exec] (Zotero) {zotero}
+    [end]
+    [submenu] (Other)
+        [exec] (Crusta) {crusta}
+        [exec] (Help) {yelp help:mate-user-guide}
+        [exec] (Help) {khelpcenter}
+    [end]
+    [submenu] (Science)
+        [exec] (bc) {xterm -e bc}
+        [exec] (Cantor) {cantor -qwindowicon cantor}
+        [exec] (dc) {xterm -e dc}
+        [exec] (KAlgebra) {kalgebra}
+        [exec] (KAlgebra Mobile) {kalgebramobile}
+        [exec] (Kalzium) {kalzium}
+        [exec] (KBruch) {kbruch}
+        [exec] (KDE Marble) {marble}
+        [exec] (Kig) {kig}
+        [exec] (KmPlot) {kmplot}
+        [exec] (Qalculate!) {qalculate-gtk}
+        [exec] (Rocs) {rocs}
+        [exec] (Step) {step}
+    [end]
+    [submenu] (Shells)
+        [exec] (4Pane) {4Pane}
+        [exec] (Deepin Terminal) {deepin-terminal}
+        [exec] (Dolphin) {dolphin}
+        [exec] (emelFM2) {emelfm2}
+        [exec] (File Manager PCManFM) {pcmanfm}
+        [exec] (Files) {io.elementary.files}
+        [exec] (Files) {nautilus}
+        [exec] (GIT) {xterm -e git}
+        [exec] (Konsole) {konsole}
+        [exec] (LXTerminal) {lxterminal}
+        [exec] (MATE Terminal) {mate-terminal}
+        [exec] (Oracle VM VirtualBox) {VirtualBox}
+        [exec] (QTerminal) {qterminal}
+        [exec] (QTerminal drop down) {qterminal --drop}
+        [exec] (ranger) {xterm -e ranger}
+        [exec] (ROX) {rox}
+        [exec] (Terminal) {io.elementary.terminal}
+        [exec] (Terminal) {gnome-terminal}
+        [exec] (Thunar File Manager) {thunar}
+        [exec] (TuxCommander) {tuxcmd}
+        [exec] (UXTerm) {uxterm}
+        [exec] (Vifm) {xterm -e vifm}
+        [exec] (VirtualBox) {virtualbox}
+        [exec] (Xfce Terminal) {xfce4-terminal}
+        [exec] (Xterm) {xterm}
+    [end]
+    [submenu] (System)
+        [submenu] (Settings)
+            [submenu] (GNOME)
+                [exec] (Add/Remove Software) {pamac-manager}
+                [exec] (Advanced Network Configuration) {nm-connection-editor}
+                [exec] (GPaste) {/usr/lib/gpaste/gpaste-ui}
+            [end]
+            [submenu] (Xfce)
+                [exec] (Orage preferences) {orage -p}
+                [exec] (Screensaver) {xscreensaver-demo}
+                [exec] (Settings Manager) {xfce4-settings-manager}
+            [end]
+            [exec] (About Me) {mate-about-me}
+            [exec] (Accessibility) {xfce4-accessibility-settings}
+            [exec] (Appearance) {xfce4-appearance-settings}
+            [exec] (Appearance) {lxqt-config-appearance}
+            [exec] (Appearance) {mate-appearance-properties}
+            [exec] (Assistive Technologies) {mate-at-properties}
+            [exec] (Awn Settings) {awn-settings}
+            [exec] (Brightness) {lxqt-config-brightness}
+            [exec] (Control Center) {mate-control-center}
+            [exec] (Customize Look and Feel) {lxappearance}
+            [exec] (Date and Time) {lxqt-admin-time}
+            [exec] (Default applications for LXSession) {lxsession-default-apps}
+            [exec] (Desktop) {xfdesktop-settings}
+            [exec] (Desktop Notifications) {lxqt-config-notificationd}
+            [exec] (Desktop Preferences) {pcmanfm --desktop-pref}
+            [exec] (Desktop Session Settings) {lxsession-edit}
+            [exec] (Display) {xfce4-display-settings}
+            [exec] (Displays) {mate-display-properties}
+            [exec] (DockbarX Preference) {dbx_preference}
+            [exec] (File Associations) {lxqt-config-file-associations}
+            [exec] (File Management) {caja-file-management-properties}
+            [exec] (File Manager) {thunar-settings}
+            [exec] (Floating GNOME) {/usr/lib/mate-screensaver/mate-screensaver/floaters /usr/share/pixmaps/gnome-logo-white.svg}
+            [exec] (Floating MATE) {/usr/lib/mate-screensaver/mate-screensaver/floaters /usr/share/pixmaps/mate-logo-white.svg}
+            [exec] (Gda Control Center) {gda-control-center-5.0}
+            [exec] (KDE System Settings) {systemsettings5}
+            [exec] (Keyboard) {xfce4-keyboard-settings}
+            [exec] (Keyboard) {mate-keyboard-properties}
+            [exec] (Keyboard and Mouse) {lxqt-config-input}
+            [exec] (Keyboard and Mouse) {lxinput}
+            [exec] (Keyboard Shortcuts) {mate-keybinding-properties}
+            [exec] (Locale) {lxqt-config-locale}
+            [exec] (Lock Screen) {lxqt-leave --lockscreen}
+            [exec] (LXQt Configuration Center) {lxqt-config}
+            [exec] (Main Menu) {mozo}
+            [exec] (MIME Type Editor) {xfce4-mime-settings}
+            [exec] (Monitor Settings) {lxrandr}
+            [exec] (Monitor settings) {lxqt-config-monitor}
+            [exec] (Mouse) {mate-mouse-properties}
+            [exec] (Mouse and Touchpad) {xfce4-mouse-settings}
+            [exec] (Network Proxy) {mate-network-properties}
+            [exec] (Notifications) {xfce4-notifyd-config}
+            [exec] (Openbox Configuration Manager) {obconf}
+            [exec] (Openbox Settings) {obconf-qt}
+            [exec] (Panel) {xfce4-panel --preferences}
+            [exec] (Personal File Sharing) {mate-file-share-properties}
+            [exec] (Pictures folder) {/usr/lib/mate-screensaver/mate-screensaver/slideshow}
+            [exec] (Pop art squares) {/usr/lib/mate-screensaver/mate-screensaver/popsquares}
+            [exec] (Popup Notifications) {mate-notification-properties}
+            [exec] (Power Management) {mate-power-preferences}
+            [exec] (Power Management) {lxqt-config-powermanagement}
+            [exec] (Power Manager) {xfce4-power-manager-settings}
+            [exec] (Preferred Applications) {exo-preferred-applications}
+            [exec] (Preferred Applications) {mate-default-applications-properties}
+            [exec] (Preferred Applications) {libfm-pref-apps}
+            [exec] (Removable Drives and Media) {thunar-volman-settings}
+            [exec] (Rygel Preferences) {rygel-preferences}
+            [exec] (Screensaver) {mate-screensaver-preferences}
+            [exec] (Session and Startup) {xfce4-session-settings}
+            [exec] (Session Settings) {lxqt-config-session}
+            [exec] (Settings Editor) {xfce4-settings-editor}
+            [exec] (Shortcut Keys) {lxqt-config-globalkeyshortcuts}
+            [exec] (Startup Applications) {mate-session-properties}
+            [exec] (Tint2 Settings) {tint2conf}
+            [exec] (Users and Groups) {lxqt-admin-user}
+            [exec] (Window Manager) {xfwm4-settings}
+            [exec] (Window Manager Tweaks) {xfwm4-tweaks-settings}
+            [exec] (Windows) {mate-window-properties}
+            [exec] (Workspaces) {xfwm4-workspace-settings}
+            [exec] (Xfce Terminal) {xfce4-terminal --preferences}
+        [end]
+        [exec] (About LXQt) {lxqt-about}
+        [exec] (Avahi Zeroconf Browser) {avahi-discover}
+        [exec] (Boxes) {gnome-boxes}
+        [exec] (Bulk Rename) {/usr/lib/Thunar/ThunarBulkRename}
+        [exec] (Caja) {caja --no-desktop}
+        [exec] (Color Profile Viewer) {gcm-viewer}
+        [exec] (Computer) {gio open computer:///}
+        [exec] (Cylon) {xterm -e cylon}
+        [exec] (Deepin Boot Maker) {deepin-boot-maker}
+        [exec] (Deepin System Monitor) {deepin-system-monitor}
+        [exec] (Discover) {plasma-discover}
+        [exec] (Disk Usage Analyzer) {baobab}
+        [exec] (GDM flexiserver) {gdmflexiserver}
+        [exec] (GDM flexiserver in Xnest) {gdmflexiserver -n}
+        [exec] (GNOME System Monitor) {gnome-system-monitor}
+        [exec] (gpa) {gpa}
+        [exec] (GTK+ 2.0 theme manager) {gtk-chtheme}
+        [exec] (Hibernate) {lxqt-leave --hibernate}
+        [exec] (Htop) {xterm -e htop}
+        [exec] (Info Center) {kinfocenter}
+        [exec] (jgmenu) {jgmenu_run}
+        [exec] (KDiskFree) {kdf}
+        [exec] (KSysGuard) {ksysguard}
+        [exec] (KSystemLog) {ksystemlog}
+        [exec] (KWalletManager) {kwalletmanager5}
+        [exec] (KwikDisk) {kwikdisk}
+        [exec] (Leave) {lxqt-leave}
+        [exec] (Log File Viewer) {mate-system-log}
+        [exec] (Log Out) {xfce4-session-logout}
+        [exec] (Logout) {lxqt-leave --logout}
+        [exec] (Logs) {gnome-logs}
+        [exec] (luckyBackup [super user]) {luckybackup-pkexec}
+        [exec] (MATE Disk Usage Analyzer) {mate-disk-usage-analyzer}
+        [exec] (MATE System Monitor) {mate-system-monitor}
+        [exec] (Octopi) {octopi}
+        [exec] (Octopi CacheCleaner) {octopi-cachecleaner}
+        [exec] (Octopi Notifier) {octopi-notifier}
+        [exec] (Octopi Repo Editor) {octopi-repoeditor}
+        [exec] (Pakku GUI) {pakku-gui}
+        [exec] (Power Statistics) {mate-power-statistics}
+        [exec] (pstree) {x-terminal-emulator -e /usr/bin/pstree.x11}
+        [exec] (pstree) {xterm -e pstree}
+        [exec] (pstree) {xterm -e pstree.x11}
+        [exec] (pstree) {xterm -e /usr/bin/pstree.x11}
+        [exec] (Reboot) {lxqt-leave --reboot}
+        [exec] (Sensor Viewer) {xfce4-sensors}
+        [exec] (Settings) {gnome-control-center}
+        [exec] (Shutdown) {lxqt-leave --shutdown}
+        [exec] (Suspend) {lxqt-leave --suspend}
+        [exec] (Synaptic Package Manager) {x-terminal-emulator -e synaptic-pkexec}
+        [exec] (System Settings) {io.elementary.switchboard}
+        [exec] (Task Manager) {lxtask}
+        [exec] (Task Manager) {xfce4-taskmanager}
+        [exec] (Tint2) {tint2}
+        [exec] (Top) {xterm -e top}
+        [exec] (Trash) {gio open trash:///}
+        [exec] (ZuluCrypt) {zuluCrypt-gui}
+        [exec] (ZuluMount) {zuluMount-gui}
+    [end]
+    [submenu] (Utilities)
+        [exec] (About Xfce) {xfce4-about}
+        [exec] (Activate ScreenSaver [Next]) {xscreensaver-command -next}
+        [exec] (Activate ScreenSaver [Previous]) {xscreensaver-command -prev}
+        [exec] (Activate ScreenSaver [Random]) {xscreensaver-command -activate}
+        [exec] (Application Finder) {xfce4-appfinder}
+        [exec] (Archive Manager) {file-roller}
+        [exec] (Ark) {ark}
+        [exec] (Avant Window Navigator) {avant-window-navigator}
+        [exec] (Books) {gnome-books}
+        [exec] (Calculator) {gnome-calculator}
+        [exec] (Cardapio) {cardapio show-near-mouse}
+        [exec] (Catarina) {catarina}
+        [exec] (Characters) {gnome-characters}
+        [exec] (CherryTree) {cherrytree}
+        [exec] (Clipman) {xfce4-clipman}
+        [exec] (Clocks) {gnome-clocks}
+        [exec] (Console Matrix [Text]) {xterm -e cmatrix}
+        [exec] (Console Matrix [Virtual Console]) {xterm -e cmatrix -l}
+        [exec] (Console Matrix [X11]) {cmatrix -x}
+        [exec] (CopyQ) {copyq}
+        [exec] (Deepin Calculator) {deepin-calculator}
+        [exec] (Deepin Clone) {deepin-clone-pkexec}
+        [exec] (Deepin File Manager) {dde-file-manager}
+        [exec] (Demo Screen Hacks) {xscreensaver-command -demo}
+        [exec] (Disable XScreenSaver) {xscreensaver-command -exit}
+        [exec] (Disks) {gnome-disks}
+        [exec] (DockX) {dockx}
+        [exec] (Documents) {gnome-documents}
+        [exec] (Enable XScreenSaver) {xscreensaver}
+        [exec] (Engrampa Archive Manager) {engrampa}
+        [exec] (File Manager) {exo-open --launch FileManager}
+        [exec] (Filelight) {filelight}
+        [exec] (Fonts) {gnome-font-viewer}
+        [exec] (GPG-Crypter) {gpg-crypter}
+        [exec] (Help) {yelp}
+        [exec] (Info) {xterm -e info}
+        [exec] (KBackup) {kbackup}
+        [exec] (KCalc) {kcalc}
+        [exec] (KCharSelect) {kcharselect}
+        [exec] (KFind) {kfind}
+        [exec] (KFloppy) {kfloppy}
+        [exec] (Kleopatra) {kleopatra}
+        [exec] (Klipper) {klipper}
+        [exec] (KMag) {kmag}
+        [exec] (KMouseTool) {kmousetool}
+        [exec] (KMouth) {kmouth}
+        [exec] (KTeaTime) {kteatime}
+        [exec] (KTimer) {ktimer}
+        [exec] (Lock Screen [XScreenSaver]) {xscreensaver-command -lock}
+        [exec] (luckyBackup) {luckybackup}
+        [exec] (Maps) {gapplication launch org.gnome.Maps}
+        [exec] (MATE Calculator) {mate-calc}
+        [exec] (MATE Font Viewer) {mate-font-viewer}
+        [exec] (MATE Search Tool) {mate-search-tool}
+        [exec] (Nemo) {nemo}
+        [exec] (Notes) {xfce4-notes}
+        [exec] (Plank) {plank}
+        [exec] (Qlipper) {qlipper}
+        [exec] (Reinitialize XScreenSaver) {xscreensaver-command -restart}
+        [exec] (Run Program...) {xfce4-appfinder --collapsed}
+        [exec] (ScreenSaver Preferences) {xscreensaver-command -prefs}
+        [exec] (Screenshot) {xfce4-screenshooter}
+        [exec] (Screenshot) {gnome-screenshot --interactive}
+        [exec] (Spectacle) {spectacle}
+        [exec] (Sweeper) {sweeper}
+        [exec] (Take Screenshot) {mate-screenshot --interactive}
+        [exec] (taskbar) {taskbar}
+        [exec] (Terminal Emulator) {exo-open --launch TerminalEmulator}
+        [exec] (To Do) {gnome-todo}
+        [exec] (Xarchiver) {xarchiver}
+        [exec] (Xclock [analog]) {xclock -analog}
+        [exec] (Xclock [digital]) {xclock -digital -update 1}
+        [exec] (Xclock [digital]) {xclock -digital}
+        [exec] (Xev) {x-terminal-emulator -e xev}
+        [exec] (Xev) {xterm -e xev}
+        [exec] (Xkill) {xkill}
+        [exec] (Xrefresh) {xrefresh}
+        [exec] (Xsetroot) {xsetroot}
+    [end]
+    [separator]
+    [submenu] (FluxBox)
+        [workspaces] (Workspaces)
+        [submenu] (Styles)
+            [stylesdir] (/usr/share/fluxbox/styles)
+            [stylesdir] (~/.fluxbox/styles)
+        [end]
+        [config] (Configure)
+        [reconfig] (Reconfig)
+        [restart] (Restart)
+        [separator]
+        [exit] (Exit)
+    [end]
+[end]
