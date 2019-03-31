@@ -184,11 +184,16 @@ fi
 if test $USER = "micha"
 then
 		US="$LCYAN"
+    echo -ne "\033]10;#ffffff\007";
+    echo -ne "\033]11;#000000\007";
+
 fi
 
 if test $USER = "root"
 then
 		US="$RED"
+    echo -ne "\033]11;#bb6f20\007";
+    echo -ne "\033]10;#000000\007";
 fi
 
 

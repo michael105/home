@@ -5,3 +5,7 @@
 [app] (name=lxterminal) (class=Lxterminal)
   [Maximized]	{yes}
 [end]
+[app] (name=gqview) (class=GQview)
+  [Dimensions]	{82% 84%}
+  [Position]	(UPPERLEFT)	{8% 4%}
+[end]

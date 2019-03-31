@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="launchers" mtime="1553922956" type="list" ltype="string">
+	<entry name="launchers" mtime="1554013700" type="list" ltype="string">
 		<li type="string">
 			<stringvalue>lxtask;/usr/share/applications/lxtask.desktop</stringvalue>
 		</li>
@@ -18,6 +18,9 @@
 		</li>
 		<li type="string">
 			<stringvalue>opera;/home/micha//.local/share/dockbarx/launchers/opera.desktop</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>gqview;/home/micha//.local/share/dockbarx/launchers/gqview.desktop</stringvalue>
 		</li>
 	</entry>
 	<entry name="groupbutton_left_click_double" mtime="1551692406" type="bool" value="false"/>
