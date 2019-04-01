@@ -98,7 +98,7 @@ Plugin {
     MaxTaskWidth=150
     spacing=1
     SameMonitorOnly=0
-    GroupedTasks=0
+    GroupedTasks=1
     DisableUpscale=0
   }
 }

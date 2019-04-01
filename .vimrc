@@ -365,12 +365,17 @@ map! <M-Up> <ESC>:wincmd k<CR>i
 map! <M-Down> <ESC>:wincmd j<CR>i
 
 
-
 " Insertion
 map! <C-Down> <ESC>o
 map! <C-Up> <ESC>O
 map <C-Down> o
 map <C-Up> O
+
+"urxvt
+map! Ob <ESC>o
+map! Oa <ESC>O
+map Ob o
+map Oa O
 
 
 
