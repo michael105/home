@@ -1,3 +1,12 @@
+"
+"
+":let g:syntastic_c_compiler_options = '-ansi -include syntaxhcheck.h'
+
+"
+"
+"
+"
+"
 "möglicherweise setmetamode bin in der Shell ausführen
 " oder mit !
 set nocompatible
@@ -24,26 +33,26 @@ map! <C-B> /* ------------------------------------------------------------------
 
 
 "  TreeExplorer
-map <F8> :call VTreeToggle()<CR>
-map - :call VTreeToggle()<CR><C-w>h
-map! - <ESC>:call VTreeToggle()<CR><C-w>h
-map + <C-w>l
-map! + <C-w>l
+"map <F8> :call VTreeToggle()<CR>
+"map - :call VTreeToggle()<CR><C-w>h
+"map! - <ESC>:call VTreeToggle()<CR><C-w>h
+"map + <C-w>l
+"map! + <C-w>l
+"
+"let vtree_is_open=0
+"function! VTreeToggle()
+"    if g:vtree_is_open
+"        "let g:vtree_is_open = 
+"    else
+"				:30vsplit
+"				:VTreeExplore
+"        let g:vtree_is_open = 1
+"    endif
+"endfunction
+"
 
-let vtree_is_open=0
-function! VTreeToggle()
-    if g:vtree_is_open
-        "let g:vtree_is_open = 
-    else
-				:30vsplit
-				:VTreeExplore
-        let g:vtree_is_open = 1
-    endif
-endfunction
-
-
-
-
+map <F9> :NERDTreeToggle<CR>
+map! <F9> <ESC>:NERDTreeToggle<CR>
 
 colorscheme torte
 
@@ -459,4 +468,9 @@ let vimid=0x1800003
 
 
 
+" Return to last edit position when opening files (You want this!)
+"autocmd BufReadPost *
+"     \ if line("'\"") > 0 && line("'\"") <= line("$") "|
+"      \   exe "normal! g`\"" |
+"     \ endif
 
