@@ -85,6 +85,25 @@ map k <C-y>
 map <M-C-Down> <C-y>
 map! <M-C-Down> <C-y>
 
+"Window right/left
+map [1;7C <C-w>l
+map [1;7D <C-w>h
+map [1;7B <C-w>j
+map [1;7A <C-w>k
+map! [1;7D <ESC><C-w>h
+map! [1;7C <ESC><C-w>l
+map! [1;7A <ESC><C-w>k
+map! [1;7B <ESC><C-w>j
+
+"Window split
+map V <C-w>v
+map H <C-w>s
+map Q <C-w>q
+map! V <ESC><C-w>v
+map! H <ESC><C-w>s
+map! Q <ESC><C-w>q
+
+
 
 "Perlsupport
 "Syntax Check
@@ -247,6 +266,7 @@ map! m \mbe
 "map! [1;3D <ESC>:bp<CR>i
 "ELINUX
 
+
 "OSX
 "map [1;2C :bn<CR>
 "map [1;2D :bp<CR>
@@ -295,11 +315,18 @@ map! [1;3B <ESC>:bn<CR>i
 map! [1;3A <ESC>:bp<CR>i
 
 
+"urxvt
+map <Down> :bn<CR>
+map <Up> :bp<CR>
+map! <Down> <ESC>:bn<CR>i
+map! <Up> <ESC>:bp<CR>i
 
-map <M-PageDown> :bn<CR>
-map <M-PageUp> :bp<CR>
-map! <M-PageDown> <ESC>:bn<CR>i
-map! <M-PageUp> <ESC>:bp<CR>i
+" fn - right/left
+map OF :bn<CR>
+map OH :bp<CR>
+map! OF <ESC>:bn<CR>i
+map! OH <ESC>:bp<CR>i
+
 
 " Move window to the last ..
 map <M-C-PageDown> :call Funcbufmoveright()<CR> 

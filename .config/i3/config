@@ -110,30 +110,12 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+        bindsym $mod+Ctrl+Left resize shrink width 10 px
+        bindsym $mod+Ctrl+Down resize grow height 10 px 
+        bindsym $mod+Ctrl+Up resize shrink height 10 px 
+        bindsym $mod+Ctrl+Right resize grow width 10 px 
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -174,10 +156,10 @@ bindsym $mod+m bar mode toggle
 # #aa0000
 
 font pango: Monospace Bold 9
-#the focused window       frame titlebar | bgtitlebar,border  | schrift titlebar  | ?    
-client.focused          #000000 #202222 #7bff00 #ffff00
+#the focused window       frame titlebar | bgtitlebar,border  | schrift titlebar  | ?   -sidebar, rechts?
+client.focused          #000000 #202222 #00fffb #4aff96
 # the container
-client.focused_inactive #000000 #202218 #7bff00 #ffff00
+client.focused_inactive #000000 #202218 #00acab #291500
 #client.focused_inactive #000000 #202218 #7bff00 #ffff00
 client.unfocused        #000000 #000000 #00b49f #292d2e
 #client.unfocused        #000000 #000000 #00b49f #292d2e
@@ -187,10 +169,18 @@ client.urgent           #ffff00 #900000 #ffffff #900000
 # application bindings
 
 # start a terminal
-bindsym $mod+Return exec tinyterm
+bindsym $mod+Return exec urxvtc || ( urxvtd && urxvtc )
 #bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+t exec lxtask
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+w reload
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
 
 
 

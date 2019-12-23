@@ -1,4 +1,5 @@
 #exec awesome
-#exec i3
-exec startlxde
+exec i3
+exec urxvtd
+#exec startlxde
 #exec startlxqt

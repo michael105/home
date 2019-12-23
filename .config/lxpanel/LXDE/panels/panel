@@ -111,12 +111,8 @@ Plugin {
   }
 }
 Plugin {
-  type=monitors
+  type=cpufreq
   Config {
-    DisplayCPU=1
-    DisplayRAM=1
-    CPUColor=#2135a5
-    RAMColor=#26dde6
   }
 }
 Plugin {

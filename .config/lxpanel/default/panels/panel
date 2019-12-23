@@ -86,6 +86,8 @@ Plugin {
   type=launchtaskbar
   Config {
     FlatButton=-1
+    ShowAllDesks=0
+    SameMonitorOnly=0
   }
 }
 Plugin {

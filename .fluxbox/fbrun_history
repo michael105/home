@@ -9,7 +9,13 @@ urxvt
 lxterminal
 netsurf
 gscope
-gedit
 konqueror
 xsane
 pdfarranger
+gedit
+dillo
+arandr
+qalculate
+qalculate-gtk
+uuterm
+tilix
