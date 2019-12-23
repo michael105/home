@@ -89,7 +89,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+c focus child
+bindsym $mod+s focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -112,6 +112,9 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 
         bindsym $mod+Ctrl+Left resize shrink width 10 px
+				bindsym $mod+y resize set width 1300 px
+				bindsym $mod+x resize set width 700 px
+				bindsym $mod+c resize set width 350 px
         bindsym $mod+Ctrl+Down resize grow height 10 px 
         bindsym $mod+Ctrl+Up resize shrink height 10 px 
         bindsym $mod+Ctrl+Right resize grow width 10 px 
