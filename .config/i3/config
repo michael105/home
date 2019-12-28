@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace Bold 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -32,14 +32,15 @@ floating_modifier $mod
 
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill <end>
+bindsym $mod+SHIFT+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -88,8 +89,10 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+bindsym $mod+Shift+a close parent
+
 # focus the child container
-bindsym $mod+s focus child
+bindsym $mod+y focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -112,9 +115,9 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 
         bindsym $mod+Ctrl+Left resize shrink width 10 px
-				bindsym $mod+y resize set width 1300 px
-				bindsym $mod+x resize set width 700 px
-				bindsym $mod+c resize set width 350 px
+				bindsym $mod+u resize set width 1300 px
+				bindsym $mod+i resize set width 700 px
+				bindsym $mod+o resize set width 350 px
         bindsym $mod+Ctrl+Down resize grow height 10 px 
         bindsym $mod+Ctrl+Up resize shrink height 10 px 
         bindsym $mod+Ctrl+Right resize grow width 10 px 
@@ -160,7 +163,8 @@ bindsym $mod+m bar mode toggle
 
 font pango: Monospace Bold 9
 #the focused window       frame titlebar | bgtitlebar,border  | schrift titlebar  | ?   -sidebar, rechts?
-client.focused          #000000 #202222 #00fffb #4aff96
+client.focused          #112233 #111155 #00dcf0 #4aff96
+# client.focused          #000000 #202222 #00fffb #4aff96
 # the container
 client.focused_inactive #000000 #202218 #00acab #291500
 #client.focused_inactive #000000 #202218 #7bff00 #ffff00
@@ -172,7 +176,7 @@ client.urgent           #ffff00 #900000 #ffffff #900000
 # application bindings
 
 # start a terminal
-bindsym $mod+Return exec urxvtc || ( urxvtd && urxvtc )
+bindsym $mod+Return exec urxvtc || ( urxvtd -q -f && urxvtc )
 #bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+t exec lxtask
@@ -183,6 +187,7 @@ bindsym $mod+Shift+w reload
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
 
 
 

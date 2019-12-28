@@ -7,12 +7,12 @@
 	<entry name="behavior" mtime="1553715616" type="string">
 		<stringvalue>panel</stringvalue>
 	</entry>
-	<entry name="size" mtime="1553302162" type="int" value="42"/>
+	<entry name="size" mtime="1577547362" type="int" value="32"/>
 	<entry name="end_decorations" mtime="1553302263" type="bool" value="true"/>
 	<entry name="mode" mtime="1553715655" type="string">
 		<stringvalue>panel</stringvalue>
 	</entry>
-	<entry name="position" mtime="1554016764" type="string">
+	<entry name="position" mtime="1577547427" type="string">
 		<stringvalue>bottom</stringvalue>
 	</entry>
 </gconf>
