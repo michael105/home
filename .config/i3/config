@@ -113,7 +113,17 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+# move focused to workspace ..
+bindsym $mod+Shift+1 move to workspace $ws1
+bindsym $mod+Shift+2 move to workspace $ws2
+bindsym $mod+Shift+3 move to workspace $ws3
+bindsym $mod+Shift+4 move to workspace $ws4
+bindsym $mod+Shift+5 move to workspace $ws5
 
+
+
+
+# Resizing
         bindsym $mod+Ctrl+Left resize shrink width 10 px
 				bindsym $mod+u resize set width 1300 px
 				bindsym $mod+i resize set width 700 px
