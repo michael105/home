@@ -9,6 +9,13 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
+# misc..
+# mod1 : Alt
+
+
+
+
 #exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 exec  --no-startup-id polybar example &
 exec --no-startup-id dockx &
@@ -19,7 +26,7 @@ exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 15 &
 
 
 
-bindsym $mod+Ctrl+x exec --no-startup-id xsetroot -bg BLACK -mod 100 100
+bindsym $mod+Ctrl+Shift+x exec --no-startup-id xsetroot -bg BLACK -mod 100 100
 
 
 set $mod Mod4
@@ -137,13 +144,25 @@ bindsym $mod+Shift+5 move to workspace $ws5
 
 
 # Resizing
-        bindsym $mod+Ctrl+Left resize shrink width 10 px
-				bindsym $mod+u resize set width 1300 px
-				bindsym $mod+i resize set width 700 px
-				bindsym $mod+o resize set width 350 px
-        bindsym $mod+Ctrl+Down resize grow height 10 px 
-        bindsym $mod+Ctrl+Up resize shrink height 10 px 
-        bindsym $mod+Ctrl+Right resize grow width 10 px 
+bindsym $mod+u resize set width 1300 px
+bindsym $mod+i resize set width 700 px
+
+bindsym $mod+Ctrl+y resize set width 1350 px
+bindsym $mod+Ctrl+x resize set width 1100 px
+bindsym $mod+Ctrl+c resize set width 950 px
+bindsym $mod+Ctrl+v resize set width 700 px
+bindsym $mod+Ctrl+b resize set width 550 px
+bindsym $mod+Ctrl+n resize set width 300 px
+bindsym $mod+Ctrl+m resize set width 50 px
+
+
+bindsym $mod+o resize set width 350 px
+bindsym $mod+Ctrl+Left resize grow width 695 px
+bindsym $mod+Ctrl+Right resize shrink width 695 px
+bindsym $mod+Mod1+Right resize shrink width 10 px
+bindsym $mod+Mod1+Down resize grow height 10 px 
+bindsym $mod+Mod1+Up resize shrink height 10 px 
+bindsym $mod+Mod1+Left resize grow width 10 px 
 
 
 # resize window (you can also use the mouse for that)
