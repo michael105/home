@@ -36,7 +36,6 @@
 #
 #URxvt*transparent:       false
 #
-URxvt.font: xft:Monospace:pixelsize=14
 #URxvt.letterSpace: 1
 #
 #*antialias:  true
@@ -73,20 +72,24 @@ URxvt.font: xft:Monospace:pixelsize=14
 *.color15:     #ffffff
 
 URxvt*scrollBar:         false
-URxvt*scrollBar_right:   false
+URxvt*scrollBar_right:   true
 
 URxvt*transparent:       false
 
-#URxvt.font: xft:Noto Sans:pixelsize=4
-#URxvt.letterSpace: 0
-
-#*antialias:  false
-#*autohint:   false
+#URxvt.font: xft:Noto Sans:pixelsize=12
 
 URxvt.keysym.Meta-t: perl:tabbedex:new_tab
 
+#URxvt.font: xft:Monospace:Bold:pixelsize=13
+URxvt.font: xft:Monospace:pixelsize=12:Bold
 #URxvt.font: xft:Nimbus Sans:pixelsize=14
-URxvt.letterSpace: 1
+URxvt.letterSpace: 0
+URxvt.lineSpace: 1
+URxvt.borderLess: false
+URxvt.externalBorder: 0
+URxvt.internalBorder: 5
+URxvt.highlightColor: DARKGREEN
+URxvt.highlightTextColor: WHITE
 
 *antialias:  true
 *autohint:   true
