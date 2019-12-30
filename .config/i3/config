@@ -9,11 +9,12 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
+#exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 exec  --no-startup-id polybar example &
 exec --no-startup-id dockx &
 exec --no-startup-id urxvtd -m -f -q
 exec --no-startup-id lxpolkit &
+exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 15 & 
 
 
 
@@ -44,7 +45,7 @@ floating_modifier $mod
 
 
 # kill focused window
-bindsym $mod+q kill <end>
+bindsym $mod+q exit
 bindsym $mod+SHIFT+q kill
 
 # start dmenu (a program launcher)
