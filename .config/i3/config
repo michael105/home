@@ -9,6 +9,18 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
+exec  --no-startup-id polybar example &
+exec --no-startup-id dockx &
+exec --no-startup-id urxvtd -m -f -q
+exec --no-startup-id lxpolkit &
+
+
+
+
+bindsym $mod+Ctrl+x exec --no-startup-id xsetroot -bg BLACK -mod 100 100
+
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
