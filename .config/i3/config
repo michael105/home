@@ -21,7 +21,7 @@ exec  --no-startup-id polybar example &
 exec --no-startup-id dockx &
 exec --no-startup-id urxvtd -m -f -q
 exec --no-startup-id lxpolkit &
-exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 15 & 
+exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars-bg.jpg & 
 
 
 

@@ -481,7 +481,7 @@ let g:dbext_default_profile_MYSQL_Unternehmen = 'type=MYSQL:user=micha:passwd=mi
 "OSX
 
 
-source ~/.vim/mapping
+map Meta-l :source ~/.vim/mapping<CR>
 
 
 autocmd BufRead,BufNewFile *.asciidoc map <F12> mz<ESC>:w<CR>:execute "%!cat - && asciidoc -b html % && xdotool windowraise ".wid." && xdotool windowfocus ".wid." && xdotool key --window ".wid." F5 && xdotool windowfocus ".vimid<CR>'z
