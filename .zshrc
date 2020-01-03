@@ -1,68 +1,3 @@
-
-BLACK="%{"$'\033[30m'"%}"
-GRAY="%{"$'\033[01;30m'"%}"
-LGREEN="%{"$'\033[01;32m'"%}"
-GREEN="%{"$'\033[32m'"%}"
-LRED="%{"$'\033[01;31m'"%}"
-RED="%{"$'\033[31m'"%}"
-YELLOW="%{"$'\033[01;33m'"%}"
-BROWN="%{"$'\033[33m'"%}"
-LBLUE="%{"$'\033[01;34m'"%}"
-BLUE="%{"$'\033[34m'"%}"
-BOLD="%{"$'\033[01;39m'"%}"
-NORM="%{"$'\033[00m'"%}"
-PINK="%{"$'\033[01;35m'"%}"
-MAGENTA="%{"$'\033[00;35m'"%}"
-LMAGENTA="%{"$'\033[01;35m'"%}"
-CYAN="%{"$'\033[36m'"%}"
-LCYAN="%{"$'\033[01;36m'"%}"
-WHITE="%{"$'\033[01;37m'"%}"
-LGRAY="%{"$'\033[37m'"%}"
-
-
-#US="$LCYAN$USER"
-US="$GREEN%n"
-i1=""
-AT="$GREEN@"
-HO="$LGREEN%m"
-PA=" $LBLUE%~"
-LI=" $ $NORM "
-
-
-
-# set the title
-if [ ! -z "$BASH" ]
-then
-		TITLESTART="%{"$'\033]0;'"%}"
-		TITLEEND="%{"$'\007\033'"%}"
-		#TITLE="$USER@$HOST:"
-else
-		#. /etc/zsh/zprofile
-fi
-
-if [ $HOST = "Michaels-MacBook-Pro.local" ]
-then
-		TITLE="$USER@osx-m: %-2d"
-else
-		TITLE="$USER@$HOST d: %-2d"
-fi
-
-
-
-if test $USER = "micha"
-then
-		US="$LCYAN%n"
-fi
-
-if test $USER = "root"
-then
-		US="$RED%n"
-fi
-
-#export PROMPT="$US$i1$AT$HO$PA$LI"
-export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
-export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
-
 #fpath=(/usr/local/share/zsh-completions $fpath)
 
 # merging oh-my-zsh ..
@@ -104,7 +39,7 @@ ZSH_THEME="junkfood"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+ DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -170,6 +105,42 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 #misc my settings, again
 
+BLACK="%{"$'\033[30m'"%}"
+GRAY="%{"$'\033[01;30m'"%}"
+LGREEN="%{"$'\033[01;32m'"%}"
+GREEN="%{"$'\033[32m'"%}"
+LRED="%{"$'\033[01;31m'"%}"
+RED="%{"$'\033[31m'"%}"
+YELLOW="%{"$'\033[01;33m'"%}"
+BROWN="%{"$'\033[33m'"%}"
+LBLUE="%{"$'\033[01;34m'"%}"
+BLUE="%{"$'\033[34m'"%}"
+BOLD="%{"$'\033[01;39m'"%}"
+NORM="%{"$'\033[00m'"%}"
+PINK="%{"$'\033[01;35m'"%}"
+MAGENTA="%{"$'\033[00;35m'"%}"
+LMAGENTA="%{"$'\033[01;35m'"%}"
+CYAN="%{"$'\033[36m'"%}"
+LCYAN="%{"$'\033[01;36m'"%}"
+WHITE="%{"$'\033[01;37m'"%}"
+LGRAY="%{"$'\033[37m'"%}"
+
+# urxvt - 256 colors
+YELLOW256="%{"$'\033[38;5;60m'"%}"
+BROWN256="%{"$'\033[38;5;68m'"%}"
+
+
+
+
+#US="$LCYAN$USER"
+US="$GREEN%n"
+i1=""
+AT="$GREEN@"
+HO="$LGREEN%m"
+PA=" $LBLUE%~"
+LI=" $ $NORM "
+
+
 
 # set the title
 if [ ! -z "$BASH" ]
@@ -183,7 +154,7 @@ fi
 
 if test $USER = "micha"
 then
-		US="$LCYAN"
+		US="$LGREEN"
     echo -ne "\033]10;#ffffff\007";
     echo -ne "\033]11;#000000\007";
 
@@ -192,8 +163,8 @@ fi
 if test $USER = "root"
 then
 		US="$RED"
-    echo -ne "\033]11;#bb6f20\007";
-    echo -ne "\033]10;#000000\007";
+    #echo -ne "\033]11;#bb6f20\007";
+    #echo -ne "\033]10;#000000\007";
 fi
 
 
@@ -205,11 +176,14 @@ else
 		TITLE="${US}$USER"
 fi
 
-export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
-export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+#export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+#export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
+export OPROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
+export PROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-
+# set windowtitle
+print -Pn "\e]2;urxvt: $PWD\a"
 
 ###export PROMPT="$US$i1$AT$HO$PA$LI"
 #${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
@@ -232,10 +206,29 @@ source ~/scripts/alias.sh
 export PATH=$PATH:~/scripts
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
+if [ $TERM = "rxvt-unicode" ]
+then
+		export TTERM="urxvt"
+else
+		export TTERM=$TERM
+fi
+
+
+chpwd(){ 
+		echo $PWD > ~/.zshlp; 
+		export PWD=`echo $PWD | sed -e s./home/$USER.~.` 
+		# set windowtitle
+		print -Pn "\e]2;$TTERM $USER:$PWD\a"
+}
+
+preexec(){
+		# set windowtitle
+		print -Pn "\e]2;$2\a"
+}
+
 
 # Colors, again. Colors defined top are defined for the prompt.
 #
-
 
 BLACK=""$'\033[30m'""
 GRAY=""$'\033[01;30m'""
