@@ -182,6 +182,8 @@ export OPROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f
 
 export PROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
+
+export PWD=`echo $PWD | sed -e s./home/$USER.~.` 
 # set windowtitle
 print -Pn "\e]2;urxvt: $PWD\a"
 
@@ -226,6 +228,9 @@ preexec(){
 		print -Pn "\e]2;$2\a"
 }
 
+precmd(){
+		print -Pn "\e]2;$TTERM $USER:$PWD\a"
+}
 
 # Colors, again. Colors defined top are defined for the prompt.
 #
