@@ -18,6 +18,7 @@
 
 #exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 exec  --no-startup-id polybar example &
+#exec  --no-startup-id orage &
 exec --no-startup-id dockx &
 exec --no-startup-id urxvtd -m -f -q
 exec --no-startup-id lxpolkit &
@@ -200,6 +201,7 @@ bar {
 				position bottom
 				mode hide
     		hidden_state hide
+				tray_output none
 }
 bindsym $mod+m bar mode toggle
 # #aa0000

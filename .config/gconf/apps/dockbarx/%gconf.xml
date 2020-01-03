@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="launchers" mtime="1577977520" type="list" ltype="string">
+	<entry name="launchers" mtime="1578073149" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>xfce4-appfinder;/usr/share/applications/xfce4-appfinder.desktop</stringvalue>
+		</li>
 		<li type="string">
 			<stringvalue>lxtask;/usr/share/applications/lxtask.desktop</stringvalue>
 		</li>
@@ -26,7 +29,7 @@
 			<stringvalue>gaiksaurus;/home/micha//.local/share/dockbarx/launchers/gaiksaurus.desktop</stringvalue>
 		</li>
 		<li type="string">
-			<stringvalue>xfce4-appfinder;/home/micha/.local/share/dockbarx/launchers/xfce4-appfinder.desktop</stringvalue>
+			<stringvalue>basket;/home/micha/.local/share/dockbarx/launchers/basket.desktop</stringvalue>
 		</li>
 	</entry>
 	<entry name="groupbutton_left_click_double" mtime="1551692406" type="bool" value="false"/>
