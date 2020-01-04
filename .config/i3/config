@@ -23,6 +23,9 @@ set $mod2 Mod2
 
 bindsym mod1+Tab exec rofi -show window
 
+bindsym mod1+w exec i3-windows-jgmenu
+#i3-msg -t get_tree | perl -e '@l=split(",{", <>);foreach my $w ( grep {/title/} @l ){ $w=~ /title":"(.*?)"/; print "$1,"; $w=~ /id":(.*?),/; print "i3-msg [ con_id=$1 ] focus\n";}' | jgmenu --vsimple --at-pointer
+
 bindsym mod4+Shift+m exec i3-input -P "Set Mark: " -f "pango:monospace Bold 10" -l 1 -F 'mark %s'
 bindsym mod4+m exec i3-input -P "Goto Mark: " -f "pango:monospace Bold 10" -l 1 -F '[con_mark="%s"] focus'
 #bindsym mod2 none

@@ -1,47 +1,7 @@
 ##### THIS FILE IS BEING CURRENTLY MANAGED BY URXVTCONFIG #####
 ##### CHANGES DONE TO THIS FILE MANUALLY MAY AFFECT THE FUNCTIONALITY ######
 ##### PROCEED WITH CAUTION! #####
-#
-#! special colors
-#*.foreground:  #d0d0d0
-#*.background:  #000000
-#*.cursorColor:  #d0d0d0
-#! black
-#*.color0:      #000000
-#*.color8:      #808080
-#! red
-#*.color1:      #ff0000
-#*.color9:      #ff0000
-#! green
-#*.color2:      #33ff00
-#*.color10:     #33ff00
-#! yellow
-#*.color3:      #ff0099
-#*.color11:     #ff0099
-#! blue
-#*.color4:      #0066ff
-#*.color12:     #0066ff
-#! magenta
-#*.color5:      #cc00ff
-#*.color13:     #cc00ff
-#! cyan
-#*.color6:      #00ffff
-#*.color14:     #00ffff
-#! white
-#*.color7:      #d0d0d0
-#*.color15:     #ffffff
-#
-#URxvt*scrollBar:         false
-#URxvt*scrollBar_right:   false
-#
-#URxvt*transparent:       false
-#
-#URxvt.letterSpace: 1
-#
-#*antialias:  true
-#*autohint:   true
-#
-#
+
 ! special colors
 *.foreground:  #d0d0d0
 *.background:  #000000
@@ -56,8 +16,8 @@
 *.color2:      #33ff00
 *.color10:     #33ff00
 ! yellow
-*.color3:      #ff0099
-*.color11:     #ff0099
+*.color3:      #a55200
+*.color11:     #ffff00
 ! blue
 *.color4:      #0066ff
 *.color12:     #0066ff
@@ -65,24 +25,28 @@
 *.color5:      #cc00ff
 *.color13:     #cc00ff
 ! cyan
-*.color6:      #00ffff
+*.color6:      #00a1a1
 *.color14:     #00ffff
 ! white
 *.color7:      #d0d0d0
 *.color15:     #ffffff
+
+URxvt*color127:#0ff000
+*color128:#00FF00
+*color:129:#ff0000
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   true
 
 URxvt*transparent:       false
 
-#URxvt.font: xft:Noto Sans:pixelsize=12
+!URxvt.font: xft:Noto Sans:pixelsize=12
 
 URxvt.keysym.Meta-t: perl:tabbedex:new_tab
 
-#URxvt.font: xft:Monospace:Bold:pixelsize=13
+!URxvt.font: xft:Monospace:Bold:pixelsize=13
 URxvt.font: xft:Monospace:pixelsize=12:Bold
-#URxvt.font: xft:Nimbus Sans:pixelsize=14
+!URxvt.font: xft:Nimbus Sans:pixelsize=14
 URxvt.letterSpace: 0
 URxvt.lineSpace: 1
 URxvt.borderLess: false
