@@ -1,0 +1,4 @@
+#!/bin/sh
+
+i3-msg -t get_tree | perl -e '@l=split(",{", <>);foreach my $w ( grep {/title/} @l ){ $w=~ /title":"(.*?)"/; print "$1,"; $w=~ /id":(.*?),/; print "i3-msg [ con_id=$1 ] focus\n";}' | jgmenu --vsimple --at-pointer
+
