@@ -152,7 +152,7 @@ else
 		#. /etc/zsh/zprofile
 fi
 
-if test $USER = "micha"
+if test $USERNAME = "micha"
 then
 		US="$LGREEN"
     echo -ne "\033]10;#ffffff\007";
@@ -160,7 +160,7 @@ then
 
 fi
 
-if test $USER = "root"
+if test $USERNAME = "root"
 then
 		US="$RED"
     #echo -ne "\033]11;#bb6f20\007";
@@ -180,12 +180,12 @@ fi
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 export OPROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-export PROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+export PROMPT='%{$US%}$USERNAME$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
 
-export PWD=`echo $PWD | sed -e s./home/$USER.~.` 
+export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
-print -Pn "\e]2;urxvt: $PWD\a"
+print -Pn "\e]2;urxvt: $PPWD\a"
 
 ###export PROMPT="$US$i1$AT$HO$PA$LI"
 #${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)
@@ -218,9 +218,9 @@ fi
 
 chpwd(){ 
 		echo $PWD > ~/.zshlp; 
-		export PWD=`echo $PWD | sed -e s./home/$USER.~.` 
+		export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 		# set windowtitle
-		print -Pn "\e]2;$TTERM $USER:$PWD\a"
+		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
 }
 
 preexec(){
@@ -229,7 +229,7 @@ preexec(){
 }
 
 precmd(){
-		print -Pn "\e]2;$TTERM $USER:$PWD\a"
+		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
 }
 
 # Colors, again. Colors defined top are defined for the prompt.
