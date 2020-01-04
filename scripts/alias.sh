@@ -16,7 +16,9 @@ alias gtamm='git commit -a -m "update"'
 alias gtamp='git commit -a -m "minor changes" && git push'
 alias gtammp='git commit -a -m "update" && git push'
 alias gta='git commit -a'
+alias gtma='git commit -a -m'
 alias gts='git status -uno'
+alias gtm='git commit -m '
 
 # Shell
 alias ls='ls --color'
