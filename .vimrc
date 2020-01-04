@@ -211,7 +211,8 @@ set statusline=%-F\ %-0M\ %-R\ %35l\ %c\ \ \ asc:%b\ \ buffer:%n\ %L\ \ %P
 
 map <M-x> :w<CR>:q<CR>
 
-highlight Statusline cterm=NONE, ctermbg=4
+highlight Statusline cterm=NONE, ctermbg=18, ctermfg=14
+"highlight Statusline cterm=NONE, ctermbg=4
 "Syntax highlight
 let perl_no_scope_in_variables=1
 

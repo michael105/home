@@ -24,6 +24,9 @@ alias gtm='git commit -m '
 alias ls='ls --color'
 alias l='ls -lh'
 
+# goto last current dir
+alias pp="cd `cat ~/.zshlp`"
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'

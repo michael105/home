@@ -12,7 +12,20 @@
 
 # misc..
 # mod1 : Alt
+# mod2 Menu
+# mod3 Shift_R
+# mod4 Windows
+# mod5 AltGr
 
+set $mod2 Mod2
+
+
+
+bindsym mod1+Tab exec rofi -show window
+
+bindsym mod4+Shift+m exec i3-input -P "Set Mark: " -f "pango:monospace Bold 10" -l 1 -F 'mark %s'
+bindsym mod4+m exec i3-input -P "Goto Mark: " -f "pango:monospace Bold 10" -l 1 -F '[con_mark="%s"] focus'
+#bindsym mod2 none
 
 
 
@@ -22,7 +35,7 @@ exec  --no-startup-id polybar example &
 exec --no-startup-id dockx &
 exec --no-startup-id urxvtd -m -f -q
 exec --no-startup-id lxpolkit &
-exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars-bg.jpg & 
+exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars.png & 
 
 
 
@@ -142,6 +155,8 @@ bindsym $mod+Shift+4 move to workspace $ws4
 bindsym $mod+Shift+5 move to workspace $ws5
 
 
+# 
+workspace_auto_back_and_forth yes
 
 
 # Resizing
@@ -203,18 +218,21 @@ bar {
     		hidden_state hide
 				tray_output none
 }
-bindsym $mod+m bar mode toggle
+bindsym $mod+mod1+m bar mode toggle
 # #aa0000
 
 #font pango: xft Monospace Bold 9
 font pango: xft Nimbus Sans Bold 9
 #font pango: Monospace Bold 9
 #the focused window       frame titlebar | bgtitlebar,border  | schrift titlebar  | ?   -sidebar, rechts?
-client.focused          #000011 #213195 #eeecf0 #4aff96
+client.focused          #444411 #33dd11 #000000 #4aff96
+#client.focused          #444411 #33dd11 #000000 #4aff96
+#client.focused          #000011 #213195 #eeecf0 #4aff96
 #client.focused          #444433 #212155 #00ecf0 #4aff96
 # client.focused          #000000 #202222 #00fffb #4aff96
 # the container
-client.focused_inactive #221e20 #202238 #80fcf0 #291500
+client.focused_inactive #221e20 #202238 #ffb52a #291500
+#client.focused_inactive #221e20 #202238 #80fcf0 #291500
 #client.focused_inactive #000000 #202218 #00acab #291500
 #client.focused_inactive #000000 #202218 #7bff00 #ffff00
 client.unfocused        #222310 #120e10 #00acab #292d2e
@@ -222,6 +240,12 @@ client.unfocused        #222310 #120e10 #00acab #292d2e
 #client.unfocused        #000000 #000000 #00b49f #292d2e
 client.urgent           #ffff00 #900000 #ffffff #900000
 
+default_border pixel 1
+hide_edge_borders both
+
+
+for_window [title="Anwendungsfinder"] floating enable, resize set width 800 px, move window absolute position 10 35 
+#for_window [title="Anwendungsfinder"] floating enable, resize set width 800 px, move window left 250 px
 
 # application bindings
 
@@ -240,6 +264,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym Help exec --no-startup-id xfce4-appfinder # app menu
 
 
-
+bindsym Mod2+q exec i3-msg [ con_mark="q" ] focus
+bindsym Mod2+Mod4+q exec i3-msg mark q
+bindsym Mod2+shift+w i3-msg mark w
+#bindsym Mod2+n exec i3-input -P wer
 
 

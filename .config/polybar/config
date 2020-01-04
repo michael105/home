@@ -49,9 +49,9 @@ font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3  
-modules-center = i3-windows
+modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
-modules-right = fs memory backlight pulseaudio xkeyboard cpu eth battery temperature popup-calendar powermenu
+modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature popup-calendar powermenu
 #modules-right = memory xbacklight alsa pulseaudio xkeyboard cpu eth battery temperature date powermenu
 
 tray-position = center
