@@ -12,3 +12,6 @@ perl -e 'my %h; while ( $f=shift ){ print $f,"\n"; my @l = `ldd $f`; while ( $d=
 
 ls ~/.cache/jgmenu/icon | perl -ne '$s = $_; print "s:$s"; chomp $s; if ( -f "/home/micha/.cache/jgmenu/icons/$s" ){system("find . -name \"$s.*\" -exec ln -s /usr/share/icons/Papirus/24x24/{} /home/micha/.cache/jgmenu/i/$s \\;  " );} '
 
+# find first free slot
+for i in `seq 10`; do if ! ( [ -e $i ] ); then echo -n $i;break; fi; done
+

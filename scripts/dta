@@ -1,0 +1,18 @@
+#!/bin/sh
+# run  command detached.
+# find first free socket within ~/.dtach
+
+
+let i=1;
+echo i $i
+
+while [ -e "$HOME/.dtach/$i" ] 
+do
+	echo $i
+  let i++
+done
+
+echo dtach socket: $HOME/.dtach/$i
+dtach -n $HOME/.dtach/$i $*
+
+
