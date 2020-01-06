@@ -18,12 +18,19 @@
 # mod5 AltGr
 
 set $mod2 Mod2
+set $inputfont "pango:monospace Bold 10"
 
 
 
 bindsym mod1+Tab exec rofi -show window
 
-bindsym mod1+w exec i3-windows-jgmenu
+# Set title
+bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%s"'
+
+# Alt+F2: execute
+bindsym mod1+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
+
+bindsym mod2+Tab exec i3-windows-jgmenu
 #i3-msg -t get_tree | perl -e '@l=split(",{", <>);foreach my $w ( grep {/title/} @l ){ $w=~ /title":"(.*?)"/; print "$1,"; $w=~ /id":(.*?),/; print "i3-msg [ con_id=$1 ] focus\n";}' | jgmenu --vsimple --at-pointer
 
 bindsym mod4+Shift+m exec i3-input -P "Set Mark: " -f "pango:monospace Bold 10" -l 1 -F 'mark %s'
@@ -241,7 +248,7 @@ client.focused_inactive #221e20 #202238 #ffb52a #291500
 client.unfocused        #222310 #120e10 #00acab #292d2e
 #client.unfocused        #121e10 #221e20 #00b49f #292d2e
 #client.unfocused        #000000 #000000 #00b49f #292d2e
-client.urgent           #ffff00 #900000 #ffffff #900000
+client.urgent           #ffff00 #00ff00 #ffffff #00ff00
 
 default_border pixel 1
 hide_edge_borders both

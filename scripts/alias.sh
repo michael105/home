@@ -24,7 +24,12 @@ alias gtm='git commit -m '
 alias ls='ls --color'
 alias l='ls -lh'
 
-# goto last current dir
+# 
+alias lr='less README* || less ?eadme*'
+
+
+# goto last current dir. 
+# Handy when opening or switching terminals
 alias pp="cd `cat ~/.zshlp`"
 
 alias ..='cd ..'
@@ -37,6 +42,7 @@ alias rd='rmdir'
 alias pf='perldoc -f'
 
 alias vi='vim'
+
 
 
 

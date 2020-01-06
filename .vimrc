@@ -2,6 +2,12 @@
 "
 ":let g:syntastic_c_compiler_options = '-ansi -include syntaxhcheck.h'
 
+
+" vundle ..
+
+" Plugin 'ap/vim-css-color'
+
+
 "
 "
 "
