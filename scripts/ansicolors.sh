@@ -89,32 +89,36 @@ function col() {
 
 		i=2
 for a in {0..5}; do 
-		col 2 $a {16..21}
-		col 2 $a {27..22}
-		col 2 $a {28..33}
-		col 2 $a {39..34}
-		col 2 $a {46..51}
-		col 2 $a {45..41}
+		col $i $a {16..21}
+		col $i $a {27..22}
+		col $i $a {28..33}
+		col $i $a {39..34}
+		col $i $a {46..51}
+		col $i $a {45..41}
 		echo
 done
 
+
+i=0;
 for a in {5..0}; do 
-		col 0 $a {16..21}
-		col 0 $a {27..22}
-		col 0 $a {28..33}
-		col 0 $a {39..34}
-		col 0 $a {46..51}
-		col 0 $a {45..41}
+		col $i $a {16..21}
+		col $i $a {27..22}
+		col $i $a {28..33}
+		col $i $a {39..34}
+		col $i $a {46..51}
+		col $i $a {45..41}
 		echo
 done
+
+i=1
 
 for a in {0..5}; do 
-		col 1 $a {16..21}
-		col 1 $a {27..22}
-		col 1 $a {28..33}
-		col 1 $a {39..34}
-		col 1 $a {46..51}
-		col 1 $a {45..41}
+		col $i $a {16..21}
+		col $i $a {27..22}
+		col $i $a {28..33}
+		col $i $a {39..34}
+		col $i $a {46..51}
+		col $i $a {45..41}
 		echo
 done
 
