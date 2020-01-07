@@ -60,12 +60,12 @@ lastBackup=0,0,0
 middleAction=0
 pasteAsPlainText=false
 playAnimations=false
-position=0,135
+position=0,55
 reLockTimeoutMinutes=0
 showIconInSystray=true
 showNotesToolTip=true
 showOnMouseIn=false
-size=792,881
+size=1400,995
 spellCheckTextNotes=true
 startDocked=true
 timeToHideOnMouseOut=0
@@ -76,10 +76,10 @@ useSystray=true
 welcomeBasketsAdded=true
 
 [MainWindow]
-Height 1050=881
-State=AAAA/wAAAAD9AAAAAAAAAxgAAAMdAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAJgByAGkAYwBoAFQAZQB4AHQARQBkAGkAdABUAG8AbwBsAEIAYQByAQAAAoz/////AAAAAAAAAAA=
+Height 1050=995
+State=AAAA/wAAAAD9AAAAAAAABXgAAAOUAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAJgByAGkAYwBoAFQAZQB4AHQARQBkAGkAdABUAG8AbwBsAEIAYQByAQAAAoz/////AAAAAAAAAAA=
 ToolBarsMovable=Disabled
-Width 1400=792
+Width 1400=1400
 
 [MainWindow Toolbar mainToolBar]
 IconText=IconOnly

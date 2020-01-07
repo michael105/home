@@ -178,9 +178,9 @@ fi
 
 #export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
-export OPROMPT='%{$US%}$USER$YELLOW256:%{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+export OPROMPT='%{$US%}$USER$YELLOW256 %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-export PROMPT='%{$US%}$USERNAME$YELLOW256:%{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+export PROMPT='%{$US%}$USERNAME$YELLOW256 %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
 
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
