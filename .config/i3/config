@@ -283,39 +283,66 @@ bindsym Help exec --no-startup-id xfce4-appfinder # app menu
 #bindsym Mod2+Mod3+r exec i3-msg mark r
 
 
-#:'<,'>%!perl -e 'foreach ( split("",qw/qwertzuiopasdfghjklyxcvbnm,.-/)){ print "bindsym Mod2+$_ exec i3-msg [ con_mark=\"$_\" ] focus\n"}'
-#:'<,'>%!perl -e 'foreach ( split("",qw/qwertzuiopasdfghjklyxcvbnm,.-/)){ print "bindsym Mod2+Mod3+$_ exec i3-msg mark $_\n"}'
-
-
-
-
-# Menu+[x]
-#bindsym Mod2+q exec i3-msg [ con_mark="q" ] focus | sed '/false/e echo "No mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13px'
-bindsym Mod2+w exec i3-msg [ con_mark="w" ] focus
-bindsym Mod2+e exec i3-msg [ con_mark="e" ] focus
-bindsym Mod2+r exec i3-msg [ con_mark="r" ] focus
-bindsym Mod2+t exec i3-msg [ con_mark="t" ] focus
-bindsym Mod2+z exec i3-msg [ con_mark="z" ] focus
-bindsym Mod2+u exec i3-msg [ con_mark="u" ] focus
-bindsym Mod2+i exec i3-msg [ con_mark="i" ] focus
-bindsym Mod2+o exec i3-msg [ con_mark="o" ] focus
-bindsym Mod2+p exec i3-msg [ con_mark="p" ] focus
-bindsym Mod2+a exec i3-msg [ con_mark="a" ] focus
-bindsym Mod2+s exec i3-msg [ con_mark="s" ] focus
-bindsym Mod2+d exec i3-msg [ con_mark="d" ] focus
-bindsym Mod2+f exec i3-msg [ con_mark="f" ] focus
-bindsym Mod2+g exec i3-msg [ con_mark="g" ] focus
-bindsym Mod2+h exec i3-msg [ con_mark="h" ] focus
-bindsym Mod2+j exec i3-msg [ con_mark="j" ] focus
-bindsym Mod2+k exec i3-msg [ con_mark="k" ] focus
-bindsym Mod2+l exec i3-msg [ con_mark="l" ] focus
-bindsym Mod2+y exec i3-msg [ con_mark="y" ] focus
-bindsym Mod2+x exec i3-msg [ con_mark="x" ] focus
-bindsym Mod2+c exec i3-msg [ con_mark="c" ] focus
-bindsym Mod2+v exec i3-msg [ con_mark="v" ] focus
-bindsym Mod2+b exec i3-msg [ con_mark="b" ] focus
-bindsym Mod2+n exec i3-msg [ con_mark="n" ] focus
-bindsym Mod2+m exec i3-msg [ con_mark="m" ] focus
-bindsym Mod2+, exec i3-msg [ con_mark="," ] focus
-bindsym Mod2+. exec i3-msg [ con_mark="." ] focus
-bindsym Mod2+- exec i3-msg [ con_mark="-" ] focus
+# Menu+[x] : goto named window [x]
+# Menu+R_Shift+[x] : set mark [x]
+#
+# (%!perl marks.pl)
+#
+bindsym Mod2+q exec i3-msg [ con_mark="q" ] focus | sed -e '/false/e echo "No mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+w exec i3-msg [ con_mark="w" ] focus | sed -e '/false/e echo "No mark [w]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [w]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+e exec i3-msg [ con_mark="e" ] focus | sed -e '/false/e echo "No mark [e]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [e]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+r exec i3-msg [ con_mark="r" ] focus | sed -e '/false/e echo "No mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+t exec i3-msg [ con_mark="t" ] focus | sed -e '/false/e echo "No mark [t]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [t]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+z exec i3-msg [ con_mark="z" ] focus | sed -e '/false/e echo "No mark [z]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [z]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+u exec i3-msg [ con_mark="u" ] focus | sed -e '/false/e echo "No mark [u]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [u]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+i exec i3-msg [ con_mark="i" ] focus | sed -e '/false/e echo "No mark [i]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [i]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+o exec i3-msg [ con_mark="o" ] focus | sed -e '/false/e echo "No mark [o]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [o]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+p exec i3-msg [ con_mark="p" ] focus | sed -e '/false/e echo "No mark [p]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [p]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+a exec i3-msg [ con_mark="a" ] focus | sed -e '/false/e echo "No mark [a]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [a]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+s exec i3-msg [ con_mark="s" ] focus | sed -e '/false/e echo "No mark [s]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [s]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+d exec i3-msg [ con_mark="d" ] focus | sed -e '/false/e echo "No mark [d]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [d]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+f exec i3-msg [ con_mark="f" ] focus | sed -e '/false/e echo "No mark [f]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [f]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+g exec i3-msg [ con_mark="g" ] focus | sed -e '/false/e echo "No mark [g]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [g]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+h exec i3-msg [ con_mark="h" ] focus | sed -e '/false/e echo "No mark [h]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [h]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+j exec i3-msg [ con_mark="j" ] focus | sed -e '/false/e echo "No mark [j]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [j]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+k exec i3-msg [ con_mark="k" ] focus | sed -e '/false/e echo "No mark [k]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [k]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+l exec i3-msg [ con_mark="l" ] focus | sed -e '/false/e echo "No mark [l]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [l]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+y exec i3-msg [ con_mark="y" ] focus | sed -e '/false/e echo "No mark [y]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [y]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+x exec i3-msg [ con_mark="x" ] focus | sed -e '/false/e echo "No mark [x]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [x]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+c exec i3-msg [ con_mark="c" ] focus | sed -e '/false/e echo "No mark [c]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [c]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+v exec i3-msg [ con_mark="v" ] focus | sed -e '/false/e echo "No mark [v]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [v]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+b exec i3-msg [ con_mark="b" ] focus | sed -e '/false/e echo "No mark [b]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [b]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+n exec i3-msg [ con_mark="n" ] focus | sed -e '/false/e echo "No mark [n]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [n]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+m exec i3-msg [ con_mark="m" ] focus | sed -e '/false/e echo "No mark [m]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [m]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+, exec i3-msg [ con_mark="," ] focus | sed -e '/false/e echo "No mark [,]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [,]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+. exec i3-msg [ con_mark="." ] focus | sed -e '/false/e echo "No mark [.]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [.]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym Mod2+- exec i3-msg [ con_mark="-" ] focus | sed -e '/false/e echo "No mark [-]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [-]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
+bindsym mod3+mod2+q exec i3-msg mark q && echo "Set Mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+w exec i3-msg mark w && echo "Set Mark [w]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+e exec i3-msg mark e && echo "Set Mark [e]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+r exec i3-msg mark r && echo "Set Mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+t exec i3-msg mark t && echo "Set Mark [t]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+z exec i3-msg mark z && echo "Set Mark [z]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+u exec i3-msg mark u && echo "Set Mark [u]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+i exec i3-msg mark i && echo "Set Mark [i]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+o exec i3-msg mark o && echo "Set Mark [o]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+p exec i3-msg mark p && echo "Set Mark [p]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+a exec i3-msg mark a && echo "Set Mark [a]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+s exec i3-msg mark s && echo "Set Mark [s]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+d exec i3-msg mark d && echo "Set Mark [d]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+f exec i3-msg mark f && echo "Set Mark [f]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+g exec i3-msg mark g && echo "Set Mark [g]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+h exec i3-msg mark h && echo "Set Mark [h]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+j exec i3-msg mark j && echo "Set Mark [j]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+k exec i3-msg mark k && echo "Set Mark [k]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+l exec i3-msg mark l && echo "Set Mark [l]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+y exec i3-msg mark y && echo "Set Mark [y]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+x exec i3-msg mark x && echo "Set Mark [x]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+c exec i3-msg mark c && echo "Set Mark [c]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+v exec i3-msg mark v && echo "Set Mark [v]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+b exec i3-msg mark b && echo "Set Mark [b]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+n exec i3-msg mark n && echo "Set Mark [n]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+m exec i3-msg mark m && echo "Set Mark [m]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+, exec i3-msg mark , && echo "Set Mark [,]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+. exec i3-msg mark . && echo "Set Mark [.]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+bindsym mod3+mod2+- exec i3-msg mark - && echo "Set Mark [-]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
