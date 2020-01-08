@@ -24,6 +24,8 @@ set $inputfont "pango:monospace Bold 10"
 
 bindsym mod1+Tab exec rofi -show window
 
+bindsym Print exec deepin-screenshot
+
 # Set title
 bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%s"'
 
@@ -42,10 +44,10 @@ bindsym mod4+m exec i3-input -P "Goto Mark: " -f "pango:monospace Bold 10" -l 1 
 #exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 exec  --no-startup-id polybar example &
 #exec  --no-startup-id orage &
-exec --no-startup-id dockx &
-exec --no-startup-id urxvtd -m -f -q
-exec --no-startup-id lxpolkit &
-exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars.png & 
+#exec --no-startup-id dockx &
+#exec --no-startup-id urxvtd -m -f -q
+#exec --no-startup-id lxpolkit &
+#exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars.png & 
 
 
 
@@ -274,10 +276,46 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym Help exec --no-startup-id xfce4-appfinder # app menu
 
-
-bindsym Mod2+q exec i3-msg [ con_mark="q" ] focus
-bindsym Mod2+Mod4+q exec i3-msg mark q
-bindsym Mod2+shift+w i3-msg mark w
+#bindsym Mod2+shift+w i3-msg mark w
 #bindsym Mod2+n exec i3-input -P wer
 
+#bindsym Mod2+r exec i3-msg [ con_mark="r" ] focus
+#bindsym Mod2+Mod3+r exec i3-msg mark r
 
+
+#:'<,'>%!perl -e 'foreach ( split("",qw/qwertzuiopasdfghjklyxcvbnm,.-/)){ print "bindsym Mod2+$_ exec i3-msg [ con_mark=\"$_\" ] focus\n"}'
+#:'<,'>%!perl -e 'foreach ( split("",qw/qwertzuiopasdfghjklyxcvbnm,.-/)){ print "bindsym Mod2+Mod3+$_ exec i3-msg mark $_\n"}'
+
+
+
+
+# Menu+[x]
+#bindsym Mod2+q exec i3-msg [ con_mark="q" ] focus | sed '/false/e echo "No mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13px'
+bindsym Mod2+w exec i3-msg [ con_mark="w" ] focus
+bindsym Mod2+e exec i3-msg [ con_mark="e" ] focus
+bindsym Mod2+r exec i3-msg [ con_mark="r" ] focus
+bindsym Mod2+t exec i3-msg [ con_mark="t" ] focus
+bindsym Mod2+z exec i3-msg [ con_mark="z" ] focus
+bindsym Mod2+u exec i3-msg [ con_mark="u" ] focus
+bindsym Mod2+i exec i3-msg [ con_mark="i" ] focus
+bindsym Mod2+o exec i3-msg [ con_mark="o" ] focus
+bindsym Mod2+p exec i3-msg [ con_mark="p" ] focus
+bindsym Mod2+a exec i3-msg [ con_mark="a" ] focus
+bindsym Mod2+s exec i3-msg [ con_mark="s" ] focus
+bindsym Mod2+d exec i3-msg [ con_mark="d" ] focus
+bindsym Mod2+f exec i3-msg [ con_mark="f" ] focus
+bindsym Mod2+g exec i3-msg [ con_mark="g" ] focus
+bindsym Mod2+h exec i3-msg [ con_mark="h" ] focus
+bindsym Mod2+j exec i3-msg [ con_mark="j" ] focus
+bindsym Mod2+k exec i3-msg [ con_mark="k" ] focus
+bindsym Mod2+l exec i3-msg [ con_mark="l" ] focus
+bindsym Mod2+y exec i3-msg [ con_mark="y" ] focus
+bindsym Mod2+x exec i3-msg [ con_mark="x" ] focus
+bindsym Mod2+c exec i3-msg [ con_mark="c" ] focus
+bindsym Mod2+v exec i3-msg [ con_mark="v" ] focus
+bindsym Mod2+b exec i3-msg [ con_mark="b" ] focus
+bindsym Mod2+n exec i3-msg [ con_mark="n" ] focus
+bindsym Mod2+m exec i3-msg [ con_mark="m" ] focus
+bindsym Mod2+, exec i3-msg [ con_mark="," ] focus
+bindsym Mod2+. exec i3-msg [ con_mark="." ] focus
+bindsym Mod2+- exec i3-msg [ con_mark="-" ] focus
