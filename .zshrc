@@ -215,9 +215,6 @@ else
 		export TTERM=$TERM
 fi
 
-# cd into last current dir
-PPWD=`cat $HOME/.zshlp`
-
 chpwd(){ 
 		echo $PWD > ~/.zshlp; 
 		export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
@@ -230,7 +227,15 @@ preexec(){
 		print -Pn "\e]2;$2\a"
 }
 
+
+# cd into last current dir
+initchdir=`cat $HOME/.zshlp 2>/dev/null`
+
 precmd(){
+		if [ $initchdir ];  then # execute once after startup
+				chdir $initchdir
+				initchdir=''
+		fi;
 		# windowtitle
 		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
 }
