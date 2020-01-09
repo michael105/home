@@ -1,5 +1,5 @@
 
-my @k = split("", qw/qwertzuiopasdfghjklyxcvbnm,.-/ );
+my @k = split("", qw/qwertzuiopasdfghjklyxcvbnm/ );
 
 #goto l;
 

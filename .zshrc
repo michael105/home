@@ -155,8 +155,8 @@ fi
 if test $USERNAME = "micha"
 then
 		US="$LGREEN"
-    echo -ne "\033]10;#ffffff\007";
-    echo -ne "\033]11;#000000\007";
+    #echo -ne "\033]10;#ffffff\007";
+    #echo -ne "\033]11;#000000\007";
 
 fi
 
@@ -215,6 +215,8 @@ else
 		export TTERM=$TERM
 fi
 
+# cd into last current dir
+PPWD=`cat $HOME/.zshlp`
 
 chpwd(){ 
 		echo $PWD > ~/.zshlp; 
@@ -229,6 +231,7 @@ preexec(){
 }
 
 precmd(){
+		# windowtitle
 		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
 }
 

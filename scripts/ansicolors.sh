@@ -54,6 +54,17 @@ for i in 0 8; do
 done
 
 
+function col() {
+		fi=$1; shift
+		fa=$[$1*36]; shift
+		for fb in $@; do
+				printf "\033[0;$fi""m\033[38;5;$[$fa+$fb]""m %03d"  $[$fa+$fb]
+		done
+}
+
+
+
+
 echo "\033[0;1;37;4m";
 echo Colors \#16-231
 echo -n "\033[0m";
@@ -72,18 +83,25 @@ for a in {1..15}; do
 		echo "\033[0;30m"  
 done
 
+
+
+echo "\033[1;4;37m";
+echo 256 Grayscale, \#232-255 "\033[0;1m"
+echo -n "\033[0m";
+
+col 2 0 {232..255}
+echo
+col 0 0 {232..255}
+echo
+col 1 0 {232..255}
+echo
+
+
+
+
 echo "\033[0;1;37;4m";
 echo Colors \#16-231 - gradient
 echo -n "\033[0m";
-
-
-function col() {
-		fi=$1; shift
-		fa=$[$1*36]; shift
-		for fb in $@; do
-				printf "\033[0;$fi""m\033[38;5;$[$fa+$fb]""m %03d"  $[$fa+$fb]
-		done
-}
 
 #for i in 2 0 1; do
 
@@ -122,23 +140,11 @@ for a in {0..5}; do
 		echo
 done
 
-
+echo
 
 
 #col 0 0 {16..21}
 #col 0 1 {16..21}
-
-
-echo "\033[1;4;37m";
-echo 256 Grayscale, \#232-255 "\033[0;1m"
-echo -n "\033[0m";
-
-col 2 0 {232..255}
-echo
-col 0 0 {232..255}
-echo
-col 1 0 {232..255}
-echo
 
 
 exit

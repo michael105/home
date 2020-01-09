@@ -19,6 +19,7 @@ alias gta='git commit -a'
 alias gtma='git commit -a -m'
 alias gts='git status -uno'
 alias gtm='git commit -m '
+alias gtc='git commit '
 
 # Shell
 alias ls='ls --color'
