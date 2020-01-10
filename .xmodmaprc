@@ -249,10 +249,11 @@ keycode 253 =
 keycode 254 = XF86WWAN NoSymbol XF86WWAN
 keycode 255 = XF86RFKill NoSymbol XF86RFKill
 
-add Mod2 = Menu
+remove mod1 = Meta_L
+add mod2 = Menu
 remove shift = Shift_R
-add Mod3 = Shift_R
+add mod3 = Shift_R
 remove lock = Meta_L
-add Mod5 = Meta_L
+add mod5 = Meta_L
 
 
