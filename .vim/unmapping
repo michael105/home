@@ -1,0 +1,11 @@
+" :%!perl -e 'print <> while ($s ne "\"PERL\n"); for $i  ( qw/ö ä ü Ö Ä Ü/ ){ print "unmap\! $i\n" }'
+unmap! ö
+unmap! ä
+unmap! ü
+unmap! Ö
+unmap! Ä
+unmap! Ü
+unmap! ß
+unmap! ´ 
+
+
