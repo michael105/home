@@ -51,7 +51,7 @@ font-2 = siji:pixelsize=10;1
 modules-left = i3  
 modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
-modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature popup-calendar powermenu
+modules-right = pulseaudio systray freemem freedisk cpu cpuclock backlight xkeyboard eth battery temperature popup-calendar powermenu
 #modules-right = memory xbacklight alsa pulseaudio xkeyboard cpu eth battery temperature date powermenu
 
 tray-position = center
@@ -80,6 +80,36 @@ cursor-scroll = ns-resize
 type = custom/script
 exec = ~/.config/polybar/module.py
 tail = true
+
+[module/freemem]
+type = custom/script
+exec = ~/.config/polybar/meminfo.sh
+tail = true
+click-left = ~/.config/polybar/memjgmenu.sh
+interval = 10
+format-prefix = "Mem: "
+format-prefix-foreground = ${colors.foreground-alt}
+
+
+[module/freedisk]
+type = custom/script
+exec = ~/.config/polybar/freedisk.sh
+tail = true
+click-left = ~/.config/polybar/memjgmenu.sh
+interval = 10
+format-prefix = "HD: "
+format-prefix-foreground = ${colors.foreground-alt}
+
+
+
+[module/cpuclock]
+type = custom/script
+exec = sed -n 's/^cpu MHz.*: \(\S*\)\..*/\1MHz/p;/^cache/q' /proc/cpuinfo
+tail = true
+click-left = ~/.config/polybar/memjgmenu.sh
+interval = 3
+
+
 
 
 [module/popup-calendar]
@@ -222,11 +252,13 @@ format-prefix = "CPU"
 format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #f90000
 label = %percentage:2%%
+click-left = /home/micha/scripts/i3/memjgmenu.sh
 
 [module/memory]
 type = internal/memory
-interval = 2
-format-prefix = "MEM "
+interval = 10
+click-left = /home/micha/scripts/i3/memjgmenu.sh
+format-prefix = "MEM"
 format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #4bffdc
 label = %percentage_used%%
@@ -281,7 +313,8 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-click-left = /usr/bin/orage
+;click-left = /usr/bin/orage
+click-left = /home/micha/scripts/i3/memjgmenu.sh
 click-right = /usr/bin/orage -t
 
 

@@ -22,7 +22,9 @@ set $inputfont "pango:monospace Bold 10"
 
 
 bindsym mod2+p move window to scratchpad
-bindsym mod2+l scratchpad show
+bindsym mod2+l scratchpad show floating disable
+bindsym mod4+F2 exec i3-msg scratchpad show && sleep 1 && xdotool key F5 --repeat-delay 200 --repeat 1
+bindsym mod4+F3 move window to scratchpad 
 
 bindsym mod1+Tab exec rofi -show window
 
@@ -80,8 +82,9 @@ floating_modifier $mod
 
 
 # kill focused window
-bindsym $mod+q exit
-bindsym $mod+SHIFT+q kill
+bindsym $mod+q kill
+# exit i3
+bindsym $mod+SHIFT+q exit
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -91,10 +94,10 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -115,7 +118,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Ctrl+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v

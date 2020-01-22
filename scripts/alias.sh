@@ -7,8 +7,12 @@ alias bl='source ~/.shellbookmarks'
 source ~/.shellbookmarks
 alias rb='rmbookmark'
 alias lb='listbookmarks'
+alias lm='source ~/scripts/listbookmarksbemenu'
 alias sb='source ~/scripts/setbookmark'
 alias b='source ~/scripts/cdbookmark'
+#export BEMENU_BACKEND=curses
+
+
 
 # Git
 alias gtam='git commit -a -m "minor changes"'
@@ -20,6 +24,7 @@ alias gtma='git commit -a -m'
 alias gts='git status -uno'
 alias gtm='git commit -m '
 alias gtc='git commit '
+alias gtda='git commit -m "`date`" -a'
 
 # Shell
 alias ls='ls --color'
