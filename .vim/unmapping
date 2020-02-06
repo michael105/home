@@ -6,6 +6,6 @@ unmap! Ö
 unmap! Ä
 unmap! Ü
 unmap! ß
-unmap! ´ 
-
+"unmap! ´ 
+map <C-\> :source ~/.vim/mapping<CR>
 

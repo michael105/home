@@ -118,10 +118,11 @@ set nofoldenable
 "Key Mappings ==========================================
 
 
-"map µ to load mapping for programming (ö,ä .. mapped)
+"map (ö,ä .. mapped to {}, [], $ to $%, apostrophe to /, and oh. \ ) 
 source ~/.vim/mapping
-map <C-M-m> :source ~/.vim/unmapping<CR>
-
+"map <C-\> :source ~/.vim/mapping
+map <C-\> :source ~/.vim/unmapping<CR>
+							
 
 map <F9> :NERDTreeToggle<CR>
 map! <F9> <ESC>:NERDTreeToggle<CR>
@@ -132,8 +133,7 @@ map! <F2> <ESC>:w<CR>a
 map <F2> :w<CR>
 
 "Session support
-map <S-F2> :mks! .vimsession<CR>
-map! <S-F2> <ESC>:mks! .vimsession<CR>
+map <S-F2> :mks! .vimsession<CR>map! <S-F2> <ESC>:mks! .vimsession<CR>
 "set ssop="blank,buffers,curdir,folds,help,tabpages,winsize" 
 
 " Scroll up and down
@@ -385,10 +385,10 @@ map!	<C-x> <ESC>:call SwitchHeader()<CR>
 
 
 
-map <C-s>s :call CSLineSymbol('s')<CR>
-map! <C-s>s <ESC>:call CSLineSymbol('s')<CR>
-map <C-s>c :call CSLineSymbol('c')<CR>
-map! <C-s>c <ESC>:call CSLineSymbol('c')<CR>
+"map <C-s>s :call CSLineSymbol('s')<CR>
+"map! <C-s>s <ESC>:call CSLineSymbol('s')<CR>
+"map <C-s>c :call CSLineSymbol('c')<CR>
+"map! <C-s>c <ESC>:call CSLineSymbol('c')<CR>
 
 
 "Quickfix
