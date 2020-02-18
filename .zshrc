@@ -198,6 +198,7 @@ print -Pn "\e]2;urxvt: $PPWD\a"
 #export LESSOPEN="/usr/bin/lesspipe.sh %s" 
 export LESSOPEN="|/usr/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
+#export PATH=~/static/bin:~/static/bin/tb64:~/static/bin/bb64/~/scripts:~/git/tools:/usr/bin/vendor_perl
 export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 export CLICOLOR=1
