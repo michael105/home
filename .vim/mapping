@@ -16,5 +16,8 @@ map! ß \
 map! ´ /
 
 
+map <C-\> :source ~/.vim/unmapping<CR>
+map! <C-\> <ESC>:source ~/.vim/unmapping<CR>a
+
 
 

@@ -8,4 +8,5 @@ unmap! Ü
 unmap! ß
 "unmap! ´ 
 map <C-\> :source ~/.vim/mapping<CR>
+map! <C-\> <ESC>:source ~/.vim/mapping<CR>a
 

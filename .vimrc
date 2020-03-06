@@ -121,8 +121,10 @@ set nofoldenable
 "map (ö,ä .. mapped to {}, [], $ to $%, apostrophe to /, and oh. \ ) 
 source ~/.vim/mapping
 "map <C-\> :source ~/.vim/mapping
+"map umlauts, etc to normal
 map <C-\> :source ~/.vim/unmapping<CR>
-							
+map! <C-\> <ESC>:source ~/.vim/unmapping<CR>a
+
 
 map <F9> :NERDTreeToggle<CR>
 map! <F9> <ESC>:NERDTreeToggle<CR>
