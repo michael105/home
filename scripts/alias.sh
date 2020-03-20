@@ -2,6 +2,11 @@
 # sorted by categories
 alias listalias='highlight --style oxygenated ~/scripts/alias.sh' 
 
+
+# 
+alias aik=aiksaurus
+
+
 # Bookmarks
 alias bl='source ~/.shellbookmarks'
 source ~/.shellbookmarks
