@@ -207,13 +207,17 @@ chpwd(){
 		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
 		# path history
 		echo $PWD >> ~/.pathhistory
-		uniq ~/.pathhistory | tac | sed -e 10q | tac > ~/.pathhistory
+		if [ $(( `stat ~/.pathhistory --format=%s` > 10000 )) = 1 ]; then
+		  uniq ~/.pathhistory | tac | sed -e 100q | tac > ~/.pathhistory
+		fi
 }
 
 # path history, menu
 export BEMENU_BACKEND=curses
-alias ph='chdir `cat ~/.pathhistory| bemenu || echo $PWD`'
+alias ph='chdir `uniq ~/.pathhistory | tac | bemenu || echo $PWD`'
 
+# cmd history, menu
+alias ch='sed -e "s/^:.*:0;//" .zsh_history | tac | bemenu'
 
 preexec(){
 		# set windowtitle
