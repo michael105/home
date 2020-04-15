@@ -16,12 +16,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="junkfood"
 #ZSH_THEME="robbyrussell"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -30,13 +24,10 @@ ZSH_THEME="junkfood"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
  DISABLE_AUTO_TITLE="true"
@@ -93,15 +84,6 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 
 #misc my settings, again
 
@@ -130,8 +112,6 @@ YELLOW256="%{"$'\033[38;5;60m'"%}"
 BROWN256="%{"$'\033[38;5;68m'"%}"
 
 
-
-
 #US="$LCYAN$USER"
 US="$GREEN%n"
 i1=""
@@ -157,16 +137,14 @@ then
 		US="$LGREEN"
     #echo -ne "\033]10;#ffffff\007";
     #echo -ne "\033]11;#000000\007";
-
-fi
-
+else
 if test $USERNAME = "root"
 then
 		US="$RED"
     #echo -ne "\033]11;#bb6f20\007";
     #echo -ne "\033]10;#000000\007";
 fi
-
+fi
 
 
 if [ $HOST = "Michaels-MacBook-Pro.local" ]
@@ -176,11 +154,17 @@ else
 		TITLE="${US}$USER"
 fi
 
+ZONE=""
+ifconfig veth1 2> /dev/null > /dev/null
+if [ $? = 0 ]; then
+		ZONE="%{$LGREEN%}@dmz"
+fi
+
 #export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
-export OPROMPT='%{$US%}$USER$YELLOW256 %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-export PROMPT='%{$US%}$USERNAME$YELLOW256 %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+export PROMPT='%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
 
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
@@ -217,15 +201,23 @@ else
 fi
 
 chpwd(){ 
-		echo $PWD > ~/.zshlp; 
+		echo $PWD > ~/.zshlp 
 		export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 		# set windowtitle
 		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
+		# path history
+		echo $PWD >> ~/.pathhistory
+		uniq ~/.pathhistory | tac | sed -e 10q | tac > ~/.pathhistory
 }
+
+# path history, menu
+export BEMENU_BACKEND=curses
+alias ph='chdir `cat ~/.pathhistory| bemenu || echo $PWD`'
+
 
 preexec(){
 		# set windowtitle
-		print -Pn "\e]2;$2\a"
+		print -Pn '\e]2;$2\a'
 }
 
 

@@ -9,7 +9,7 @@ alias aik=aiksaurus
 
 # Bookmarks
 alias bl='source ~/.shellbookmarks'
-source ~/.shellbookmarks
+source ~/.shellbookmarks 2>/dev/null
 alias rb='rmbookmark'
 alias lb='listbookmarks'
 alias lm='source ~/scripts/listbookmarksbemenu'
@@ -59,9 +59,7 @@ alias vi='vim'
 
 alias make=colormake.sh
 
-# ever mistyped, and found yourself in your home?
-# Now: hit p-
-# and you'll be back .. ;)
+# p- -> go to last dir
 alias p-="cd \$OLDPWD"
 
 
