@@ -154,16 +154,28 @@ else
 		TITLE="${US}$USER"
 fi
 
-ZONE=""
-ifconfig veth1 2> /dev/null > /dev/null
-if [ $? = 0 ]; then
-		ZONE="%{$LGREEN%}@ns"
-else
-ifconfig veth2 2> /dev/null > /dev/null
-if [ $? = 0 ]; then
-		ZONE="%{$LGREEN%}@alp"
+#ZONE=""
+#ifconfig veth1 2> /dev/null > /dev/null
+
+#if [ $? = 0 ]; then
+#		ZONE="%{$LGREEN%}@ns"
+#else
+#ifconfig veth2 2> /dev/null > /dev/null
+#if [ $? = 0 ]; then
+#		ZONE="%{$LGREEN%}@alp"
+#fi
+#fi
+
+ZONE=`ip netns identify`
+if [ ${#ZONE} -gt 0 ] #within a netns
+then
+		if [ $ZONE = "alp" ]; then
+				ZONE="%{$LCYAN%}@$ZONE"
+		else
+				ZONE="%{$YELLOW%}@$ZONE"
+		fi
 fi
-fi
+
 
 #export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
