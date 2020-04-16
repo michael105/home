@@ -62,4 +62,14 @@ alias make=colormake.sh
 # p- -> go to last dir
 alias p-="cd \$OLDPWD"
 
+# iptables
+alias il="iptables -L -v"
+alias ia="iptables -A"
+alias isave=iptables-save
+alias irest=iptables-restore
+
+# network namespaces
+alias alp='ip netns exec alp'
+alias ns='ip netns exec ns'
+
 

@@ -157,7 +157,12 @@ fi
 ZONE=""
 ifconfig veth1 2> /dev/null > /dev/null
 if [ $? = 0 ]; then
-		ZONE="%{$LGREEN%}@dmz"
+		ZONE="%{$LGREEN%}@ns"
+else
+ifconfig veth2 2> /dev/null > /dev/null
+if [ $? = 0 ]; then
+		ZONE="%{$LGREEN%}@alp"
+fi
 fi
 
 #export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
@@ -217,7 +222,7 @@ export BEMENU_BACKEND=curses
 alias ph='chdir `uniq ~/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
-alias ch='sed -e "s/^:.*:0;//" .zsh_history | tac | bemenu'
+alias ch='sed -e "s/^:.*:0;//" ~/.zsh_history | tac | bemenu'
 
 preexec(){
 		# set windowtitle
