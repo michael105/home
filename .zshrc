@@ -202,13 +202,8 @@ export LESSOPEN="|/usr/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 #export PATH=~/static/bin:~/static/bin/tb64:~/static/bin/bb64/~/scripts:~/git/tools:/usr/bin/vendor_perl
 export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
-export CLICOLOR=1
-export LSCOLORS="eaEafaDaca"
 
 source ~/scripts/alias.sh
-
-export PATH=$PATH:~/scripts
-#export PATH=~/bin:$PATH:~/scripts:~/bin
 
 if [ $TERM = "rxvt-unicode" ]
 then
@@ -277,6 +272,13 @@ LCYAN=""$'\033[01;36m'""
 WHITE=""$'\033[01;37m'""
 LGRAY=""$'\033[37m'""
 
+export CLICOLOR=1
+
+# LSCOLORS seems to be abandoned
+# dircolors shows the usage of the var LS_COLORS
+
+
+
 #   LSCOLORS:
 #    The color designators are as follows:
 #
@@ -317,3 +319,7 @@ LGRAY=""$'\033[37m'""
 #
 #                 The default is "exfxcxdxbxegedabagacad", i.e. blue foreground and default background for regular directories, black foreground and red
 #									background for setuid executables, etc.
+#               "1 2 3 4 5 6 7 8 9 0 1"  (attribute order)
+export LSCOLORS="eaEafaDaca"
+
+

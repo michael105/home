@@ -6,10 +6,10 @@ map! Ã¼ \
 map! Ãœ %
 
 " st / arch
-map! ö {
-map! Ö [
-map! ä }
-map! Ä ]
+map! ö [
+map! Ö {
+map! ä ]
+map! Ä }
 map! ü $
 map! Ü %
 map! ß \
