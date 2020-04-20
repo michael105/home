@@ -1,0 +1,21 @@
+Key Mappings:
+
+
+Left				h
+Down				j
+Up					k
+Right 			l
+
+
+Home				<M-h>
+End					<M-l>
+ScrollUp		<M-k>
+ScrollDown	<M-j>
+
+
+PageUp			K  <M-S-k> <C-Up>
+PageDown		J  <M-S-j> <C-Down>
+
+PrevBuf			<C-Left>
+NextBuf			<C-Right>
+

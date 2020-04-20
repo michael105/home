@@ -140,6 +140,12 @@ LGRAY=""$'\033[37m'""
 
 export CLICOLOR=1
 
+#bindkey "${terminfo[kcuu1]}" up-line-or-history # up
+#bindkey "${terminfo[kcud1]}" down-line-or-history # down
+#bindkey "${terminfo[kpp]}" up-line-or-beginning-search # page up
+#bindkey "${terminfo[knp]}" up-line-or-beginning-search # page down
+
+
 if [ -z $profile_sourced ]
 then
 		source ~/.profile
