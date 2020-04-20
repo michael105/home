@@ -140,7 +140,7 @@ LGRAY=""$'\033[37m'""
 
 export CLICOLOR=1
 
-if [ $profile_sourced -ne 1 ]
+if [ -z $profile_sourced ]
 then
 		source ~/.profile
 fi

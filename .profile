@@ -1,5 +1,7 @@
 # profile 
 
+
+
 export profile_sourced=1
 
 export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
@@ -106,7 +108,10 @@ export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
 export PROMPT='%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-export PS1='mksh: $GREEN $USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
+if [ ! -z $KSHUID ] # set by mksh
+then
+		export PS1='mksh: $GREEN $USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
+fi
 
 
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
@@ -222,4 +227,5 @@ alias ch='sed -e "s/^:.*:0;//" ~/.zsh_history | tac | bemenu'
 export LSCOLORS="eaEafaDaca"
 
 
+# the guard
 
