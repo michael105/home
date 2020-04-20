@@ -9,37 +9,56 @@
 #
 #
 # The "sections" are prepended with 
-# '#section [title]'
-#just grep for 'section'..
+# --------------
+# [sectiontitle]
+# --------------
+# 
+# and
+#
+# [subsection]
+# ------------
+# 
+#
+# grep for '---'..
 
 # misc (2020)
 
 
 
+# 
 set $mod2 Mod2
 set $mod Mod4
+
+# where are the scripts for i3 located..
+set $scriptdir $HOME/.config/i3/scripts
 
 set $inputfont "pango:monospace Bold 10"
 
 
-#section scratchpad
+# scratchpad
+# ----------
 bindsym mod2+p move window to scratchpad
 bindsym mod2+l scratchpad show floating disable
 bindsym mod4+F2 exec i3-msg scratchpad show && sleep 1 && xdotool key F5 --repeat-delay 200 --repeat 1
 bindsym mod4+F3 move window to scratchpad 
 
-# section float
+# float
+# -----
+#
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 
-#section task switchers
+# task switchers
+# --------------
 bindsym mod1+Tab exec rofi -show window
 #(i3-windows-jgmenu by me..)
-bindsym mod2+Tab exec i3-windows-jgmenu
+bindsym mod2+Tab exec $scriptdir/i3-windows-jgmenu
 
 
-#section app launchers
+# -------------
+# app launchers
+# -------------
 bindsym Help exec --no-startup-id xfce4-appfinder # app menu
 #bindsym mod1+F2 exec lighthouse
 # start dmenu (a program launcher)
@@ -49,7 +68,9 @@ bindsym $mod+d exec dmenu_run
 # installed.
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
-#section lock, quit,..
+# -------------
+# lock, quit,..
+# -------------
 bindsym $mod+p exec lxlock&
 # kill focused window
 bindsym $mod+q kill
@@ -68,7 +89,8 @@ bindsym Print exec deepin-screenshot
 # Set title
 bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%s"'
 
-#section exec
+# exec
+# ====
 # Alt+F2: execute
 #bindsym mod1+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
 #bindsym mod1+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
@@ -132,8 +154,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-
-#section split 
+# -----
+# split 
+# -----
 # vertical orientation
 bindsym $mod+s split v
 # split in horizontal orientation
@@ -142,7 +165,9 @@ bindsym $mod+Shift+s split h
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-#section layout
+# ------
+# layout
+# ------
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -175,6 +200,10 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# ----------
+# workspaces
+# ----------
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -188,7 +217,12 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws0
 
 bindsym	$mod+Ctrl+Down workspace next
+bindsym	$mod+Page_Down workspace next
 bindsym	$mod+Ctrl+Up workspace prev
+bindsym	$mod+Page_Up workspace prev
+
+bindsym $mod+Home workspace $ws1
+bindsym $mod+End workspace $ws9
 
 # move focused to workspace ..
 bindsym $mod+Shift+1 move to workspace $ws1
@@ -316,7 +350,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 #bindsym Mod2+Mod3+r exec i3-msg mark r
 
 
-#section window marks
+# ------------
+# window marks
+# ------------
 # either: 
 #   Windows+Shift_L+m -> enter mark for current window
 #   Windows+m -> ask for mark, show window
