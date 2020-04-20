@@ -1,7 +1,5 @@
 # profile 
 
-
-
 export profile_sourced=1
 
 export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
