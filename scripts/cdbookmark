@@ -1,0 +1,23 @@
+# Run with source
+# Gets the bookmark param1 from the home bookmark file
+# or lists the bookmarks and asks for the bookmark shortcut
+
+x=$1
+
+if [ -z "$1" ]
+then
+	perl -e 'print substr($_,7) while (<>)' ~/.shellbookmarks
+	read x
+fi
+
+if [ $x ]
+then
+	y=`perl -e 'open F,$ARGV[1];while(<F>){ print $1 if (/^export $ARGV[0]=.(.*)./);};close F;' $x ~/.shellbookmarks`
+	if [ $y ]
+	then
+		cd $y
+	else
+		echo "Unknown bookmark"
+	fi
+fi
+

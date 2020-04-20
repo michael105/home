@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# deletes the bookmark from the bookmark file
+
+# test for help
+if ( [[ $1 == "--help" ]] || [[ -z $1 ]] )
+then
+	echo "rb BOOKMARK"
+	echo "Removes Bookmark from your bookmark file"
+else
+
+
+
+# Strip bookmark
+perl -e 'open (F,$ARGV[0]);@f=<F>;close F;@f = grep(!/^export $ARGV[1]=/,@f);open(F,">",$ARGV[0]);print F @f;close F;' ~/.shellbookmarks $1
+
+fi

@@ -1,0 +1,5 @@
+alias b='source /usr/local/bin/cdbookmark'
+alias lb=listbookmarks
+alias rb=rmbookmark
+alias sb='source /usr/local/bin/setbookmark'
+

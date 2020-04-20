@@ -1,0 +1,23 @@
+map! Ã¶ {
+map! Ã– [
+map! Ã¤ }
+map! Ã„ ]
+map! Ã¼ \
+map! Ãœ %
+
+" st / arch
+map! ö [
+map! Ö {
+map! ä ]
+map! Ä }
+map! ü $
+map! Ü %
+map! ß \
+map! ´ /
+
+
+map <C-\> :source ~/.vim/unmapping<CR>
+map! <C-\> <ESC>:source ~/.vim/unmapping<CR>a
+
+
+

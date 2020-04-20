@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo Unmount
+umount /cdrom
+sudo /sbin/losetup -d /dev/loop5
+
+
