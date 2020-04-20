@@ -1,0 +1,3 @@
+#!/bin/sh
+
+i3-msg focus parent && i3-msg focus parent && i3-msg title_format "$*"
