@@ -2,10 +2,12 @@
 # sorted by categories
 alias listalias='highlight --style oxygenated ~/scripts/alias.sh' 
 
+alias vim=vim8
 
 # 
 alias aik=aiksaurus
 
+alias set-musl='source $HOME/scripts/set-musl.sh'
 
 # Bookmarks
 alias bl='source ~/.shellbookmarks'
@@ -16,7 +18,6 @@ alias lm='source ~/scripts/listbookmarksbemenu'
 alias sb='source ~/scripts/setbookmark'
 alias b='source ~/scripts/cdbookmark'
 #export BEMENU_BACKEND=curses
-
 
 
 # Git

@@ -9,6 +9,6 @@ do
 done
 
 echo dtach socket: $HOME/.dtach/$i
-dtach -n $HOME/.dtach/$i sh -c "$* >$HOME/.dtach/$i.stdout 2>$HOME/.dtach/$i.err"
 echo "$*" > $HOME/.dtach/$i.nfo
-
+dtach -n $HOME/.dtach/$i sh -c "$* >$HOME/.dtach/$i.stdout 2>$HOME/.dtach/$i.err" 
+#echo $?

@@ -1,5 +1,7 @@
 # profile 
 
+
+
 export profile_sourced=1
 
 export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
@@ -108,7 +110,7 @@ export PROMPT='%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
 if [ ! -z $KSHUID ] # set by mksh
 then
-		export PS1='mksh: $GREEN $USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
+		export PS1='mksh: $GREEN$USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
 fi
 
 
@@ -171,10 +173,10 @@ export CLICOLOR=1
 # path history, menu
 # better would be smenu ('smenu -c -n')
 export BEMENU_BACKEND=curses
-alias ph='chdir `uniq ~/.pathhistory | tac | bemenu || echo $PWD`'
+alias ph='chdir `uniq $HOME/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
-alias ch='sed -e "s/^:.*:0;//" ~/.zsh_history | tac | bemenu'
+alias ch='sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS
@@ -224,6 +226,9 @@ alias ch='sed -e "s/^:.*:0;//" ~/.zsh_history | tac | bemenu'
 #               "1 2 3 4 5 6 7 8 9 0 1"  (attribute order)
 export LSCOLORS="eaEafaDaca"
 
+if [ -e "$HOME/.pprofile" ]
+then
+		source $HOME/.pprofile
+fi
 
-# the guard
 

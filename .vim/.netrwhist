@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/micha/static/perl/lib/site_perl'
-let g:netrw_dirhist_2='/home/micha/static/perl/lib/site_perl/5.8.9'
-let g:netrw_dirhist_3='/home/micha/static/perl/lib/site_perl/5.8.9/i686-linux-thread-multi'
-let g:netrw_dirhist_4='/home/micha/static/perl/lib/site_perl/5.8.9'
-let g:netrw_dirhist_5='/home/micha/static/perl/lib/site_perl'
-let g:netrw_dirhist_6='/home/micha/static/perl/lib'
-let g:netrw_dirhist_7='/home/micha/static/perl/lib/5.8.9'
-let g:netrw_dirhist_8='/home/micha/static/perl/lib/5.8.9/Attribute'
-let g:netrw_dirhist_9='/home/micha/static/bin'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/micha/.NOTES.bak'
+let g:netrw_dirhist_2='/home/micha'
+let g:netrw_dirhist_3='/home/micha/backup/rsync'

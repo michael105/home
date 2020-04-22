@@ -146,8 +146,9 @@ export CLICOLOR=1
 #bindkey "${terminfo[knp]}" up-line-or-beginning-search # page down
 
 
-if [ -z $profile_sourced ]
-then
-		source ~/.profile
-fi
+#if [ -z $profile_sourced ]
+#then
+# source config, common to all shells
+source ~/.profile
+#fi
 
