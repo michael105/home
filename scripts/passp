@@ -1,13 +1,45 @@
-#!/bin/sh
+#!/bin/ash
 
-function pwin(){
-  echo pwin
 
-		
+BLACK=""$'\033[30m'""
+GRAY=""$'\033[01;30m'""
+LGREEN=""$'\033[01;32m'""
+GREEN=""$'\033[32m'""
+LRED=""$'\033[01;31m'""
+RED=""$'\033[31m'""
+YELLOW=""$'\033[01;33m'""
+BROWN=""$'\033[33m'""
+LBLUE=""$'\033[01;34m'""
+BLUE=""$'\033[34m'""
+PINK=""$'\033[01;35m'""
+MAGENTA=""$'\033[00;35m'""
+LMAGENTA=""$'\033[01;35m'""
+CYAN=""$'\033[36m'""
+LCYAN=""$'\033[01;36m'""
+WHITE=""$'\033[01;37m'""
+LGRAY=""$'\033[37m'""
+
+BOLD=""$'\033[1m'""
+FAINT=""$'\033[2m'""
+CURSIVE=""$'\033[3m'""
+UNDERLINE=""$'\033[4m'""
+BLINK=""$'\033[5m'""
+INVERTED=""$'\033[7m'""
+NORM=""$'\033[0;0m'""
+
+function fb(){
+		echo -n '('`echo -n $1 | wc -c `') '
+		echo $1 | tr -d "\n" | md5sum |  base91 | sed -E 's/^(.....).*/\1/'  1>&2
 }
 
 k=""
 r=""
+
+#echo -n 'passp: ' 1>&2
+echo $GREEN`md5sum $0 | sum | sed 's/ *.$//' | tr -d "\n" | base64`$NORM $0 `whoami` 1>&2
+#| sed -E 's/^(......).*/\1/' 1>&2
+
+
 
 if [ ! -e /dev/shm/micha ]; then
 		mkdir /dev/shm/micha
@@ -15,8 +47,9 @@ if [ ! -e /dev/shm/micha ]; then
 fi
 
 if [ -e /dev/shm/micha/c ]; then
-    echo load 1>&2
+    echo -n "load: " 1>&2
 		r=`cat /dev/shm/micha/c`
+		fb $r 
 fi
 
 
@@ -30,83 +63,105 @@ do
 		r="$r$k"
 		k=`readkey -b`
 
-		if [ $k = "RET" ]; then
-				e=1
-		fi
+		case "$k" in 
+				"RET")
+						e=1
+						echo 1>&2
+						#echo $r 1>&2
+						r=`echo -n $r | md5sum | sed "s/ *-$//" | tr -d "\n" | base91`
+						echo -n $r
+						exit 0
+						;;
+				"ALT+m" | "ALT+5")
+						k=""
+						r=`echo -n $r | md5sum | sed "s/ *-$//"`
+						x='$'
+						;;
+						#echo r: $r 1>&2
+				"ALT+f")
+						k=""
+						fb $r
+						x=': '
+						;;
 
-		if [ $k = "ALT+m" ]; then
-				k=""
-				r=`echo -n $r | md5sum | sed "s/ *-$//"`
-				x='$'
-				#echo r: $r 1>&2
-		else
-				if [ $k = "ALT+b" ]; then
+				"ALT+9" | "ALT+b")
 						k=""
 						r=`echo -n $r | base91`
 						x="+"
 						#echo r: $r 1>&2
-		else
-				if [ $k = "F5" ]; then
+						;;
+				"ALT+r" | "F12" )
 						k=""
 						r=`cat /dev/shm/micha/c`
-						x="<F5: "
-						#echo r: $r 1>&2
-		else
-				if [ $k = "ALT+h" ]; then
+						x="<: "
+						echo -n ":" 1>&2
+						fb $r
+						;;
+				"ALT+x")
+						x="copy "
+						k=""
+						r=`echo -n $r | md5sum | sed "s/ *-$//" | tr -d "\n" | base91`
+						echo -n $r | xclip 
+						;;
+				"ALT+6")
 						k=""
 						r=`echo -n $r | base64`
 						x="+"
 						#echo r: $r 1>&2
-		else
-				if [ $k = "ALT+a" ]; then
+						;;
+				"ALT+1")
 						k=""
 						r=`echo -n $r | sha1sum | sed "s/ *-$//"`
 						x='$'
 						#echo r: $r 1>&2
-		else
-				if [ $k = "ALT+A" ]; then
+						;;
+				'ALT+2')
 						k=""
 						r=`echo -n $r | sha256sum | sed "s/ *-$//"`
 						x='$'
 						#echo r: $r 1>&2
-		else
-				if [ "XX" = `echo -n $k | sed "s/ALT+[[:digit:]]/XX/"` ]; then
-						f=`echo -n $k | sed "s/ALT+/F/"`
-						x=">$f: "
-						echo -n $r > /dev/shm/micha/c.$f
-						f=""
-		else
-				if [ "XX" = `echo -n $k | sed "s/F./XX/"` ]; then
-						x="<$k: "
-						r=`cat /dev/shm/micha/c.$k`
-						#echo r load: $r 1>&2
+						;;
+				'ALT+5')
 						k=""
-		else
-				if [ $k = "ALT+r" ]; then
+						r=`echo -n $r | sha512sum | sed "s/ *-$//"`
+						x='$'
+						#echo r: $r 1>&2
+						;;
+				"ALT+R")
 						k=""
-						x='R'
+						x='RM '
 						rm /dev/shm/micha/c
-		else
-				if [ $k = "ALT+D" ]; then
+						;;
+				"ALT+w")
+						k=""
+						x='WR c '
+						echo -n $r > /dev/shm/micha/c
+						;;
+
+				"ALT+D")
 						k=""
 						x=': '
 						echo $r 1>&2
-				fi
-				fi
-				fi
-				fi
-				fi
-				fi
-				fi
-				fi
-				fi
-		fi
+						;;
+				"ALT+l")
+						ls /dev/shm/micha 1>&2
+						;;
+
+				*)
+						if [ "XX" = `echo -n $k | sed 's/ALT+[!"§$%&/()=]/XX/'` ]; then
+								f=`echo -n $k | sed "s/ALT+/F/" | tr '!"§$%&/()=' '1234567890'`
+								x=">$f: "
+								echo -n $r > /dev/shm/micha/c.$f
+								f=""
+						fi
+						if [ "XX" = `echo -n $k | sed "s/F./XX/"` ]; then
+								x="<$k: "
+								r=$r`cat /dev/shm/micha/c.$k`
+								#echo r load: $r 1>&2
+								k=""
+						fi
+						;;
+		esac
 
 done
 
-echo 1>&2
-echo $r 1>&2
-
-r=`echo -n $r | md5sum | sed "s/ *-$//" | tr -d "\n" | base91`
-
-echo -n $r
