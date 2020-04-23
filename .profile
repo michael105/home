@@ -186,7 +186,7 @@ then
 fi
 
 
-export PROMPT='$CURSIVE%{$WHITE%}`echo -n $GIT_DIR | sed -e "sx.*/xgit%{$NORM%}:x" -e "sx\..*x x"`\
+export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/xgit:%{$NORM%}x" -e "sx\..*x x")`$NORM\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
