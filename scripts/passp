@@ -1,0 +1,106 @@
+#!/bin/sh
+
+function pwin(){
+  echo pwin
+
+		
+}
+
+k=""
+r=""
+
+if [ ! -e /dev/shm/micha ]; then
+		mkdir /dev/shm/micha
+		chmod go-rx /dev/shm/micha
+fi
+
+if [ -e /dev/shm/micha/c ]; then
+    echo load 1>&2
+		#r=`cat /dev/shm/micha/c`
+fi
+
+
+e=0
+x=''
+
+until [ $e = 1 ]
+do
+		echo -n "$x" 1>&2
+		x='*'
+		r="$r$k"
+		k=`readkey -b`
+
+		if [ $k = "RET" ]; then
+				e=1
+		fi
+
+		if [ $k = "ALT+m" ]; then
+				k=""
+				r=`echo -n $r | md5sum | sed "s/ *-$//"`
+				x='$'
+				#echo r: $r 1>&2
+		else
+				if [ $k = "ALT+b" ]; then
+						k=""
+						r=`echo -n $r | base91`
+						x="+"
+						#echo r: $r 1>&2
+		else
+				if [ $k = "ALT+h" ]; then
+						k=""
+						r=`echo -n $r | base64`
+						x="+"
+						#echo r: $r 1>&2
+		else
+				if [ $k = "ALT+a" ]; then
+						k=""
+						r=`echo -n $r | sha1sum | sed "s/ *-$//"`
+						x='$'
+						#echo r: $r 1>&2
+		else
+				if [ $k = "ALT+A" ]; then
+						k=""
+						r=`echo -n $r | sha256sum | sed "s/ *-$//"`
+						x='$'
+						#echo r: $r 1>&2
+		else
+				if [ "XX" = `echo -n $k | sed "s/ALT+[[:digit:]]/XX/"` ]; then
+						f=`echo -n $k | sed "s/ALT+/F/"`
+						x=">$f: "
+						echo -n $r > /dev/shm/micha/c.$f
+						f=""
+		else
+				if [ "XX" = `echo -n $k | sed "s/F./XX/"` ]; then
+						x="<$k: "
+						r=`cat /dev/shm/micha/c.$k`
+						#echo r load: $r 1>&2
+						k=""
+		else
+				if [ $k = "ALT+r" ]; then
+						k=""
+						x='R'
+						rm /dev/shm/micha/c
+		else
+				if [ $k = "ALT+D" ]; then
+						k=""
+						x=': '
+						echo $r 1>&2
+				fi
+
+				fi
+				fi
+				fi
+				fi
+				fi
+				fi
+				fi
+		fi
+
+done
+
+echo 1>&2
+echo $r 1>&2
+
+r=`echo -n $r | md5sum | sed "s/ *-$//" | tr -d "\n" | base91`
+
+echo -n $r
