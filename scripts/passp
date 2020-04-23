@@ -27,34 +27,60 @@ BLINK=""$'\033[5m'""
 INVERTED=""$'\033[7m'""
 NORM=""$'\033[0;0m'""
 
+
+
 function fb(){
-		echo -n '('`echo -n $1 | wc -c `') '
-		echo $1 | tr -d "\n" | md5sum |  base91 | sed -E 's/^(.....).*/\1/'  1>&2
+		echo '('`echo -n $1 | wc -c `') '\
+$GREEN`echo $1 | tr -d "\n" | md5sum |  base91 | sed -E 's/^(.....).*/\1/'`$NORM  1>&2
 }
+
+function cmd(){
+		echo -n "$1: " 1>&2
+}
+
 
 k=""
 r=""
+dpath=/dev/shm/.$USER-c
 
 #echo -n 'passp: ' 1>&2
-echo $GREEN`md5sum $0 | sum | sed 's/ *.$//' | tr -d "\n" | base64`$NORM $0 `whoami` 1>&2
+echo $GREEN`md5sum $0 | sum | sed 's/ *.$//' | tr -d "\n" | base64`$NORM $0 `whoami` "(Alt+h)" 1>&2
 #| sed -E 's/^(......).*/\1/' 1>&2
 
 
 
-if [ ! -e /dev/shm/micha ]; then
-		mkdir /dev/shm/micha
-		chmod go-rx /dev/shm/micha
+if [ ! -e $dpath ]; then
+		mkdir $dpath
+		chmod go-rx $dpath
 fi
 
-if [ -e /dev/shm/micha/c ]; then
-    echo -n "load: " 1>&2
-		r=`cat /dev/shm/micha/c`
+if [ -e $dpath/c ]; then
+    cmd "load"
+		r=`cat $dpath/c`
 		fb $r 
 fi
 
 
 e=0
 x=''
+
+function scripthelp(){
+		echo `cat << ENDL
+ALT+Shift+[1-9]:  Save   F1-F9: Load  Alt+l: list
+Ret: to stdout, exit 
+
+F10/Alt+c: clear         Alt+f: show checksum
+
+clipboard: Alt+x: write  Alt+y  append from    
+checksums: Alt+1 sha1  Alt+2 sha256 Alt+5 sha512 
+converter: Alt+b,Alt+9 base91 Alt+6 base64 
+
+Alt+D: Reveal 
+
+ENDL` 1>&2
+
+}
+
 
 until [ $e = 1 ]
 do
@@ -64,7 +90,7 @@ do
 		k=`readkey -b`
 
 		case "$k" in 
-				"RET")
+				"RET") # output to stdout, exit
 						e=1
 						echo 1>&2
 						#echo $r 1>&2
@@ -72,6 +98,17 @@ do
 						echo -n $r
 						exit 0
 						;;
+				"ALT+h" | "CTRL+H")
+						echo help 1>&2
+						scripthelp
+						k=""
+						;;
+				"ALT+c" | "F10")
+						x="clear: "
+						r=""
+						k=""
+						;;
+
 				"ALT+m" | "ALT+5")
 						k=""
 						r=`echo -n $r | md5sum | sed "s/ *-$//"`
@@ -80,6 +117,7 @@ do
 						#echo r: $r 1>&2
 				"ALT+f")
 						k=""
+						echo 1>&2
 						fb $r
 						x=': '
 						;;
@@ -92,8 +130,8 @@ do
 						;;
 				"ALT+r" | "F12" )
 						k=""
-						r=`cat /dev/shm/micha/c`
-						x="<: "
+						r=`cat $dpath/c`
+						x="load: "
 						echo -n ":" 1>&2
 						fb $r
 						;;
@@ -130,12 +168,12 @@ do
 				"ALT+R")
 						k=""
 						x='RM '
-						rm /dev/shm/micha/c
+						rm $dpath/c
 						;;
 				"ALT+w")
 						k=""
 						x='WR c '
-						echo -n $r > /dev/shm/micha/c
+						echo -n $r > $dpath/c
 						;;
 
 				"ALT+D")
@@ -144,19 +182,20 @@ do
 						echo $r 1>&2
 						;;
 				"ALT+l")
-						ls /dev/shm/micha 1>&2
+						ls $dpath 1>&2
 						;;
 
 				*)
-						if [ "XX" = `echo -n $k | sed 's/ALT+[!"§$%&/()=]/XX/'` ]; then
+						if [ "XX" = `echo -n $k | sed 's/ALT+[!"§$%&/()]/XX/'` ]; then
 								f=`echo -n $k | sed "s/ALT+/F/" | tr '!"§$%&/()=' '1234567890'`
 								x=">$f: "
-								echo -n $r > /dev/shm/micha/c.$f
+								echo -n $r > $dpath/c.$f
 								f=""
+								k=""
 						fi
 						if [ "XX" = `echo -n $k | sed "s/F./XX/"` ]; then
 								x="<$k: "
-								r=$r`cat /dev/shm/micha/c.$k`
+								r=$r`cat $dpath/c.$k`
 								#echo r load: $r 1>&2
 								k=""
 						fi
