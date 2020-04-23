@@ -72,8 +72,12 @@ YELLOW="%{"$'\033[01;33m'"%}"
 BROWN="%{"$'\033[33m'"%}"
 LBLUE="%{"$'\033[01;34m'"%}"
 BLUE="%{"$'\033[34m'"%}"
+
 BOLD="%{"$'\033[01;39m'"%}"
+CURSIVE="%{"$'\033[03;39m'"%}"
+UNDERLINE="%{"$'\033[04;39m'"%}"
 NORM="%{"$'\033[00m'"%}"
+
 PINK="%{"$'\033[01;35m'"%}"
 MAGENTA="%{"$'\033[00;35m'"%}"
 LMAGENTA="%{"$'\033[01;35m'"%}"
@@ -182,7 +186,7 @@ then
 fi
 
 
-export PROMPT='%{$WHITE%}`echo -n $GIT_DIR | sed -e "sx.*/xgit:x" -e "sx\..*x x"`\
+export PROMPT='$CURSIVE%{$WHITE%}`echo -n $GIT_DIR | sed -e "sx.*/xgit%{$NORM%}:x" -e "sx\..*x x"`\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
