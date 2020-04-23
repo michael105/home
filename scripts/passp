@@ -44,7 +44,7 @@ r=""
 dpath=/dev/shm/.$USER-c
 
 #echo -n 'passp: ' 1>&2
-echo $GREEN`md5sum $0 | sum | sed 's/ *.$//' | tr -d "\n" | base64`$NORM $0 `whoami` "(Alt+h)" 1>&2
+echo $GREEN`md5sum $0 | sum | sed 's/ *.$//' | tr -d "\n" | base64`$NORM $0 `whoami` "(Alt+h/^)" 1>&2
 #| sed -E 's/^(......).*/\1/' 1>&2
 
 
@@ -64,20 +64,25 @@ fi
 e=0
 x=''
 
+c=$LCYAN
+n=$NORM
 function scripthelp(){
-		echo `cat << ENDL
-ALT+Shift+[1-9]:  Save   F1-F9: Load  Alt+l: list
-Ret: to stdout, exit 
+echo "
+$c""ALT+Shift+[1-9]$n  Save   $c""F1-F9$n Load  $c""Alt+l$n list
 
-F10/Alt+c: clear         Alt+f: show checksum
+$c""F10,Alt+r$n read c      $c""F11,Alt+c$n clear
+$c""Alt+W$n     write c     $c""Alt+R/F12$n rm c
 
-clipboard: Alt+x: write  Alt+y  append from    
-checksums: Alt+1 sha1  Alt+2 sha256 Alt+5 sha512 
-converter: Alt+b,Alt+9 base91 Alt+6 base64 
+clipboard$n 
+   $c""Alt+x$n write  $c""Alt+y$n  append from    
+checksums$n 
+   $c""Alt+1$n sha1    $c""Alt+2$n sha256   $c""Alt+3$n sha512   $c""Alt+5$n md5sum 
+converter$n 
+   $c""Alt+6$n base64  $c""Alt+b,Alt+9$n base91
 
-Alt+D: Reveal 
-
-ENDL` 1>&2
+$c""Alt+f$n Show checksum $c""Alt+D$n Show 
+$c""Ret$n to stdout, exit 
+" 1>&2
 
 }
 
@@ -98,12 +103,11 @@ do
 						echo -n $r
 						exit 0
 						;;
-				"ALT+h" | "CTRL+H")
-						echo help 1>&2
+				"ALT+h" | "CTRL+H" | "^" )
 						scripthelp
 						k=""
 						;;
-				"ALT+c" | "F10")
+				"ALT+c" | "F11")
 						x="clear: "
 						r=""
 						k=""
@@ -128,14 +132,14 @@ do
 						x="+"
 						#echo r: $r 1>&2
 						;;
-				"ALT+r" | "F12" )
+				"ALT+r" | "F10" )
 						k=""
 						r=`cat $dpath/c`
 						x="load: "
 						echo -n ":" 1>&2
 						fb $r
 						;;
-				"ALT+x")
+				"ALT+5")
 						x="copy "
 						k=""
 						r=`echo -n $r | md5sum | sed "s/ *-$//" | tr -d "\n" | base91`
@@ -159,15 +163,15 @@ do
 						x='$'
 						#echo r: $r 1>&2
 						;;
-				'ALT+5')
+				'ALT+3')
 						k=""
 						r=`echo -n $r | sha512sum | sed "s/ *-$//"`
 						x='$'
 						#echo r: $r 1>&2
 						;;
-				"ALT+R")
+				"ALT+R" | "F12")
 						k=""
-						x='RM '
+						x='RM c '
 						rm $dpath/c
 						;;
 				"ALT+w")
