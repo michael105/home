@@ -16,7 +16,7 @@ fi
 
 if [ -e /dev/shm/micha/c ]; then
     echo load 1>&2
-		#r=`cat /dev/shm/micha/c`
+		r=`cat /dev/shm/micha/c`
 fi
 
 
@@ -44,6 +44,12 @@ do
 						k=""
 						r=`echo -n $r | base91`
 						x="+"
+						#echo r: $r 1>&2
+		else
+				if [ $k = "F5" ]; then
+						k=""
+						r=`cat /dev/shm/micha/c`
+						x="<F5: "
 						#echo r: $r 1>&2
 		else
 				if [ $k = "ALT+h" ]; then
@@ -86,7 +92,7 @@ do
 						x=': '
 						echo $r 1>&2
 				fi
-
+				fi
 				fi
 				fi
 				fi
