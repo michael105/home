@@ -175,9 +175,15 @@ fi
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-export PROMPT='%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+gitdir=""
+if [ ! -z $GIT_DIR ]
+then
+  #gitdir=
+fi
 
 
+export PROMPT='%{$WHITE%}`echo -n $GIT_DIR | sed -e "sx.*/xgit:x" -e "sx\..*x x"`\
+%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
 #print -Pn "\e]2;urxvt: $PPWD\a"
