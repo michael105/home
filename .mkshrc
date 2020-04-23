@@ -626,8 +626,8 @@ done
 
 \\builtin unset p
 
-export HISTFILE=~/.mksh_hist
+export HISTFILE=$HOME/.mksh_hist
 export HISTSIZE=1000
-source ~/.profile
+source $HOME/.profile
 
 \: place customisations above this line

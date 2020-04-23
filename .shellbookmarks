@@ -1,5 +1,6 @@
 export ans='/home/micha/git/michael105.old/ans'
 export b='/home/micha/src/polybar'
+export bb='/home/micha/Downloads/busybox-1_31_1'
 export bitsort='/home/micha/prog/c/global_libs/test'
 export br='/hd/sda13/src/arch64/buildroot-image'
 export c='/home/micha/src/scrollback'

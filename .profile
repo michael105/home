@@ -2,10 +2,64 @@
 
 export profile_sourced=1
 
-export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+
+
+export PATH=/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
-source ~/scripts/alias.sh
+source $HOME/scripts/alias.sh
+
+if [ 1 -eq `ps | tail -n 5 | sed -n -e '/ash/p' | wc -l` ] 
+then
+		export ASH=/bin/ash
+
+BLACK="\033[30m"
+GRAY="\033[01;30m"
+LGREEN="\033[01;32m"
+GREEN="\033[32m"
+LRED="\033[01;31m"
+RED="\033[31m"
+YELLOW="\033[01;33m"
+BROWN="\033[33m"
+LBLUE="\033[01;34m"
+BLUE="\033[34m"
+BOLD="\033[01;39m"
+NORM="\033[00m"
+PINK="\033[01;35m"
+MAGENTA="\033[00;35m"
+LMAGENTA="\033[01;35m"
+CYAN="\033[36m"
+LCYAN="\033[01;36m"
+WHITE="\033[01;37m"
+LGRAY="\033[37m"
+
+
+else
+if [ ! -z $KSHUID ] # mksh
+then
+
+BLACK="\033[30m"
+GRAY="\033[01;30m"
+LGREEN="\033[01;32m"
+GREEN="\033[32m"
+LRED="\033[01;31m"
+RED="\033[31m"
+YELLOW="\033[01;33m"
+BROWN="\033[33m"
+LBLUE="\033[01;34m"
+BLUE="\033[34m"
+BOLD="\033[01;39m"
+NORM="\033[00m"
+PINK="\033[01;35m"
+MAGENTA="\033[00;35m"
+LMAGENTA="\033[01;35m"
+CYAN="\033[36m"
+LCYAN="\033[01;36m"
+WHITE="\033[01;37m"
+LGRAY="\033[37m"
+
+
+else
 
 
 BLACK="%{"$'\033[30m'"%}"
@@ -18,8 +72,12 @@ YELLOW="%{"$'\033[01;33m'"%}"
 BROWN="%{"$'\033[33m'"%}"
 LBLUE="%{"$'\033[01;34m'"%}"
 BLUE="%{"$'\033[34m'"%}"
+
 BOLD="%{"$'\033[01;39m'"%}"
+CURSIVE="%{"$'\033[03;39m'"%}"
+UNDERLINE="%{"$'\033[04;39m'"%}"
 NORM="%{"$'\033[00m'"%}"
+
 PINK="%{"$'\033[01;35m'"%}"
 MAGENTA="%{"$'\033[00;35m'"%}"
 LMAGENTA="%{"$'\033[01;35m'"%}"
@@ -27,6 +85,8 @@ CYAN="%{"$'\033[36m'"%}"
 LCYAN="%{"$'\033[01;36m'"%}"
 WHITE="%{"$'\033[01;37m'"%}"
 LGRAY="%{"$'\033[37m'"%}"
+fi
+fi
 
 # urxvt - 256 colors
 YELLOW256="%{"$'\033[38;5;60m'"%}"
@@ -34,7 +94,7 @@ BROWN256="%{"$'\033[38;5;68m'"%}"
 
 
 #US="$LCYAN$USER"
-US="$GREEN%n"
+US="$GREEN"
 i1=""
 AT="$GREEN@"
 HO="$LGREEN%m"
@@ -93,25 +153,41 @@ ZZ=$ZONE
 if [ ${#ZONE} -gt 0 ] #within a netns
 then
 		if [ $ZONE = "alp" ]; then
+				PZONE="$LCYAN@$ZONE"
 				ZONE="%{$LCYAN%}@$ZONE"
 		else
+				PZONE="$YELLOW@$ZONE"
 				ZONE="%{$YELLOW%}@$ZONE"
 		fi
 fi
+
+if [ ! -z $ASH ] # 
+then
+		export PS1='\033[0;37mash$NORM $US$USER$PZONE$LBLUE `pwd | sed -e s./home/micha.~.` $CYAN$ $NORM'
+fi
+
+if [ ! -z $KSHUID ] # set by mksh
+then
+		#export PS1='mksh: $GREEN$USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
+		export PS1='mksh$NORM $GREEN$USER$YELLOW@$ZZ$LBLUE `pwd | sed -e s./home/micha.~.` $CYAN$ $NORM'
+fi
+
+
 
 
 #export PROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-export PROMPT='%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
-
-if [ ! -z $KSHUID ] # set by mksh
+gitdir=""
+if [ ! -z $GIT_DIR ]
 then
-		export PS1='mksh: $GREEN $USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
+  #gitdir=
 fi
 
 
+export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/xgit:%{$NORM%}x" -e "sx\..*x x")`$NORM\
+%{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
 #print -Pn "\e]2;urxvt: $PPWD\a"
@@ -171,10 +247,10 @@ export CLICOLOR=1
 # path history, menu
 # better would be smenu ('smenu -c -n')
 export BEMENU_BACKEND=curses
-alias ph='chdir `uniq ~/.pathhistory | tac | bemenu || echo $PWD`'
+alias ph='chdir `uniq $HOME/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
-alias ch='sed -e "s/^:.*:0;//" ~/.zsh_history | tac | bemenu'
+alias ch='sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS
@@ -224,6 +300,8 @@ alias ch='sed -e "s/^:.*:0;//" ~/.zsh_history | tac | bemenu'
 #               "1 2 3 4 5 6 7 8 9 0 1"  (attribute order)
 export LSCOLORS="eaEafaDaca"
 
+if [ -e "$HOME/.pprofile" ]; then
+		source $HOME/.pprofile
+fi
 
-# the guard
 

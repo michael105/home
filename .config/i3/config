@@ -40,6 +40,7 @@ bindsym $win+$menu+s scratchpad show floating disable
 
 # scratchpad
 # ----------
+bindsym $mod+Shift+s move window to scratchpad
 bindsym $alt+Shift+s move window to scratchpad
 bindsym $alt+s scratchpad show
 bindsym $alt+Ctrl+s scratchpad show floating disable
@@ -77,7 +78,8 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # -------------
 # lock, quit,..
 # -------------
-bindsym $mod+p exec lxlock&
+bindsym $mod+$alt+l exec $scriptdir/lock.sh &
+bindsym $altgr+l exec $scriptdir/lock.sh &
 # kill focused window
 bindsym $mod+q kill
 # exit i3
@@ -98,8 +100,8 @@ bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%
 # exec
 # ====
 # Alt+F2: execute
-#bindsym mod1+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
-#bindsym mod1+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
+bindsym mod1+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
+bindsym mod1+$mod+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
 # urxvt kann im daemon mode gestartet werden.
 
 
@@ -164,10 +166,11 @@ bindsym $mod+Shift+Right move right
 # split 
 # -----
 # vertical orientation
-bindsym $mod+Ctrl+s split v
+bindsym $mod+Ctrl+s split h
 bindsym $mod+v split v
+bindsym $mod+Ctrl+v split h
 # split in horizontal orientation
-bindsym $mod+Shift+s split h
+#bindsym $mod+Shift+s split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -342,7 +345,7 @@ for_window [title="Anwendungsfinder"] floating enable, resize set width 800 px, 
 
 # start a terminal
 bindsym $mod+Return exec /usr/local/bin/st
-#bindsym $mod+Return exec urxvtc || ( urxvtd -q -f -m && urxvtc )
+bindsym $mod+Shift+Return exec urxvtc -e fish || ( urxvtd -q -f -m && urxvtc -e fish )
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec lxtask
 

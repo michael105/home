@@ -7,14 +7,16 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
  " alternatively, pass a path where Vundle should install plugins
  "call vundle#begin('~/some/path/here')
 
  " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+ Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'ObserverOfTime/coloresque.vim'
+Plugin 'ap/vim-css-color'
  " The following are examples of different formats supported.
  " Keep Plugin commands between vundle#begin/end.
  " plugin on GitHub repo
@@ -679,3 +681,7 @@ endfunction
 "endfunction
 "command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 "
+"
+"
+"
+let g:coloresque_whitelist = [ 'css', 'haml', 'html', 'htmldjango', 'javascript', 'jsx', 'less', 'php', 'postcss', 'pug', 'qml', 'sass', 'scss', 'sh', 'stylus', 'svg', 'typescript', 'vim', 'vue', 'xml', 'conf']
