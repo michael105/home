@@ -2,7 +2,7 @@
 # sorted by categories
 alias listalias='highlight --style oxygenated ~/scripts/alias.sh' 
 
-alias vim=vim8
+alias vim=vim
 
 # 
 alias aik=aiksaurus
