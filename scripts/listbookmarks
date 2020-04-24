@@ -1,3 +1,4 @@
+#!/bin/sh
 #
 # Lists the bookmarks located in the home bookmark file
 #use Misc::Snippets;

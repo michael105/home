@@ -4,7 +4,7 @@ export profile_sourced=1
 
 
 
-export PATH=/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+export PATH=/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 source $HOME/scripts/alias.sh
@@ -231,8 +231,6 @@ YELLOW=""$'\033[01;33m'""
 BROWN=""$'\033[33m'""
 LBLUE=""$'\033[01;34m'""
 BLUE=""$'\033[34m'""
-BOLD=""$'\033[01;39m'""
-NORM=""$'\033[00m'""
 PINK=""$'\033[01;35m'""
 MAGENTA=""$'\033[00;35m'""
 LMAGENTA=""$'\033[01;35m'""
@@ -240,6 +238,15 @@ CYAN=""$'\033[36m'""
 LCYAN=""$'\033[01;36m'""
 WHITE=""$'\033[01;37m'""
 LGRAY=""$'\033[37m'""
+
+NORM=""$'\033[0;0m'""
+BOLD=""$'\033[1m'""
+FAINT=""$'\033[2m'""
+CURSIVE=""$'\033[3m'""
+UNDERLINE=""$'\033[4m'""
+BLINK=""$'\033[5m'""
+INVERTED=""$'\033[7m'""
+
 
 export CLICOLOR=1
 

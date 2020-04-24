@@ -42,8 +42,10 @@ bindsym $win+$menu+s scratchpad show floating disable
 # ----------
 bindsym $mod+Shift+s move window to scratchpad
 bindsym $alt+Shift+s move window to scratchpad
-bindsym $alt+s scratchpad show
+bindsym $mod+Shift+y move window to scratchpad
+bindsym $mod+y scratchpad show
 bindsym $alt+Ctrl+s scratchpad show floating disable
+bindsym $mod+Ctrl+y scratchpad show floating disable
 
 # show browser and reload. (do with marks?)
 bindsym mod4+F2 exec i3-msg scratchpad show && sleep 1 && xdotool key F5 --repeat-delay 200 --repeat 1
@@ -345,7 +347,7 @@ for_window [title="Anwendungsfinder"] floating enable, resize set width 800 px, 
 
 # start a terminal
 bindsym $mod+Return exec /usr/local/bin/st
-bindsym $mod+Shift+Return exec urxvtc -e fish || ( urxvtd -q -f -m && urxvtc -e fish )
+bindsym $mod+Shift+Return exec /usr/local/bin/urxvtc -e fish || ( /usr/local/bin/urxvtd -q -f -m && /usr/local/bin/urxvtc -e fish )
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec lxtask
 
