@@ -93,8 +93,8 @@ chpwd(){
 		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
 		# path history
 		echo $PWD >> ~/.pathhistory
-		if [ $(( `stat ~/.pathhistory --format=%s` > 10000 )) = 1 ]; then
-		  uniq ~/.pathhistory | tac | sed -e 100q | tac > ~/.pathhistory
+		if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
+		  uniq ~/.pathhistory | tac | sed -e 1000q | tac > ~/.pathhistory
 		fi
 }
 preexec(){
