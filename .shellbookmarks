@@ -1,3 +1,4 @@
+export D='/home/micha/Downloads'
 export ans='/home/micha/git/michael105.old/ans'
 export b='/home/micha/src/polybar'
 export bb='/home/micha/Downloads/busybox-1_31_1'

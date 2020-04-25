@@ -44,6 +44,7 @@ bindsym $mod+Shift+s move window to scratchpad
 bindsym $alt+Shift+s move window to scratchpad
 bindsym $mod+Shift+y move window to scratchpad
 bindsym $mod+y scratchpad show
+bindsym $mod+F2 scratchpad show
 bindsym $alt+Ctrl+s scratchpad show floating disable
 bindsym $mod+Ctrl+y scratchpad show floating disable
 
