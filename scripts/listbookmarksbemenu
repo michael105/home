@@ -1,0 +1,16 @@
+#
+# Lists the bookmarks located in the home bookmark file
+# select a bookmark and go there
+# needs to be sourced via "source listbookmarksbemenu"
+
+
+CD=`cat ~/.shellbookmarks | sed -n 's/export //p' | BEMENU_BACKEND=curses bemenu | sed -ne "s/.*='//" -e "s/'$//p" `
+echo $CD
+
+if [ -z "$CD" ]; then
+		echo abort
+else
+		cd $CD
+fi
+
+
