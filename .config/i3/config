@@ -82,6 +82,7 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # lock, quit,..
 # -------------
 bindsym $mod+$alt+l exec $scriptdir/lock.sh &
+bindsym $mod+Ctrl+l exec $scriptdir/lock.sh &
 bindsym $altgr+l exec $scriptdir/lock.sh &
 # kill focused window
 bindsym $mod+q kill
@@ -112,6 +113,7 @@ bindsym mod1+$mod+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergae
 
 #exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 exec  --no-startup-id polybar example &
+exec  --no-startup-id xmodmap $HOME/.xmodmaprc &
 #exec  --no-startup-id orage &
 #exec --no-startup-id dockx &
 #exec --no-startup-id urxvtd -m -f -q

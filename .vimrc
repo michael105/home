@@ -432,6 +432,8 @@ map! <M-F11> <ESC>:cw<CR>
 "map! <M-F11> <ESC>:vert cw<CR>:set winwidth=60<CR>
 map! <S-F11> <ESC>:cclose<CR>
 
+" syntastic
+let g:syntastic_auto_loc_list = 2
 
 
 "cscope 

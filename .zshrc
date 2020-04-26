@@ -149,6 +149,6 @@ export CLICOLOR=1
 #if [ -z $profile_sourced ]
 #then
 # source config, common to all shells
-source ~/.profile
+source $HOME/.profile
 #fi
 

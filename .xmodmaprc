@@ -256,7 +256,7 @@ remove shift = Shift_R
 add mod3 = Shift_R
 remove lock = Meta_L
 remove lock = Escape
-remove lock
+!remove lock
 !add mod5 = Meta_L
 
 

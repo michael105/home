@@ -5,4 +5,4 @@ exec i3
 #exec dockx
 #exec startlxde
 #exec startlxqt
-exec xmodmap .xmodmaprc
+#exec xmodmap .xmodmaprc
