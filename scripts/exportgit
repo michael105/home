@@ -1,0 +1,4 @@
+#!/bin/sh
+
+tar -czf $1 $(git ls-files | xargs)
+
