@@ -43,6 +43,7 @@ alias lr='less README* || less ?eadme*'
 # goto last current dir. 
 # Handy when opening or switching terminals
 alias pp="cd `cat ~/.zshlp`"
+alias p+="cd `cat ~/.zshlp`"
 
 alias ..='cd ..'
 alias ...='cd ../../'

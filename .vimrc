@@ -330,9 +330,18 @@ map! <M-C-PageDown> <ESC>:call Funcbufmoveright()<CR>
 map <F10> :TlistToggle<CR>
 map! <F10> <ESC>:TlistToggle<CR>
 
-" M-x
+" M-x / M-q : Exit, confirm
 map x :confirm qa<CR>
 map! x <ESC>:confirm qa<CR>
+map q :confirm qa<CR>
+map! q <ESC>:confirm qa<CR>
+
+" M-Shift-x / M-Shift-q :  Exit, no confirmation
+map X :q!<CR>
+map! X <ESC>:q!<CR>
+map Q :q!<CR>
+map! Q <ESC>:q!<CR>
+
 
 
 
@@ -423,6 +432,8 @@ map! <M-F11> <ESC>:cw<CR>
 "map! <M-F11> <ESC>:vert cw<CR>:set winwidth=60<CR>
 map! <S-F11> <ESC>:cclose<CR>
 
+" syntastic
+let g:syntastic_auto_loc_list = 2
 
 
 "cscope 

@@ -4,10 +4,14 @@ export profile_sourced=1
 
 
 
-export PATH=/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 source $HOME/scripts/alias.sh
+
+# weed out duplicate entries
+PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
+export PATH
 
 if [ 1 -eq `ps | tail -n 5 | sed -n -e '/ash/p' | wc -l` ] 
 then
