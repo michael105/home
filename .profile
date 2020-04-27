@@ -198,7 +198,7 @@ export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 gitdir=""
 if [ ! -z $GIT_DIR ]
 then
-  #gitdir=
+  export GITPROMPT=1
 fi
 
 
