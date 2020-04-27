@@ -92,7 +92,7 @@ function gitprompt(){
 				export ISGITDIR=1
 				modcount=`git status -uno -b -s 2>/dev/null | wc -l`
 				if [ $modcount -eq 1 ]; then
-						branchp="%{$CYAN%}$branch"
+						branchp="%{$CYAN%}$branch (=)"
 				fi
 				if [ $modcount -gt 1 ]; then
 						branchp="%{$ORANGE%}$branch ($modcount)"
