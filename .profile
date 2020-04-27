@@ -99,6 +99,8 @@ LCYAN="%{"$'\033[01;36m'"%}"
 WHITE="%{"$'\033[01;37m'"%}"
 BGWHITE="%{"$'\033[47m'"%}"
 LGRAY="%{"$'\033[37m'"%}"
+
+ORANGE="%{"$'\033[38;5;214m'"%}"
 fi
 fi
 
@@ -200,7 +202,7 @@ then
 fi
 
 
-export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$BGBLUE%}git:%{$NORM%} x" -e "sx\..*x x")`%{$NORM%}\
+export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$BGBLUE%}git:%{$NORM$ORANGE%} x" -e "sx\..*x x")`%{$NORM%}\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
@@ -271,6 +273,7 @@ BLINK=""$'\033[5m'""
 INVERTED=""$'\033[7m'""
 INVERSE=""$'\033[7m'""
 
+ORANGE=""$'\033[38;5;214m'""
 
 export CLICOLOR=1
 
