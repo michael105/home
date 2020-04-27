@@ -95,11 +95,12 @@ function gitprompt(){
 						branchp="%{$CYAN%}$branch"
 				fi
 				if [ $modcount -gt 1 ]; then
-						branchp="%{$PINK%}$branch"
+						branchp="%{$ORANGE%}$branch"
 				fi
 
 				export PROMPT="git: $branchp%{$NORM%} $OLDPROMPT"
 		else
+				export ISGITDIR=0
 				export PROMPT=$OLDPROMPT
 		fi
 }
@@ -115,21 +116,7 @@ chpwd(){
 		if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
 		  uniq ~/.pathhistory | tac | sed -e 1000q | tac > ~/.pathhistory
 		fi
-		branch=`git status -uno -b -s 2>/dev/null | sed -n -E '/^##/s/^## ([^.]*).*/\1/p' 2>/dev/null`
-		if [ ! -z $branch ];then
-				export ISGITDIR=1
-				modcount=`git status -uno -b -s 2>/dev/null | wc -l`
-				if [ $modcount -eq 1 ]; then
-						branchp="%{$CYAN%}$branch"
-				fi
-				if [ $modcount -gt 1 ]; then
-						branchp="%{$PINK%}$branch"
-				fi
-
-				export PROMPT="git: $branchp%{$NORM%} $OLDPROMPT"
-		else
-				export PROMPT=$OLDPROMPT
-		fi
+		gitprompt
 }
 preexec(){
 		# set windowtitle
