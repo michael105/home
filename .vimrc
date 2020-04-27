@@ -132,13 +132,47 @@ map <F9> :NERDTreeToggle<CR>
 map! <F9> <ESC>:NERDTreeToggle<CR>
 
 
+let g:commitsaves = 0
+function! FileSave()
+		:w
+    if g:commitsaves
+		:silent execute '!git commit -m "`date`" -a &>/dev/null'
+		
+		:redraw!
+"map <F4> :silent exe '!perl ./wxduplicates.pl &>/dev/pts/4 &'<CR>:redraw!<CR>
+		":execute !git commit -m "`date`" -a
+    endif
+endfunction
+
+function! Gitcommitsaves()
+		:w
+		let g:commitsaves = 1
+    if g:commitsaves
+		:!git commit -m "`date`" -a
+		":redraw!
+"map <F4> :silent exe '!perl ./wxduplicates.pl &>/dev/pts/4 &'<CR>:redraw!<CR>
+		":execute !git commit -m "`date`" -a
+    endif
+endfunction
+
+
+map! <M-g> <ESC>:call Gitcommitsaves()<CR>a
+map! g <ESC>:call Gitcommitsaves()<CR>a
+map <M-g> :call Gitcommitsaves()<CR>
+map g :call Gitcommitsaves()<CR>
+
+
+
 " Save
-map! <F2> <ESC>:w<CR>a
-map <F2> :w<CR>
+map! <F2> <ESC>:call FileSave()<CR>a
+map <F2> :call FileSave()<CR>
 
 "Session support
 map <S-F2> :mks! .vimsession<CR>map! <S-F2> <ESC>:mks! .vimsession<CR>
 "set ssop="blank,buffers,curdir,folds,help,tabpages,winsize" 
+
+" set to git mode (commit locally after each change) 
+
 
 " Scroll up and down
 map <C-J> <C-e>

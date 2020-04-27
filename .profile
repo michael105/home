@@ -66,29 +66,41 @@ LGRAY="\033[37m"
 else
 
 
+BGBLACK="%{"$'\033[40m'"%}"
 BLACK="%{"$'\033[30m'"%}"
 GRAY="%{"$'\033[01;30m'"%}"
 LGREEN="%{"$'\033[01;32m'"%}"
+BGGREEN="%{"$'\033[42m'"%}"
 GREEN="%{"$'\033[32m'"%}"
 LRED="%{"$'\033[01;31m'"%}"
+BGRED="%{"$'\033[41m'"%}"
 RED="%{"$'\033[31m'"%}"
 YELLOW="%{"$'\033[01;33m'"%}"
+BGBROWN="%{"$'\033[43m'"%}"
 BROWN="%{"$'\033[33m'"%}"
 LBLUE="%{"$'\033[01;34m'"%}"
+BGBLUE="%{"$'\033[44m'"%}"
 BLUE="%{"$'\033[34m'"%}"
 
 BOLD="%{"$'\033[01;39m'"%}"
 CURSIVE="%{"$'\033[03;39m'"%}"
 UNDERLINE="%{"$'\033[04;39m'"%}"
 NORM="%{"$'\033[00m'"%}"
+INVERSE="%{"$'\033[07m'"%}"
+INVERTED="%{"$'\033[07m'"%}"
 
 PINK="%{"$'\033[01;35m'"%}"
 MAGENTA="%{"$'\033[00;35m'"%}"
+BGMAGENTA="%{"$'\033[00;45m'"%}"
 LMAGENTA="%{"$'\033[01;35m'"%}"
 CYAN="%{"$'\033[36m'"%}"
+BGCYAN="%{"$'\033[46m'"%}"
 LCYAN="%{"$'\033[01;36m'"%}"
 WHITE="%{"$'\033[01;37m'"%}"
+BGWHITE="%{"$'\033[47m'"%}"
 LGRAY="%{"$'\033[37m'"%}"
+
+ORANGE="%{"$'\033[38;5;214m'"%}"
 fi
 fi
 
@@ -190,7 +202,7 @@ then
 fi
 
 
-export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/xgit:%{$NORM%}x" -e "sx\..*x x")`%{$NORM%}\
+export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$BGBLUE%}git:%{$NORM$ORANGE%} x" -e "sx\..*x x")`%{$NORM%}\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
@@ -226,21 +238,30 @@ fi
 #
 
 BLACK=""$'\033[30m'""
+BLACK=""$'\033[30m'""
+BGBLACK=""$'\033[40m'""
 GRAY=""$'\033[01;30m'""
 LGREEN=""$'\033[01;32m'""
 GREEN=""$'\033[32m'""
+BGGREEN=""$'\033[42m'""
 LRED=""$'\033[01;31m'""
 RED=""$'\033[31m'""
+BGRED=""$'\033[41m'""
 YELLOW=""$'\033[01;33m'""
 BROWN=""$'\033[33m'""
+BGYELLOW=""$'\033[43m'""
 LBLUE=""$'\033[01;34m'""
 BLUE=""$'\033[34m'""
+BGBLUE=""$'\033[44m'""
 PINK=""$'\033[01;35m'""
 MAGENTA=""$'\033[00;35m'""
+BGMAGENTA=""$'\033[45m'""
 LMAGENTA=""$'\033[01;35m'""
 CYAN=""$'\033[36m'""
+BGCYAN=""$'\033[46m'""
 LCYAN=""$'\033[01;36m'""
 WHITE=""$'\033[01;37m'""
+BGWHITE=""$'\033[47m'""
 LGRAY=""$'\033[37m'""
 
 NORM=""$'\033[0;0m'""
@@ -250,7 +271,9 @@ CURSIVE=""$'\033[3m'""
 UNDERLINE=""$'\033[4m'""
 BLINK=""$'\033[5m'""
 INVERTED=""$'\033[7m'""
+INVERSE=""$'\033[7m'""
 
+ORANGE=""$'\033[38;5;214m'""
 
 export CLICOLOR=1
 
