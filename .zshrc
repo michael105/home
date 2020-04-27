@@ -95,10 +95,10 @@ function gitprompt(){
 						branchp="%{$CYAN%}$branch"
 				fi
 				if [ $modcount -gt 1 ]; then
-						branchp="%{$ORANGE%}$branch"
+						branchp="%{$ORANGE%}$branch ($modcount)"
 				fi
 
-				export PROMPT="git: $branchp%{$NORM%} $OLDPROMPT"
+				export PROMPT="%{$WHITE%}git > $branchp%{$NORM%} $OLDPROMPT"
 		else
 				export ISGITDIR=0
 				export PROMPT=$OLDPROMPT
