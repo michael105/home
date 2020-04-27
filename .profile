@@ -202,6 +202,7 @@ then
 fi
 
 
+
 export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$WHITE%}vcsh:%{$NORM$PINK%} x" -e "sx\..*x x")`%{$NORM%}\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export OLDPROMPT=$PROMPT
