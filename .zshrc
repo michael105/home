@@ -84,6 +84,25 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+ISGITDIR=0
+
+function gitprompt(){
+		branch=`git status -uno -b -s 2>/dev/null | sed -n -E '/^##/s/^## ([^.]*).*/\1/p' 2>/dev/null`
+		if [ ! -z $branch ];then
+				export ISGITDIR=1
+				modcount=`git status -uno -b -s 2>/dev/null | wc -l`
+				if [ $modcount -eq 1 ]; then
+						branchp="%{$CYAN%}$branch"
+				fi
+				if [ $modcount -gt 1 ]; then
+						branchp="%{$PINK%}$branch"
+				fi
+
+				export PROMPT="git: $branchp%{$NORM%} $OLDPROMPT"
+		else
+				export PROMPT=$OLDPROMPT
+		fi
+}
 
 #misc my settings, again
 chpwd(){ 
@@ -98,6 +117,7 @@ chpwd(){
 		fi
 		branch=`git status -uno -b -s 2>/dev/null | sed -n -E '/^##/s/^## ([^.]*).*/\1/p' 2>/dev/null`
 		if [ ! -z $branch ];then
+				export ISGITDIR=1
 				modcount=`git status -uno -b -s 2>/dev/null | wc -l`
 				if [ $modcount -eq 1 ]; then
 						branchp="%{$CYAN%}$branch"
@@ -127,6 +147,10 @@ precmd(){
 		fi;
 		# windowtitle
 		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
+		if [ $ISGITDIR ]; then
+				gitprompt
+		fi
+				
 }
 
 # Colors, again. Colors defined top are defined for the prompt.
