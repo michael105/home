@@ -284,7 +284,7 @@ export BEMENU_BACKEND=curses
 alias ph='chdir `uniq $HOME/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
-alias ch='sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu'
+alias ch='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS
