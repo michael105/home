@@ -404,18 +404,29 @@ map!	<C-x> <ESC>:call SwitchHeader()<CR>
 "map! <C-s>c <ESC>:call CSLineSymbol('c')<CR>
 
 
+let g:quickfix_is_open = 0
+
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+        execute g:quickfix_return_to_window . "wincmd w"
+    else
+        let g:quickfix_return_to_window = winnr()
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+
 "Quickfix
-map <F4> :cp<CR>
-map! <F4> <ESC>:cp<CR>
-map <F5> :cn<CR>
-map! <F5> <ESC>:cn<CR>
-
-map c :make<CR>
-map! c <ESC>:make<CR>
-
-
-nnoremap <f6> :call QuickfixToggle()<cr>
-
+"map <F4> :cp<CR>
+"map! <F4> <ESC>:cp<CR>
+"map <F5> :cn<CR>
+"map! <F5> <ESC>:cn<CR>
+"map c :make<CR>
+"map! c <ESC>:make<CR>
+"nnoremap <f6> :call QuickfixToggle()<cr>
+"
 
 "Quickfix..
 "
@@ -432,8 +443,38 @@ map! <M-F11> <ESC>:cw<CR>
 "map! <M-F11> <ESC>:vert cw<CR>:set winwidth=60<CR>
 map! <S-F11> <ESC>:cclose<CR>
 
+
+
+
+
+
 " syntastic
 let g:syntastic_auto_loc_list = 2
+set statusline+=%#warningmsg#
+
+
+map <F6> :call ViewSyntasticToggle()<CR>
+map! <F6> <ESC>:call ViewSyntasticToggle()<CR>a
+
+map <F4> :lprevious<CR>
+map! <F4> <ESC>:lprevious<CR>a
+map <F5> :lnext<CR>
+map! <F5> <ESC>:lnext<CR>a
+
+
+let g:syntastic_is_open = 0
+
+function! ViewSyntasticToggle()
+    if g:syntastic_is_open
+        lclose
+        let g:syntastic_is_open = 0
+    else
+        "let g:syntastic_return_to_window = winnr()
+        "copen
+				Errors
+        let g:syntastic_is_open = 1
+    endif
+endfunction
 
 
 "cscope 
@@ -520,21 +561,6 @@ let perl_no_scope_in_variables=1
 
 
 set ai
-
-let g:quickfix_is_open = 0
-
-function! QuickfixToggle()
-    if g:quickfix_is_open
-        cclose
-        let g:quickfix_is_open = 0
-        execute g:quickfix_return_to_window . "wincmd w"
-    else
-        let g:quickfix_return_to_window = winnr()
-        copen
-        let g:quickfix_is_open = 1
-    endif
-endfunction
-
 
 
 :let g:miniBufExplMapWindowNavArrows=1
