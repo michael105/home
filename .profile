@@ -202,7 +202,8 @@ then
 fi
 
 
-export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$BGBLUE%}git:%{$NORM$ORANGE%} x" -e "sx\..*x x")`%{$NORM%}\
+isdf
+export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$WHITE%}git:%{$NORM$ORANGE%} x" -e "sx\..*x x")`%{$NORM%}\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
@@ -284,7 +285,7 @@ export BEMENU_BACKEND=curses
 alias ph='chdir `uniq $HOME/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
-alias ch='sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu'
+alias ch='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS
