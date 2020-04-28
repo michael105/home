@@ -2,6 +2,8 @@
 
 export profile_sourced=1
 
+export EDITOR=vim
+export PAGER=less
 
 
 export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
@@ -287,6 +289,7 @@ alias ph='chdir `uniq $HOME/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
 alias ch='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
+alias pc='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS

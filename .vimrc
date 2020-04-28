@@ -146,7 +146,11 @@ endfunction
 
 function! Gitcommitsaves()
 		:w
-		let g:commitsaves = 1
+    if g:commitsaves
+				let g:commitsaves = 0
+		else
+				let g:commitsaves = 1
+		endif
     if g:commitsaves
 		:!git commit -m "`date`" -a
 		":redraw!
