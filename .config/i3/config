@@ -270,13 +270,13 @@ bindsym $mod+u resize set width 1300 px
 bindsym $mod+i resize set width 700 px
 bindsym $mod+o resize set width 350 px
 
-bindsym $mod+Ctrl+y resize set width 1350 px
-bindsym $mod+Ctrl+x resize set width 1100 px
-bindsym $mod+Ctrl+c resize set width 950 px
-bindsym $mod+Ctrl+v resize set width 700 px
-bindsym $mod+Ctrl+b resize set width 550 px
-bindsym $mod+Ctrl+n resize set width 300 px
-bindsym $mod+Ctrl+m resize set width 50 px
+bindsym $shift_r+y resize set width 1350 px
+bindsym $shift_r+x resize set width 1100 px
+bindsym $shift_r+c resize set width 950 px
+bindsym $shift_r+v resize set width 700 px
+bindsym $shift_r+b resize set width 550 px
+bindsym $shift_r+n resize set width 300 px
+bindsym $shift_r+m resize set width 50 px
 
 
 bindsym $mod+Ctrl+Left resize grow width 600 px
