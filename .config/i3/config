@@ -49,7 +49,7 @@ bindsym $alt+Ctrl+s scratchpad show floating disable
 bindsym $mod+Ctrl+y scratchpad show floating disable
 
 # show browser and reload. (do with marks?)
-bindsym mod4+F2 exec i3-msg scratchpad show && sleep 1 && xdotool key F5 --repeat-delay 200 --repeat 1
+bindsym mod4+F6 exec i3-msg scratchpad show && sleep 1 && xdotool key F5 --repeat-delay 200 --repeat 1
 bindsym mod4+F3 move window to scratchpad 
 
 # float
@@ -104,11 +104,11 @@ bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%
 # exec
 # ====
 # Alt+F2: execute
-bindsym mod1+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
-bindsym mod1+$mod+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
+bindsym $alt+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
+#bindsym mod1+$mod+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
 # urxvt kann im daemon mode gestartet werden.
 
-bindsym $alt+F2 exec i3-msg [ con_mark="r" ] focus | exec /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" || ( /usr/local/bin/urxvtd -q -f -m && /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" )
+bindsym mod4+F2 exec i3-msg [ con_mark="a" ] focus | ( /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" || ( /usr/local/bin/urxvtd -q -f -m && /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" ))
 #| sed -e '/false/e echo "No mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 
 

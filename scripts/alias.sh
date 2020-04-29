@@ -35,6 +35,7 @@ alias gtda='git commit -m "`date`" -a'
 # Shell
 alias ls='ls --color'
 alias l='ls -lh'
+alias la='ls -lah'
 
 # 
 alias lr='less README* || less ?eadme*'

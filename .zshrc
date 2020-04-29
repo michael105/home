@@ -120,7 +120,7 @@ chpwd(){
 		echo $PWD > ~/.zshlp 
 		export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 		# set windowtitle
-		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
+		print -Pn "\e]2;$USERNAME: $PPWD\a"
 		# path history
 		echo $PWD >> ~/.pathhistory
 		if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
@@ -143,7 +143,7 @@ precmd(){
 				initchdir=''
 		fi;
 		# windowtitle
-		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
+		print -Pn "\e]2;$USERNAME: $PPWD\a"
 		if [ $ISGITDIR ]; then
 				gitprompt
 		fi
