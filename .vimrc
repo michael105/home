@@ -161,9 +161,9 @@ endfunction
 
 
 map! <C-g> <ESC>:call Gitcommitsaves()<CR>a
-map! g <ESC>:call Gitcommitsaves()<CR>a
-map <M-g> :call Gitcommitsaves()<CR>
-map g :call Gitcommitsaves()<CR>
+map!  <ESC>:call Gitcommitsaves()<CR>a
+map <C-g> :call Gitcommitsaves()<CR>
+map  :call Gitcommitsaves()<CR>
 
 
 
