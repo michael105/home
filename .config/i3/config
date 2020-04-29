@@ -44,7 +44,7 @@ bindsym $mod+Shift+s move window to scratchpad
 bindsym $alt+Shift+s move window to scratchpad
 bindsym $mod+Shift+y move window to scratchpad
 bindsym $mod+y scratchpad show
-bindsym $mod+F2 scratchpad show
+bindsym $mod+F5 scratchpad show
 bindsym $alt+Ctrl+s scratchpad show floating disable
 bindsym $mod+Ctrl+y scratchpad show floating disable
 
@@ -107,6 +107,9 @@ bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%
 bindsym mod1+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
 bindsym mod1+$mod+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
 # urxvt kann im daemon mode gestartet werden.
+
+bindsym $alt+F2 exec i3-msg [ con_mark="r" ] focus | exec /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" || ( /usr/local/bin/urxvtd -q -f -m && /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" )
+#| sed -e '/false/e echo "No mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 
 
 
@@ -396,7 +399,6 @@ bindsym mod4+m exec i3-input -P "Goto Mark: " -f "pango:monospace Bold 10" -l 1 
 bindsym Mod2+q exec i3-msg [ con_mark="q" ] focus | sed -e '/false/e echo "No mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [q]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 bindsym Mod2+w exec i3-msg [ con_mark="w" ] focus | sed -e '/false/e echo "No mark [w]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [w]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 bindsym Mod2+e exec i3-msg [ con_mark="e" ] focus | sed -e '/false/e echo "No mark [e]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [e]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
-bindsym Mod2+r exec i3-msg [ con_mark="r" ] focus | sed -e '/false/e echo "No mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 bindsym Mod2+t exec i3-msg [ con_mark="t" ] focus | sed -e '/false/e echo "No mark [t]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [t]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 bindsym Mod2+z exec i3-msg [ con_mark="z" ] focus | sed -e '/false/e echo "No mark [z]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [z]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 bindsym Mod2+u exec i3-msg [ con_mark="u" ] focus | sed -e '/false/e echo "No mark [u]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [u]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'

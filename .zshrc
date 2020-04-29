@@ -106,7 +106,8 @@ function gitprompt(){
 						upc="($upcount)"
 				fi
 
-				export PROMPT="%{$WHITE%}git$upc > $branchp%{$NORM%} $OLDPROMPT"
+				export PROMPT="%{"$'\033[s\033[0H'"$WHITE""git$upc > $branchp$NORM"$'\033[0K\033[u'"%}$OLDPROMPT"
+				#export PROMPT="%{"$'\033[0H'"%{$WHITE%}git$upc > $branchp%{$NORM%} $OLDPROMPT"
 		else
 				export ISGITDIR=0
 				export PROMPT=$OLDPROMPT
