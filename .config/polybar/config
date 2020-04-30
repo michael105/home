@@ -53,7 +53,7 @@ font-2 = NimbusSans:Bold:size=8:antialias=true
 modules-left = i3  
 modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
-modules-right = alsa pulseaudio systray freemem freedisk cpu cpuclock battery temperature net popup-calendar powermenu
+modules-right = alsa systray freemem freedisk cpu cpuclock battery fanstate temperature net popup-calendar powermenu
 #modules-right = pulseaudio systray freemem freedisk cpu cpuclock backlight xkeyboard eth battery temperature popup-calendar powermenu
 #modules-right = memory xbacklight alsa pulseaudio xkeyboard cpu eth battery temperature date powermenu
 
@@ -92,6 +92,18 @@ tail = true
 #click-left = ~/.config/polybar/memjgmenu.sh
 interval = 10
 #format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+#font = font-2
+#font = NimbusSans:Bold:size=7:antialias=true
+
+[module/fanstate]
+type = custom/script
+exec = ~/.config/polybar/fanstate.sh
+tail = true
+click-left = ~/.config/i3/scripts/fanup.sh
+click-right = ~/.config/i3/scripts/fandown.sh
+interval = 30
+format-prefix = "Fan: "
 format-prefix-foreground = ${colors.foreground-alt}
 #font = font-2
 #font = NimbusSans:Bold:size=7:antialias=true
