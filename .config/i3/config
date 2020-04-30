@@ -366,7 +366,9 @@ bindsym $mod+t exec lxtask
 # -----
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id $scriptdir/alsa_volup.sh 
+bindsym $alt+XF86AudioRaiseVolume exec --no-startup-id $scriptdir/alsa_volup.sh 5
 bindsym XF86AudioLowerVolume exec --no-startup-id $scriptdir/alsa_voldown.sh 
+bindsym $alt+XF86AudioLowerVolume exec --no-startup-id $scriptdir/alsa_voldown.sh 5
 bindsym XF86AudioMute exec --no-startup-id $scriptdir/alsa_togglemute.sh
 
 # Pulse Audio controls
