@@ -10,6 +10,8 @@ export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 source $HOME/scripts/alias.sh
+# stack size. 64kB
+ulimit -s 64000
 
 # weed out duplicate entries
 PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`

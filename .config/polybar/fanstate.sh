@@ -1,5 +1,5 @@
 #!/bin/sh
-cat /tmp/.fanstate
+cat /tmp/.fanstate || echo ?
 
 
 

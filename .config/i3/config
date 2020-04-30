@@ -59,6 +59,10 @@ bindsym mod4+F3 move window to scratchpad
 floating_modifier $mod
 
 
+# mouse
+# -----
+bindsym button3 exec --no-startup-id "echo 'e1,echo 1;e2;echo 2' | jgmenu --vsimple --at-pointer"
+
 # task switchers
 # --------------
 bindsym mod1+Tab exec rofi -show window
