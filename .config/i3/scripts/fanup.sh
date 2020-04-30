@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 state=0
 if [ -e /tmp/.fanstate ]; then
