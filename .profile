@@ -339,7 +339,8 @@ alias pc='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 #               "1 2 3 4 5 6 7 8 9 0 1"  (attribute order)
 export LSCOLORS="eaEafaDaca"
 
-if [ -e "$HOME/.pprofile" ]; then
+if [ -e "$HOME/.pprofile" ] 
+then
 		source $HOME/.pprofile
 fi
 

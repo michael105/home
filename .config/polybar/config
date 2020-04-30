@@ -53,7 +53,7 @@ font-2 = NimbusSans:Bold:size=8:antialias=true
 modules-left = i3  
 modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
-modules-right = pulseaudio systray freemem freedisk cpu cpuclock battery temperature net popup-calendar powermenu
+modules-right = alsa pulseaudio systray freemem freedisk cpu cpuclock battery temperature net popup-calendar powermenu
 #modules-right = pulseaudio systray freemem freedisk cpu cpuclock backlight xkeyboard eth battery temperature popup-calendar powermenu
 #modules-right = memory xbacklight alsa pulseaudio xkeyboard cpu eth battery temperature date powermenu
 
@@ -85,6 +85,18 @@ exec = ~/.config/polybar/module.py
 tail = true
 
 # custom scripts
+[module/alsamisc]
+type = custom/script
+exec = ~/.config/polybar/net.sh
+tail = true
+#click-left = ~/.config/polybar/memjgmenu.sh
+interval = 10
+#format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+#font = font-2
+#font = NimbusSans:Bold:size=7:antialias=true
+
+
 [module/net]
 type = custom/script
 exec = ~/.config/polybar/net.sh
