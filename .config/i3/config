@@ -43,7 +43,7 @@ bindsym $win+$menu+s scratchpad show floating disable
 bindsym $mod+Shift+s move window to scratchpad
 bindsym $alt+Shift+s move window to scratchpad
 bindsym $mod+Shift+y move window to scratchpad
-bindsym $mod+y scratchpad show
+bindsym $mod+x scratchpad show
 bindsym $mod+F5 scratchpad show
 bindsym $alt+Ctrl+s scratchpad show floating disable
 bindsym $mod+Ctrl+y scratchpad show floating disable
@@ -279,8 +279,8 @@ bindsym $shift_r+n resize set width 300 px
 bindsym $shift_r+m resize set width 50 px
 
 
-bindsym $mod+Ctrl+Left resize grow width 600 px
-bindsym $mod+Ctrl+Right resize shrink width 600 px
+bindsym $shift_r+Left resize grow width 600 px
+bindsym $shift_r+Right resize shrink width 600 px
 bindsym $mod+Mod1+Right resize shrink width 10 px
 bindsym $mod+Mod1+Down resize grow height 10 px 
 bindsym $mod+Mod1+Up resize shrink height 10 px 
@@ -361,11 +361,18 @@ bindsym $mod+Shift+Return exec /usr/local/bin/urxvtc -e fish || ( /usr/local/bin
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec lxtask
 
-#
+
+# Audio
+# -----
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id $scriptdir/alsa_volup.sh 
+bindsym XF86AudioLowerVolume exec --no-startup-id $scriptdir/alsa_voldown.sh 
+bindsym XF86AudioMute exec --no-startup-id $scriptdir/alsa_togglemute.sh
+
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 #bindsym Mod2+shift+w i3-msg mark w
 #bindsym Mod2+n exec i3-input -P wer
