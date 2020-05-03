@@ -19,6 +19,14 @@ alias sb='source ~/scripts/setbookmark'
 alias b='source ~/scripts/cdbookmark'
 #export BEMENU_BACKEND=curses
 
+# apk ( if exists )
+if [[ -e "/sbin/apk" ]]; then 
+		alias al="apk list"
+		alias ail="apk info -L"
+		alias ai="apk info"
+		alias aa="apk add -i"
+		alias aA="apk add"
+fi
 
 # Git
 alias gtam='git commit -a -m "minor changes"'
@@ -27,7 +35,7 @@ alias gtamp='git commit -a -m "minor changes" && git push'
 alias gtammp='git commit -a -m "update" && git push'
 alias gta='git commit -a'
 alias gtma='git commit -a -m'
-alias gts='git status -uno'
+alias gts='git status -uno -b -s'
 alias gtm='git commit -m '
 alias gtc='git commit '
 alias gtda='git commit -m "`date`" -a'
@@ -35,6 +43,7 @@ alias gtda='git commit -m "`date`" -a'
 # Shell
 alias ls='ls --color'
 alias l='ls -lh'
+alias la='ls -lah'
 
 # 
 alias lr='less README* || less ?eadme*'
@@ -42,8 +51,8 @@ alias lr='less README* || less ?eadme*'
 
 # goto last current dir. 
 # Handy when opening or switching terminals
-alias pp="cd `cat ~/.zshlp`"
-alias p+="cd `cat ~/.zshlp`"
+alias pp='cd `cat ~/.zshlp`'
+#alias p+='cd `cat ~/.zshlp`'
 
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -55,8 +64,6 @@ alias rd='rmdir'
 alias pf='perldoc -f'
 
 alias vi='vim'
-
-
 
 
 alias make=colormake.sh
@@ -75,4 +82,3 @@ alias alp='ip netns exec alp'
 alias ns='ip netns exec ns'
 
 
-# git clone --depth 1 file:///git/home-shell/ .

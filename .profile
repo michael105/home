@@ -2,16 +2,27 @@
 
 export profile_sourced=1
 
+export EDITOR=vim
+export PAGER=less
 
-
+export HISTSIZE=10000
 export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+
+
+
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 source $HOME/scripts/alias.sh
+# stack size. 64kB
+ulimit -s 64000
 
 # weed out duplicate entries
 PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
-export PATH
+
+# run starters first (e.g. sg palemoon palemoon, instead of palemoon
+export PATH=$HOME/scripts/starter:$PATH
+
+
 
 if [ 1 -eq `ps | tail -n 5 | sed -n -e '/ash/p' | wc -l` ] 
 then
@@ -198,12 +209,14 @@ export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 gitdir=""
 if [ ! -z $GIT_DIR ]
 then
-  #gitdir=
+  export GITPROMPT=1
 fi
 
 
-export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$WHITE%}git:%{$NORM$ORANGE%} x" -e "sx\..*x x")`%{$NORM%}\
+
+export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$WHITE%}vcsh:%{$NORM$PINK%} x" -e "sx\..*x x")`%{$NORM%}\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+export OLDPROMPT=$PROMPT
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle
 #print -Pn "\e]2;urxvt: $PPWD\a"
@@ -220,7 +233,7 @@ export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.`
 export LESSOPEN="|/usr/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
 #export PATH=~/static/bin:~/static/bin/tb64:~/static/bin/bb64/~/scripts:~/git/tools:/usr/bin/vendor_perl
-export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+#export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 
@@ -285,6 +298,7 @@ alias ph='chdir `uniq $HOME/.pathhistory | tac | bemenu || echo $PWD`'
 
 # cmd history, menu
 alias ch='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
+alias pc='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS
@@ -334,7 +348,8 @@ alias ch='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 #               "1 2 3 4 5 6 7 8 9 0 1"  (attribute order)
 export LSCOLORS="eaEafaDaca"
 
-if [ -e "$HOME/.pprofile" ]; then
+if [ -e "$HOME/.pprofile" ] 
+then
 		source $HOME/.pprofile
 fi
 

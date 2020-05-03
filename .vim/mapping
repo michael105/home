@@ -1,7 +1,7 @@
-map! ö {
-map! Ö [
-map! ä }
-map! Ä ]
+map! ö [
+map! Ö {
+map! ä ]
+map! Ä }
 map! ü \
 map! Ü %
 

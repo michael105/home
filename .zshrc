@@ -84,19 +84,52 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+ISGITDIR=0
+GITPROMPT=0
+
+function gitprompt(){
+		if [ $GITPROMPT -ne 0 ]; then
+		branch=`git status -uno -b -s 2>/dev/null | sed -n -E '/^##/s/^## ([^.]*).*/\1/p' 2>/dev/null`
+		if [ ! -z $branch ];then
+				export ISGITDIR=1
+				gitstat=`git status -uno -b -s 2>/dev/null`
+				modcount=`echo -n $gitstat | wc -l` 
+				upcount=`echo -n $gitstat | sed -ne 's/.*\[ahead //' -e 's/\]$//p'` 
+				if [ $modcount -eq 0 ]; then
+						branchp="%{$CYAN%}$branch (=)"
+				fi
+				if [ $modcount -gt 0 ]; then
+						branchp="%{$ORANGE%}$branch ($modcount)"
+				fi
+				upc=""
+				if [ ! -z $upcount ]; then
+						upc="($upcount)"
+				fi
+
+				export PROMPT="%{"$'\033[s\033[0H'"$WHITE""git$upc > $branchp$NORM"$'\033[0K\033[u'"%}$OLDPROMPT"
+				#export PROMPT="%{"$'\033[0H'"%{$WHITE%}git$upc > $branchp%{$NORM%} $OLDPROMPT"
+		else
+				export ISGITDIR=0
+				export PROMPT=$OLDPROMPT
+		fi
+		fi
+}
 
 #misc my settings, again
 chpwd(){ 
 		echo $PWD > ~/.zshlp 
 		export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 		# set windowtitle
-		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
+		print -Pn "\e]2;$USERNAME: $PPWD\a"
 		# path history
 		echo $PWD >> ~/.pathhistory
-		if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
+		#if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
+		if [ $(( `stat ~/.pathhistory -c "%s"` > 200000 )) = 1 ]; then
 		  uniq ~/.pathhistory | tac | sed -e 1000q | tac > ~/.pathhistory
 		fi
+		gitprompt
 }
+
 preexec(){
 		# set windowtitle
 		print -Pn '\e]2;$2\a'
@@ -112,7 +145,11 @@ precmd(){
 				initchdir=''
 		fi;
 		# windowtitle
-		print -Pn "\e]2;$TTERM $USERNAME:$PPWD\a"
+		print -Pn "\e]2;$USERNAME: $PPWD\a"
+		if [ $ISGITDIR ]; then
+				gitprompt
+		fi
+				
 }
 
 # Colors, again. Colors defined top are defined for the prompt.
@@ -146,6 +183,7 @@ export CLICOLOR=1
 #bindkey "${terminfo[knp]}" up-line-or-beginning-search # page down
 
 
+export HISTFILE=$HOME/.zsh_history
 #if [ -z $profile_sourced ]
 #then
 # source config, common to all shells

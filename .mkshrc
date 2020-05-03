@@ -627,7 +627,14 @@ done
 \\builtin unset p
 
 export HISTFILE=$HOME/.mksh_hist
-export HISTSIZE=1000
+export HISTSIZE=10000
+
+bind ^l=clear-screen
+
 source $HOME/.profile
+
+
+
+
 
 \: place customisations above this line

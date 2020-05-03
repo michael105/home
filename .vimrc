@@ -7,16 +7,16 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
  " alternatively, pass a path where Vundle should install plugins
  "call vundle#begin('~/some/path/here')
 
  " let Vundle manage Vundle, required
- Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'ObserverOfTime/coloresque.vim'
-Plugin 'ap/vim-css-color'
+"Plugin 'ObserverOfTime/coloresque.vim'
+"Plugin 'ap/vim-css-color'
  " The following are examples of different formats supported.
  " Keep Plugin commands between vundle#begin/end.
  " plugin on GitHub repo
@@ -35,7 +35,7 @@ Plugin 'ap/vim-css-color'
  " Plugin 'ascenator/L9', {'name': 'newL9'}
 
  " All of your Plugins must be added before the following line
- call vundle#end()            " required
+ "call vundle#end()            " required
  filetype plugin indent on    " required
  " To ignore plugin indent changes, instead use:
  "filetype plugin on
@@ -146,7 +146,11 @@ endfunction
 
 function! Gitcommitsaves()
 		:w
-		let g:commitsaves = 1
+    if g:commitsaves
+				let g:commitsaves = 0
+		else
+				let g:commitsaves = 1
+		endif
     if g:commitsaves
 		:!git commit -m "`date`" -a
 		":redraw!
@@ -156,10 +160,10 @@ function! Gitcommitsaves()
 endfunction
 
 
-map! <M-g> <ESC>:call Gitcommitsaves()<CR>a
-map! g <ESC>:call Gitcommitsaves()<CR>a
-map <M-g> :call Gitcommitsaves()<CR>
-map g :call Gitcommitsaves()<CR>
+map! <C-g> <ESC>:call Gitcommitsaves()<CR>a
+map!  <ESC>:call Gitcommitsaves()<CR>a
+map <C-g> :call Gitcommitsaves()<CR>
+map  :call Gitcommitsaves()<CR>
 
 
 
@@ -312,6 +316,7 @@ map! <F3> <ESC>:call Perl_SyntaxCheck()<CR><C-L>
 
 
 " minibufexplorer
+" mappings: Ctrl-Right/Left
 map  [1;5C :bn<CR>
 map  [1;5D :bp<CR>
 map! [1;5C <ESC>:bn<CR>i
@@ -320,7 +325,12 @@ map! [1;5D <ESC>:bp<CR>i
 map   :bn<CR>
 map   :bp<CR>
 map!  <ESC>:bn<CR>i
-map!  <ESC>:bp<CR>i
+map! ^H <ESC>:bp<CR>i
+
+map   :bn<CR>
+map   :bp<CR>
+map!  <ESC>:bn<CR>i
+
 
 
 "map   :bn<CR>
