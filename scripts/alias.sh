@@ -75,3 +75,4 @@ alias alp='ip netns exec alp'
 alias ns='ip netns exec ns'
 
 
+# git clone --depth 1 file:///git/home-shell/ .
