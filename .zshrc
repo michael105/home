@@ -181,6 +181,7 @@ export CLICOLOR=1
 #bindkey "${terminfo[knp]}" up-line-or-beginning-search # page down
 
 
+export HISTFILE=$HOME/.zsh_history
 #if [ -z $profile_sourced ]
 #then
 # source config, common to all shells

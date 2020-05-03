@@ -5,8 +5,11 @@ export profile_sourced=1
 export EDITOR=vim
 export PAGER=less
 
-
+export HISTSIZE=10000
 export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+
+
+
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 source $HOME/scripts/alias.sh
@@ -15,7 +18,11 @@ ulimit -s 64000
 
 # weed out duplicate entries
 PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
-export PATH
+
+# run starters first (e.g. sg palemoon palemoon, instead of palemoon
+export PATH=$HOME/scripts/starter:$PATH
+
+
 
 if [ 1 -eq `ps | tail -n 5 | sed -n -e '/ash/p' | wc -l` ] 
 then
@@ -226,7 +233,7 @@ export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.`
 export LESSOPEN="|/usr/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
 #export PATH=~/static/bin:~/static/bin/tb64:~/static/bin/bb64/~/scripts:~/git/tools:/usr/bin/vendor_perl
-export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
+#export PATH=$PATH:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
 
