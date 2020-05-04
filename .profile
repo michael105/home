@@ -54,25 +54,62 @@ else
 if [ ! -z $KSHUID ] # mksh
 then
 
-BLACK="\033[30m"
-GRAY="\033[01;30m"
-LGREEN="\033[01;32m"
-GREEN="\033[32m"
-LRED="\033[01;31m"
-RED="\033[31m"
-YELLOW="\033[01;33m"
-BROWN="\033[33m"
-LBLUE="\033[01;34m"
-BLUE="\033[34m"
-BOLD="\033[01;39m"
-NORM="\033[00m"
-PINK="\033[01;35m"
-MAGENTA="\033[00;35m"
-LMAGENTA="\033[01;35m"
-CYAN="\033[36m"
-LCYAN="\033[01;36m"
-WHITE="\033[01;37m"
-LGRAY="\033[37m"
+#BLACK="\033[30m"
+#GRAY="\033[01;30m"
+#LGREEN="\033[01;32m"
+#GREEN="\033[32m"
+#LRED="\033[01;31m"
+#RED="\033[31m"
+#YELLOW="\033[01;33m"
+#BROWN="\033[33m"
+#LBLUE="\033[01;34m"
+#BLUE="\033[34m"
+#BOLD="\033[01;39m"
+#NORM="\033[00m"
+#PINK="\033[01;35m"
+#MAGENTA="\033[00;35m"
+#LMAGENTA="\033[01;35m"
+#CYAN="\033[36m"
+#LCYAN="\033[01;36m"
+#WHITE="\033[01;37m"
+#LGRAY="\033[37m"
+#
+BLACK=""$'\033[30m'""
+BLACK=""$'\033[30m'""
+BGBLACK=""$'\033[40m'""
+GRAY=""$'\033[01;30m'""
+LGREEN=""$'\033[01;32m'""
+GREEN=""$'\033[32m'""
+BGGREEN=""$'\033[42m'""
+LRED=""$'\033[01;31m'""
+RED=""$'\033[31m'""
+BGRED=""$'\033[41m'""
+YELLOW=""$'\033[01;33m'""
+BROWN=""$'\033[33m'""
+BGYELLOW=""$'\033[43m'""
+LBLUE=""$'\033[01;34m'""
+BLUE=""$'\033[34m'""
+BGBLUE=""$'\033[44m'""
+PINK=""$'\033[01;35m'""
+MAGENTA=""$'\033[00;35m'""
+BGMAGENTA=""$'\033[45m'""
+LMAGENTA=""$'\033[01;35m'""
+CYAN=""$'\033[36m'""
+BGCYAN=""$'\033[46m'""
+LCYAN=""$'\033[01;36m'""
+WHITE=""$'\033[01;37m'""
+BGWHITE=""$'\033[47m'""
+LGRAY=""$'\033[37m'""
+
+NORM=""$'\033[0;0m'""
+BOLD=""$'\033[1m'""
+FAINT=""$'\033[2m'""
+CURSIVE=""$'\033[3m'""
+UNDERLINE=""$'\033[4m'""
+BLINK=""$'\033[5m'""
+INVERTED=""$'\033[7m'""
+INVERSE=""$'\033[7m'""
+
 
 
 else
@@ -189,14 +226,16 @@ fi
 
 ZONE=`ip netns identify`
 ZZ=$ZONE
+export PZONE=$ZZ
 if [ ! -z $ZONE ] #within a netns
 then
 		if [ $ZONE = "alp" ]; then
-				PZONE="$LCYAN@$ZONE"
-				ZONE="%{$LCYAN%}@$ZONE"
-		else
-				PZONE="$YELLOW@$ZONE"
+				export PZONE="$YELLOW@$ZZ"
 				ZONE="%{$YELLOW%}@$ZONE"
+		else
+				export PZONE="$CYAN@$ZZ"
+				ZONE="%{$LCYAN%}@$ZONE"
+
 		fi
 fi
 
@@ -211,10 +250,10 @@ then
 		#export PS1='mksh: $GREEN$USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
 		if [ $KSHUID -eq 0 ]; then # root
 				#export PS1='mksh:$RED root$ZONE$BLUE $PWD $RED# $NORM '
-				export PS1='mksh:$NORM$RED root$ZONE$LBLUE ${PWD/${HOME%/}/\~} $RED# $NORM'
+				export PS1='mksh:$NORM$RED root$NORM$YELLOW$PZONE$LBLUE ${PWD/${HOME%/}/\~} $RED# $NORM'
 		else
 				#export PS1='mksh: $GREEN$USER$ZONE $BLUE$PWD $CYAN$ $NORM'
-				export PS1='mksh:$NORM $GREEN$USER$ZONE$LBLUE ${PWD/${HOME%/}/\~} $CYAN$ $NORM'
+				export PS1='mksh:$NORM$LGREEN $USER$PZONE $LBLUE${PWD/${HOME%/}/\~} $CYAN$ $NORM'
 		fi
 
 fi
