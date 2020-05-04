@@ -128,8 +128,8 @@ map <C-\> :source ~/.vim/unmapping<CR>
 map! <C-\> <ESC>:source ~/.vim/unmapping<CR>a
 
 
-map <F9> :NERDTreeToggle<CR>
-map! <F9> <ESC>:NERDTreeToggle<CR>
+"map <F9> :NERDTreeToggle<CR>
+"map! <F9> <ESC>:NERDTreeToggle<CR>
 
 
 let g:commitsaves = 0
@@ -327,9 +327,15 @@ map   :bp<CR>
 map!  <ESC>:bn<CR>i
 map! ^H <ESC>:bp<CR>i
 
-map   :bn<CR>
 map   :bp<CR>
 map!  <ESC>:bn<CR>i
+
+
+" minibuf: Alt+Right/Left
+map  [1;3C :bn<CR>
+map  [1;3D :bp<CR>
+map! [1;3C <ESC>:bn<CR>i
+map! [1;3D <ESC>:bp<CR>i
 
 
 
@@ -491,7 +497,6 @@ map! <S-F11> <ESC>:cclose<CR>
 
 
 
-
 " syntastic
 let g:syntastic_auto_loc_list = 2
 set statusline+=%#warningmsg#
@@ -579,7 +584,6 @@ endfunction
 
 highlight Directory ctermfg=Green
 highlight Search ctermbg=Blue ctermfg=White
-
 
 
 
