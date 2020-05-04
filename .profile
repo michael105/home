@@ -8,7 +8,8 @@ export PAGER=less
 export HISTSIZE=10000
 export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 
-
+# read/write for owner and group. None for others.
+umask 006
 
 #export PATH=~/bin:$PATH:~/scripts:~/bin
 
@@ -128,6 +129,15 @@ HO="$LGREEN%m"
 PA=" $LBLUE%~"
 LI=" $ $NORM "
 
+root=0
+
+if [ "$KSHUID" = "0" ]; then
+		root=1
+fi
+if test "$USERNAME" = "root"; then
+		root=1
+fi
+
 
 
 # set the title
@@ -147,11 +157,13 @@ then
     #echo -ne "\033]11;#000000\007";
 else
 
-if test "$USERNAME" = "root"
+if [ $root ]
 then
 		US="$RED"
     #echo -ne "\033]11;#bb6f20\007";
     #echo -ne "\033]10;#000000\007";
+else 
+		US="$GREEN"
 fi
 fi
 
@@ -177,7 +189,7 @@ fi
 
 ZONE=`ip netns identify`
 ZZ=$ZONE
-if [ ${#ZONE} -gt 0 ] #within a netns
+if [ ! -z $ZONE ] #within a netns
 then
 		if [ $ZONE = "alp" ]; then
 				PZONE="$LCYAN@$ZONE"
@@ -193,10 +205,18 @@ then
 		export PS1='\033[0;37mash$NORM $US$USER$PZONE$LBLUE `pwd | sed -e s./home/micha.~.` $CYAN$ $NORM'
 fi
 
+
 if [ ! -z $KSHUID ] # set by mksh
 then
 		#export PS1='mksh: $GREEN$USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
-		export PS1='mksh$NORM $GREEN$USER$YELLOW@$ZZ$LBLUE `pwd | sed -e s./home/micha.~.` $CYAN$ $NORM'
+		if [ $KSHUID -eq 0 ]; then # root
+				#export PS1='mksh:$RED root$ZONE$BLUE $PWD $RED# $NORM '
+				export PS1='mksh:$NORM$RED root$ZONE$LBLUE ${PWD/${HOME%/}/\~} $RED# $NORM'
+		else
+				#export PS1='mksh: $GREEN$USER$ZONE $BLUE$PWD $CYAN$ $NORM'
+				export PS1='mksh:$NORM $GREEN$USER$ZONE$LBLUE ${PWD/${HOME%/}/\~} $CYAN$ $NORM'
+		fi
+
 fi
 
 
@@ -211,6 +231,18 @@ if [ ! -z $GIT_DIR ]
 then
   export GITPROMPT=1
 fi
+#
+#if [ ! -z $KSHUID ] # set by mksh
+#then
+#		#export PS1='mksh: $GREEN $USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
+#		#export PS1=$PROMPT
+#		if [ $KSHUID -eq 0 ]; then
+#				export PS1='mksh:$RED root$ZONE$BLUE $PWD $RED# $NORM '
+#		else
+#				export PS1='mksh: $GREEN$USER$ZONE $BLUE$PWD $CYAN$ $NORM'
+#		fi
+#fi
+#
 
 
 

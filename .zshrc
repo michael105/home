@@ -123,11 +123,13 @@ chpwd(){
 		print -Pn "\e]2;$USERNAME: $PPWD\a"
 		# path history
 		echo $PWD >> ~/.pathhistory
-		if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
+		#if [ $(( `stat ~/.pathhistory --format=%s` > 200000 )) = 1 ]; then
+		if [ $(( `stat ~/.pathhistory -c "%s"` > 200000 )) = 1 ]; then
 		  uniq ~/.pathhistory | tac | sed -e 1000q | tac > ~/.pathhistory
 		fi
 		gitprompt
 }
+
 preexec(){
 		# set windowtitle
 		print -Pn '\e]2;$2\a'
