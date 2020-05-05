@@ -62,7 +62,14 @@ floating_modifier $mod
 
 # mouse
 # -----
-bindsym button3 exec --no-startup-id "echo 'e1,echo 1;e2;echo 2' | jgmenu --vsimple --at-pointer"
+bindsym button3 focus, exec sh -c 'i3-msg mark M && ((echo "e1,echo 1"; echo "Close,i3-msg [con_mark=M] kill") | jgmenu --vsimple --at-pointer)'
+
+#(i3-msg mark M && (echo 'e1,echo 1;\nClose,i3-msg [con_mark="M"] kill;echo 2' | jgmenu --vsimple --at-pointer))
+#bindsym button3 focus, exec (i3-msg mark M && (echo 'e1,echo 1;\nClose,i3-msg [con_mark="M"] kill;echo 2' | jgmenu --vsimple --at-pointer))
+# micha@ns ~/.config/i3 $ i3-msg '[con_mark="M"]' kill
+#
+#bindsym button3 i3-msg mark M #&& exec --no-startup-id "echo 'e1,echo 1;e2;echo 2' | jgmenu --vsimple --at-pointer"
+#bindsym button3 exec --no-startup-id "echo 'e1,echo 1;e2;echo 2' | jgmenu --vsimple --at-pointer"
 
 # task switchers
 # --------------

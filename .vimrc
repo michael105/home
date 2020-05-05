@@ -74,6 +74,8 @@ set shiftwidth=4
 "set mouse=a
 set mouse=n
 
+map $ m
+map + '
 
 map <C-S> :source ~/.vimrc<CR>
 map! <C-S> <ESC>:source ~/.vimrc<CR>
