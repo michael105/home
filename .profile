@@ -82,7 +82,6 @@ then
 #LGRAY="\033[37m"
 #
 BLACK=""$'\033[30m'""
-BLACK=""$'\033[30m'""
 BGBLACK=""$'\033[40m'""
 GRAY=""$'\033[01;30m'""
 LGREEN=""$'\033[01;32m'""
@@ -120,7 +119,7 @@ INVERSE=""$'\033[7m'""
 
 
 else
-
+# definind color for zsh prompt
 
 BGBLACK="%{"$'\033[40m'"%}"
 BLACK="%{"$'\033[30m'"%}"
@@ -386,8 +385,6 @@ alias pc='zsh -c "`sed -e "s/^:.*:0;//" $HOME/.zsh_history | tac | bemenu`"'
 
 # LSCOLORS seems to be abandoned
 # dircolors shows the usage of the var LS_COLORS
-
-
 
 #   LSCOLORS:
 #    The color designators are as follows:
