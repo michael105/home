@@ -1,12 +1,42 @@
-help
+
 
 keybindings
 
 main mod key: WIN
+S = Shift Left
+SR = Shift Right
+Capslock: Shift Left + Capslock
 
-verdammt
+All windows:
+  Win+n - set title
+
+App Launchers: 
+
+  mod+F2 - Fishy launch
+  Alt+F2 - Input line
+  <Info> (oben links) : xfce launcher
+
+  nice: xlunch. 
+
+marks: 
+  - set: Win+S+m
+         Win+S-Right+[a..z]
+
+  - goto: Menu+[a..z]
+	        Win+m (input mark)
+
+Scratchpad:
+  Win+S+s - Move window to
+	Alt+x	- show (toggle)
 
 
+Floating:
+  Win+S+Space : toggle float
+
+  Win+Mouse Left  - move floating window
+  Win+Mouse Right - resize floating window
 
 
-
+Split screens:
+  Win+Mouse Right - resize window
+  
