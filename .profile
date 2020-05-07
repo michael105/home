@@ -17,6 +17,13 @@ source $HOME/scripts/alias.sh
 # stack size. 64kB
 ulimit -s 64000
 
+# memory size (1.2GB)
+ulimit -m 12582912
+# data segment
+ulimit -d 12582912
+# address space
+ulimit -v 12582912
+
 # weed out duplicate entries
 PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
 
@@ -239,6 +246,14 @@ then
 		fi
 fi
 
+gitdir=""
+GITP=""
+if [ ! -z $GIT_DIR ]
+then
+  export GITPROMPT=1
+	GP="$WHITE"""
+fi
+
 if [ ! -z $ASH ] # 
 then
 		export PS1='\033[0;37mash$NORM $US$USER$PZONE$LBLUE `pwd | sed -e s./home/micha.~.` $CYAN$ $NORM'
@@ -250,10 +265,11 @@ then
 		#export PS1='mksh: $GREEN$USER$YELLOW@$ZZ$LBLUE $PWD $NORM'
 		if [ $KSHUID -eq 0 ]; then # root
 				#export PS1='mksh:$RED root$ZONE$BLUE $PWD $RED# $NORM '
-				export PS1='mksh:$NORM$RED root$NORM$YELLOW$PZONE$LBLUE ${PWD/${HOME%/}/\~} $RED# $NORM'
+				export PS1='$WHITE${GIT_DIR:+vcsh: $PINK${GIT_DIR/*\//} }mksh:$NORM$RED root$NORM$YELLOW$PZONE$LBLUE ${PWD/${HOME%/}/\~} $RED# $NORM'
+#export PROMPT='%{$WHITE%}${GIT_DIR:+vcsh: $PINK${${GIT_DIR/*\//}%.git} }%{$NORM%}\
 		else
 				#export PS1='mksh: $GREEN$USER$ZONE $BLUE$PWD $CYAN$ $NORM'
-				export PS1='mksh:$NORM$LGREEN $USER$PZONE $LBLUE${PWD/${HOME%/}/\~} $CYAN$ $NORM'
+				export PS1='$WHITE${GIT_DIR:+vcsh: $PINK${GIT_DIR/*\//} }$NORM mksh:$NORM$LGREEN $USER$PZONE $LBLUE${PWD/${HOME%/}/\~} $CYAN$ $NORM'
 		fi
 
 fi
@@ -265,11 +281,6 @@ fi
 #export OPROMPT="$TITLESTART$TITLE$TITLEEND$US$i1$AT$HO$PA$LI"
 export OPROMPT='%{$US%}$USER$ZONE %{$BLUE%}$PWD %(!.%{$RED%}.%{$CYAN%})$ %f'
 
-gitdir=""
-if [ ! -z $GIT_DIR ]
-then
-  export GITPROMPT=1
-fi
 #
 #if [ ! -z $KSHUID ] # set by mksh
 #then
@@ -285,8 +296,10 @@ fi
 
 
 
-export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$WHITE%}vcsh:%{$NORM$PINK%} x" -e "sx\..*x x")`%{$NORM%}\
+#export PROMPT='%{$WHITE%}`test -n "$GIT_DIR" && (echo -n $GIT_DIR | sed -e "sx.*/x%{$WHITE%}vcsh:%{$NORM$PINK%} x" -e "sx\..*x x")`%{$NORM%}\
+export PROMPT='%{$WHITE%}${GIT_DIR:+vcsh: $PINK${${GIT_DIR/*\//}%.git} }%{$NORM%}\
 %{$US%}$USERNAME$ZONE %{$BLUE%}$PPWD %(!.%{$RED%}.%{$CYAN%})$ %f'
+
 export OLDPROMPT=$PROMPT
 export PPWD=`echo $PWD | sed -e s./home/$USERNAME.~.` 
 # set windowtitle

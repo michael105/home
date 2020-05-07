@@ -25,4 +25,8 @@ export fish_color_quote=224422
 #export fish_pager_color_prefix="'green'  '--bold'  '--underline'"
 #export fish_pager_color_progress="'brwhite'  '--background=cyan'"
 
-source ~/.profile
+source $HOME/.pprofile
+export PATH=$HOME/scripts/starter:$SHOME/scripts:$HOME/static/bin:/usr/bin:/bin
+
+
+
