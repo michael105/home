@@ -97,8 +97,15 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 bindsym $alt+F2 exec i3-input -P "Execute: " -f "pango:monospace Bold 10" -F 'exec %s'
 #bindsym mod1+$mod+F2 exec shellex # No focus?? Sieht aber am besten aus. ( Ergaenzt zsh, urxvt,..)
 # urxvt kann im daemon mode gestartet werden.
+#
+#
 # man. not sure. this works. but is. well.
-bindsym mod4+F2 exec sh -c 'i3-msg [ con_mark="A" ] focus 2>&1 | sed "/^ERR/q1" || ( /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" || ( /usr/local/bin/urxvtd -q -f -m && /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" ) && i3-msg mark A && i3-msg floating enable )'
+# the fishy launcher 
+# (hit f2 to toggle showing fish; 
+# fish itself is in a special mode to fire all apps in the background,
+# detached)
+# two marks needed: 'F', 'A'
+bindsym mod4+F2 exec sh -c 'i3-msg [ con_mark="A" ] scratchpad show 2>&1 | sed "/^ERR/q1" || ( i3-msg [ con_mark="F" ] focus 2>&1 | sed "/^ERR/q1" && (i3-msg [ con_mark="F" ] mark A && i3-msg move window to scratchpad) || ( /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" || ( /usr/local/bin/urxvtd -q -f -m && /usr/local/bin/urxvtc -e fish -C "source $HOME/.fishrc-launchyfish" ) && i3-msg floating enable && sleep 1 && i3-msg mark F ))'
 #| sed -e '/false/e echo "No mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 3 -bg darkred -fg lightyellow -fn BOLD:Bold:pixelsize=13' -e '/true/e echo "Mark [r]" | dzen2 -w 100 -x 1300 -y 35 -p 2 -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue'
 
 

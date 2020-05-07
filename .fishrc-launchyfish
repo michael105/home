@@ -1,0 +1,16 @@
+function preexec
+#	if test (commandline) = 'ls'
+		echo
+		eval "echo Run: "(commandline)
+		eval "$HOME/scripts/dtlaunch "(commandline)
+		commandline ""
+		commandline -f repaint
+		#commandline "echo "(commandline)
+		#commandline -f execute
+#	else
+#		commandline -f execute
+#	end
+end
+
+bind \r preexec
+bind \n preexec
