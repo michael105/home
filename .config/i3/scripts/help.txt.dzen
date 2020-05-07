@@ -1,0 +1,27 @@
+^pa(40)^fg(white)
+^pa(40)^bg(orange)^fg(black)keybindings^fg(white)^bg()
+^pa(40)^fg(white)
+^pa(40)^fg(white)
+^pa(40)^fg(white)main mod key: WIN^pa(700)^fg(white)Win+S+w    - reload i3 config
+^pa(40)^fg(white)S = Shift Left^pa(700)^fg(white)Win+S+r    - restart i3
+^pa(40)^fg(white)SR = Shift Right^pa(700)^fg(white)Win+S+q    - quit 
+^pa(40)^fg(white)Capslock: Shift Left + Capslock^pa(700)^fg(white)Ctrl+Win+l - lock
+^pa(40)^fg(white)^pa(700)^fg(white)
+^pa(40)^fg(blue)All windows:^fg(white)^bg()^pa(700)^fg(blue)Scratchpad:^fg(white)^bg()
+^pa(40)^fg(white)  Win+n - set title^pa(700)^fg(white)  Win+S+s - Move window to
+^pa(40)^fg(white)^pa(700)^fg(white)  Alt+x  - show (toggle)
+^pa(40)^fg(blue)App Launchers: ^fg(white)^bg()^pa(700)^fg(white)
+^pa(40)^fg(white)^pa(700)^fg(white)
+^pa(40)^fg(white)  mod+F2 - launching fish^pa(700)^fg(blue)Floating:^fg(white)^bg()
+^pa(40)^fg(white)  Alt+F2 - exec command^pa(700)^fg(white)  Win+S+Space : toggle float
+^pa(40)^fg(white)  <Info> (oben links) : xfce launcher^pa(700)^fg(white)
+^pa(40)^fg(white)^pa(700)^fg(white)  Win+Mouse Left  - move floating window
+^pa(40)^fg(white)  nice: xlunch. ^pa(700)^fg(white)  Win+Mouse Right - resize floating window
+^pa(40)^fg(white)^pa(700)^fg(white)
+^pa(40)^fg(blue)marks: ^fg(white)^bg()^pa(700)^fg(white)
+^pa(40)^fg(white)  - set: Win+S+m^pa(700)^fg(blue)Split screens:^fg(white)^bg()
+^pa(40)^fg(white)         Win+S-Right+[a..z]^pa(700)^fg(white)  Win+Mouse Right - resize window
+^pa(40)^fg(white)^pa(700)^fg(white)  
+^pa(40)^fg(white)  - goto: Menu+[a..z]
+^pa(40)^fg(white)          Win+m (input mark)
+^pa(40)^fg(white)
