@@ -1,6 +1,6 @@
-
-
 keybindings
+
+#leftcol
 
 main mod key: WIN
 S = Shift Left
@@ -24,6 +24,9 @@ marks:
 
   - goto: Menu+[a..z]
 	        Win+m (input mark)
+
+#rightcol
+
 
 Scratchpad:
   Win+S+s - Move window to
