@@ -36,6 +36,12 @@ set $scriptdir $HOME/.config/i3/scripts
 set $inputfont "pango:monospace Bold 10"
 set $PAGER less
 
+
+
+# show help
+# ---------
+bindsym F1 exec --no-startup-id $scriptdir/help.sh
+
 bindsym $win+$menu+s scratchpad show floating disable
 
 # scratchpad
