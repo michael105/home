@@ -1,0 +1,6 @@
+screen -t launch 1 fish
+split -v
+focus
+screen -t log 2 tail -f /home/micha/.dtlaunch/dtlaunch.stdout
+focus
+

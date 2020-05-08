@@ -1,0 +1,3 @@
+#!/bin/sh
+PATH=`echo $PATH | sed 'sx^.*scripts/starter:xx'`
+sg palemoon "palemoon"
