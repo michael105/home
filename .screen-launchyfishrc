@@ -1,6 +1,11 @@
-screen -t launch 1 fish
+screen -t launch 1 fish -C "source $HOME/.fishrc-launchyfish"
 split -v
 focus
-screen -t log 2 tail -f /home/micha/.dtlaunch/dtlaunch.stdout
+screen -t log 3 tail -f /home/micha/.dtlaunch/dtlaunch.stderr -n 0
+split
 focus
+screen -t log 2 tail -f /home/micha/.dtlaunch/dtlaunch.stdout -n 0
+focus
+truecolor on
+attrcolor b "R"
 
