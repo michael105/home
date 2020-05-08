@@ -1,0 +1,17 @@
+#!/bin/bash
+# run  command detached.
+# find first free socket within $DTDIR
+DTDIR=~/.dtlaunch
+let i=1;
+
+
+while [ -e "$DTDIR/$i" ] 
+do 
+		let i++
+done
+
+echo dtach socket: $DTDIR/$i
+echo "$*" > $DTDIR/$i.nfo
+echo "dtlaunch: $*" >> $DTDIR/dtlaunch.stdout
+dtach -n $DTDIR/$i sh -c "$* >>$DTDIR/dtlaunch.stdout 2>>$DTDIR/dtlaunch.stderr" 
+#echo $?

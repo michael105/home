@@ -51,7 +51,6 @@ bindsym $alt+Shift+s move window to scratchpad
 bindsym $win+$menu+s scratchpad show floating disable
 bindsym $mod+Shift+x move window to scratchpad
 bindsym $mod+x scratchpad show
-bindsym $mod+Shift+x move window to scratchpad
 bindsym $mod+F5 scratchpad show
 bindsym $alt+Ctrl+s scratchpad show floating disable
 bindsym $mod+Ctrl+x scratchpad show floating disable
@@ -272,6 +271,11 @@ bindsym	$mod+Ctrl+Up workspace prev
 bindsym	$mod+Ctrl+Left workspace prev
 bindsym	$mod+Page_Up workspace prev
 
+bindsym	$shift_r+Left workspace prev
+bindsym	$shift_r+Right workspace next
+
+
+
 bindsym $mod+Home workspace $ws1
 bindsym $mod+End workspace $ws9
 
@@ -308,8 +312,8 @@ bindsym $shift_r+n resize set width 300 px
 bindsym $shift_r+m resize set width 50 px
 
 
-bindsym $shift_r+Left resize grow width 600 px
-bindsym $shift_r+Right resize shrink width 600 px
+#bindsym $shift_r+Left resize grow width 600 px
+#bindsym $shift_r+Right resize shrink width 600 px
 bindsym $mod+Mod1+Right resize shrink width 10 px
 bindsym $mod+Mod1+Down resize grow height 10 px 
 bindsym $mod+Mod1+Up resize shrink height 10 px 
