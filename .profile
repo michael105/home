@@ -28,7 +28,7 @@ ulimit -v 12582912
 PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
 
 # run starters first (e.g. sg palemoon palemoon, instead of palemoon
-export PATH=$HOME/scripts/starter:$PATH
+export PATH=$HOME/scripts/starter:$HOME/static/bin:$PATH
 
 
 

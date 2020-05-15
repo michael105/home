@@ -1,11 +1,24 @@
-screen -t launch 1 fish -C "source $HOME/.fishrc-launchyfish"
+screen -t launch fish -C "source $HOME/.fishrc-launchyfish"
 split -v
 focus
-screen -t log 3 tail -f /home/micha/.dtlaunch/dtlaunch.stderr -n 0
+screen -t "log stderr" 2 tail -f /home/micha/.dtlaunch/dtlaunch.stderr -n 0
 split
 focus
-screen -t log 2 tail -f /home/micha/.dtlaunch/dtlaunch.stdout -n 0
+screen -t "log stdout" 1 tail -f /home/micha/.dtlaunch/dtlaunch.stdout -n 0
 focus
 truecolor on
 attrcolor b "R"
 
+ hardstatus off
+ hardstatus alwayslastline
+ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+
+
+ backtick 1 5 5 true
+ termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+ hardstatus string "screen (%n: %t)"
+ caption string "%{= kw} %n %t %{= kw}"
+ caption always
+
+
+ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
