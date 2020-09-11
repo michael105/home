@@ -43,6 +43,23 @@ set $PAGER less
 bindsym F1 exec $scriptdir/help.sh && i3-msg focus
 
 
+# Startup
+# -------
+#exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
+exec_always --no-startup-id xset s 1800 1800 &
+#exec_always --no-startup-id xmodmap $HOME/.xmodmaprc&
+exec  --no-startup-id polybar example &
+#exec  --no-startup-id xmodmap $HOME/.xmodmaprc &
+#exec  --no-startup-id orage &
+#exec --no-startup-id dockx &
+#exec --no-startup-id urxvtd -m -f -q
+#exec --no-startup-id lxpolkit &
+#exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars.png & 
+exec_always  --no-startup-id ( sleep 3 && nbdo touch /tmp/runlazy ) &
+exec  --no-startup-id (sleep 3; /usr/local/bin/unclutter ) &
+
+bindsym F12 exec polybar-msg cmd toggle
+
 
 # scratchpad
 # ----------
@@ -148,16 +165,6 @@ bindsym Print exec deepin-screenshot
 
 # Set title
 bindsym mod4+n exec i3-input -P "Set title: " -f $inputfont  -F 'title_format "%s"'
-
-
-#exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
-exec  --no-startup-id polybar example &
-#exec  --no-startup-id xmodmap $HOME/.xmodmaprc &
-#exec  --no-startup-id orage &
-#exec --no-startup-id dockx &
-#exec --no-startup-id urxvtd -m -f -q
-#exec --no-startup-id lxpolkit &
-#exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars.png & 
 
 
 
@@ -372,23 +379,32 @@ bindsym $mod+mod1+m bar mode toggle
 font pango: xft Nimbus Sans Bold 9
 #font pango: Monospace Bold 9
 #the focused window       frame titlebar | bgtitlebar,border  | schrift titlebar  | ?   -sidebar, rechts?
-client.focused          #444411 #33dd11 #000000 #4aff96
+#client.focused          #444411 #33dd11 #000000 #202238
 #client.focused          #444411 #33dd11 #000000 #4aff96
 #client.focused          #000011 #213195 #eeecf0 #4aff96
 #client.focused          #444433 #212155 #00ecf0 #4aff96
 # client.focused          #000000 #202222 #00fffb #4aff96
+
 # the container
-client.focused_inactive #221e20 #202238 #ffb52a #291500
+client.focused_inactive #221e20 #0055dd #ffb52a #291500
+client.focused          #444411 #33dd11 #000000 #ff0000
+#client.focused          #444411 #33dd11 #000000 #202238
+
+#client.focused_inactive #221e20 #0055b9 #ffb52a #291500
+#client.focused_inactive #221e20 #33bb11 #000000 #291500
+#client.focused_inactive #221e20 #202238 #ffb52a #291500
 #client.focused_inactive #221e20 #202238 #80fcf0 #291500
 #client.focused_inactive #000000 #202218 #00acab #291500
 #client.focused_inactive #000000 #202218 #7bff00 #ffff00
+
 client.unfocused        #222310 #120e10 #00acab #292d2e
 #client.unfocused        #121e10 #221e20 #00b49f #292d2e
 #client.unfocused        #000000 #000000 #00b49f #292d2e
 client.urgent           #ffff00 #00ff00 #ffffff #00ff00
 
-default_border pixel 1
+default_border pixel 2
 hide_edge_borders both
+#hide_edge_borders both
 
 
 for_window [title="Anwendungsfinder"] floating enable, resize set width 800 px, move window absolute position 10 35 

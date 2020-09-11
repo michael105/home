@@ -202,10 +202,10 @@ map! [1;5B <PageDown>
 map [1;5A <PageUp>
 map! [1;5A <PageUp>
 
-map j <PageDown>
-map! j <PageDown>
-map k <PageUp>
-map! k <PageUp>
+map <C-j> <PageDown>
+map! <C-j> <PageDown>
+map <C-k> <PageUp>
+map! <C-k> <PageUp>
 
 " map <c-K> <c-k>
 "map Or insert
