@@ -145,7 +145,8 @@ bindsym mod4+F2 exec sh -c 'i3-msg [ con_mark="A" ] scratchpad show 2>&1 | sed "
 
 
 
-
+# dump env settings
+bindsym $mod+$alt+d exec $scriptdir/dump.sh > $scriptdir/dump.log &
 
 # -------------
 # lock, quit,..
