@@ -36,11 +36,15 @@ set $scriptdir $HOME/.config/i3/scripts
 set $inputfont "pango:monospace Bold 10"
 set $PAGER less
 
-
+#set $OPTS "-fg white -p -l 30 -e 'onstart=uncollapse,scrollhome,grabkeys;button5=scrolldown;key_Down=scrolldown;button4=scrollup;key_Up=scrollup;key_Page_Down=scrolldown:30;key_Page_Up=scrollup:30;key_Escape=exit;button3=exit;entertitle=grabkeys;enterslave=grabkeys'"
 
 # show help
 # ---------
-bindsym F1 exec $scriptdir/help.sh && i3-msg focus
+bindsym F1 exec $scriptdir/help.sh
+
+#bindsym F1 exec sh -c "cat /home/micha/.config/i3/scripts/help.txt.dzen | dzen2 $OPTS"
+
+
 
 
 # Startup

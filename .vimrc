@@ -70,7 +70,7 @@ set autoindent
 set history=100
 set tabstop=2
 " spaces for indenting, autoindent
-set shiftwidth=4
+set shiftwidth=2
 "set mouse=a
 set mouse=n
 

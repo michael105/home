@@ -29,6 +29,9 @@ if [[ -e "/sbin/apk" ]]; then
 		alias aA="apk add"
 fi
 
+# kerberos
+alias kd=kdestroy
+
 # Git
 alias gtam='git commit -a -m "(minor)"'
 alias gtamm='git commit -a -m "(update)"'
