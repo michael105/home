@@ -98,6 +98,20 @@ format-prefix-foreground = ${colors.foreground-alt}
 #font = font-2
 #font = NimbusSans:Bold:size=7:antialias=true
 
+
+[module/passp]
+type = custom/script
+exec = ~/.config/polybar/passp.sh
+tail = true
+#click-left = ~/.config/i3/scripts/fanup.sh
+#click-right = ~/.config/i3/scripts/fandown.sh
+interval = 30
+format-prefix = "P: "
+format-prefix-foreground = ${colors.foreground-alt}
+#font = font-2
+#font = NimbusSans:Bold:size=7:antialias=true
+
+
 [module/fanstate]
 type = custom/script
 exec = ~/.config/polybar/fanstate.sh
