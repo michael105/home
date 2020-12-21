@@ -1,3 +1,4 @@
+export DISPLAY=:0
 #exec awesome
 exec i3
 #exec urxvtd
