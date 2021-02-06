@@ -1,6 +1,6 @@
-/rd/bin/route -n | /rd/bin/sed -n -e '/^[0.0.0.0|default]/{p;q}' | sed -re 's/.+[[:space:]](.*)/ifconfig \1/e' | \
-		/rd/bin/sed -nE -e 's/.*inet ([^[:space:]]*).*/\1  /p' \
+route -n | sed -n -e '/^[0.0.0.0|default]/{p;q}' | sed -re 's/.+[[:space:]](.*)/ifconfig \1/e' | \
+		sed -nE -e 's/.*inet ([^[:space:]]*).*/\1  /p' \
 		-e 's/.*RX.*\(([^[:space:]]*)[[:space:]](.).*/(\1\2/p' \
 		-e 's/.*TX.*\(([^[:space:]]*)[[:space:]](.).*/\1\2)/p' \
 		\
-		| /rd/bin/tr '\n' ' '
+		| tr '\n' ' '

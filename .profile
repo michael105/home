@@ -2,11 +2,15 @@
 
 export profile_sourced=1
 
+
+export LC_ALL=C
+export LANG=C
 export EDITOR=vim
+export VIMRUNTIME=$HOME/.vim
+export ZDOTDIR=$HOME/.zsh
 export PAGER=less
 
 export HISTSIZE=10000
-export PATH=$PATH:/local/bin:/usr/local/bin:/bin:/usr/bin:~/static/bin:~/scripts:~/git/tools:/usr/bin/vendor_perl
 
 # read/write for owner and group. None for others.
 umask 006
@@ -18,19 +22,22 @@ source $HOME/scripts/alias.sh
 ulimit -s 64000
 
 # memory size (1.2GB)
-ulimit -m 12582912
+#ulimit -m 12582912
+ulimit -m 40000000
 # data segment
 ulimit -d 12582912
+#ulimit -d 12582912
 # address space
 ulimit -v 12582912
+# stack
+ulimit -s 65000
 
 # weed out duplicate entries
-PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
+#PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`
 
 # run starters first (e.g. sg palemoon palemoon, instead of palemoon
-export PATH=$HOME/scripts/starter:$HOME/static/bin:$PATH
 
-
+export PATH=$HOME/scripts/starter:$HOME/scripts:$HOME/static/bin:/local/bin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:~/git/tools:/usr/bin/vendor_perl:$HOME/static/bin/bb64
 
 if [ 1 -eq `ps | tail -n 5 | sed -n -e '/ash/p' | wc -l` ] 
 then
@@ -435,3 +442,4 @@ then
 fi
 
 
+TT=UUU

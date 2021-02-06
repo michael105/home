@@ -1,0 +1,13 @@
+
+keycode 66 = Hyper_L Caps_Lock Hyper_L
+remove shift = Shift_R
+remove lock = Hyper_L
+remove mod4 = Hyper_L
+remove lock = Meta_L
+remove lock = Escape
+add mod2 = Menu
+add mod3 = Hyper_L
+!remove lock
+!add mod5 = Meta_L
+
+

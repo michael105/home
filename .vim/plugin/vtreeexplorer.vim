@@ -1,6 +1,6 @@
 "" File:        vtreeexplorer.vim
 "" Description: tree-like file system explorer for vim
-"" Version:     $Revision: 1.1 $ $Date: 2020/05/11 16:30:22 $
+"" Version:     $Revision: 1.24 $ $Date: 2005/11/17 16:24:33 $
 "" Author:      TS Urban (thomas.scott.urban@HORMELgmail.com)
 ""              (remove the source of SPAM from my email first)
 ""

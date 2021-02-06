@@ -53,7 +53,7 @@ font-2 = NimbusSans:Bold:size=8:antialias=true
 modules-left = i3  
 #modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
-modules-right = alsa systray freemem freedisk cpu cpuclock battery fanstate temperature net popup-calendar powermenu
+modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock battery fanstate temperature net popup-calendar powermenu
 #modules-right = pulseaudio systray freemem freedisk cpu cpuclock backlight xkeyboard eth battery temperature popup-calendar powermenu
 #modules-right = memory xbacklight alsa pulseaudio xkeyboard cpu eth battery temperature date powermenu
 
@@ -123,6 +123,33 @@ format-prefix = "Fan: "
 format-prefix-foreground = ${colors.foreground-alt}
 #font = font-2
 #font = NimbusSans:Bold:size=7:antialias=true
+
+[module/maxprocess]
+type = custom/script
+exec = ~/.config/polybar/process.sh
+tail = true
+label-foreground = #00bb00
+#click-left = ~/.config/i3/scripts/fanup.sh
+#click-right = ~/.config/i3/scripts/fandown.sh
+interval = 5
+#format-prefix = ""
+#format-prefix-foreground = ${colors.foreground-alt}
+font = font-2
+#font = NimbusSans:Bold:size=7:antialias=true
+
+[module/maxprocess-mem]
+type = custom/script
+exec = ~/.config/polybar/process-size.sh
+tail = true
+label-foreground = #88bb00
+#click-left = ~/.config/i3/scripts/fanup.sh
+#click-right = ~/.config/i3/scripts/fandown.sh
+interval = 5
+#format-prefix = ""
+#format-prefix-foreground = ${colors.foreground-alt}
+font = font-2
+#font = NimbusSans:Bold:size=7:antialias=true
+
 
 
 [module/net]
