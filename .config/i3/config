@@ -425,8 +425,11 @@ client.unfocused        #222310 #120e10 #00acab #292d2e
 #client.unfocused        #000000 #000000 #00b49f #292d2e
 client.urgent           #ffff00 #00ff00 #ffffff #00ff00
 
-default_border pixel 2
-hide_edge_borders both
+default_border pixel 1
+# 'none', 'vertical' 'horizontal', 'both', 'smart', '1', 'yes', 'true', 'on', 
+# 'enable', 'active'
+#
+hide_edge_borders  horizontal
 #hide_edge_borders both
 
 

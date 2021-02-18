@@ -1,4 +1,6 @@
+
 export DISPLAY=:0
+xhost +local:micha
 #exec awesome
 exec i3
 #exec urxvtd

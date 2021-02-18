@@ -19,18 +19,18 @@ umask 006
 
 source $HOME/scripts/alias.sh
 # stack size. 64kB
-ulimit -s 64000
+#ulimit -s 64000
 
 # memory size (1.2GB)
 #ulimit -m 12582912
-ulimit -m 40000000
+#ulimit -m 40000000
 # data segment
-ulimit -d 12582912
+#ulimit -d 12582912
 #ulimit -d 12582912
 # address space
-ulimit -v 12582912
+#ulimit -v 12582912
 # stack
-ulimit -s 65000
+#ulimit -s 65000
 
 # weed out duplicate entries
 #PATH=`echo -n $PATH| tr ':' '\n' | sort -r | uniq | tr '\n' ':' | sed -e 's/:$//' | sed -e 's.//./.g' | sed -e 's.::.:.g'`

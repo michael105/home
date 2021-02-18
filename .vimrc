@@ -36,6 +36,7 @@ filetype off                  " required
 
  " All of your Plugins must be added before the following line
  "call vundle#end()            " required
+ "
  filetype plugin indent on    " required
  " To ignore plugin indent changes, instead use:
  "filetype plugin on
@@ -70,7 +71,7 @@ set autoindent
 set history=100
 set tabstop=2
 " spaces for indenting, autoindent
-set shiftwidth=2
+set shiftwidth=4
 "set mouse=a
 set mouse=n
 
@@ -129,6 +130,9 @@ source ~/.vim/mapping
 map <C-\> :source ~/.vim/unmapping<CR>
 map! <C-\> <ESC>:source ~/.vim/unmapping<CR>a
 
+
+map <BS> <Left><Delete>
+map! <BS> <Left><Delete>
 
 "map <F9> :NERDTreeToggle<CR>
 "map! <F9> <ESC>:NERDTreeToggle<CR>
@@ -202,10 +206,11 @@ map! [1;5B <PageDown>
 map [1;5A <PageUp>
 map! [1;5A <PageUp>
 
-map <C-j> <PageDown>
-map! <C-j> <PageDown>
-map <C-k> <PageUp>
-map! <C-k> <PageUp>
+map j <PageDown>
+map! j <PageDown>
+map k <PageUp>
+map! k <PageUp>
+
 
 " map <c-K> <c-k>
 "map Or insert
@@ -339,6 +344,11 @@ map  [1;3D :bp<CR>
 map! [1;3C <ESC>:bn<CR>i
 map! [1;3D <ESC>:bp<CR>i
 
+map . :bn<CR> 
+map! . <ESC>:bn<CR>i
+map , :bp<CR> 
+map! , <ESC>:bp<CR>i
+
 
 
 "map   :bn<CR>
@@ -399,16 +409,16 @@ map! Q <ESC>:q!<CR>
 
 "Split window movement
 map <M-C-Left> :wincmd h<CR>
-map , :wincmd h<CR>
+"map , :wincmd h<CR>
 map <M-C-Right> :wincmd l<CR>
-map . :wincmd l<CR>
+"map . :wincmd l<CR>
 map <M-C-Up> :wincmd k<CR>
 map <M-C-Down> :wincmd j<CR>
 
 map! <M-C-Left> <ESC>:wincmd h<CR>i
-map! , <ESC>:wincmd h<CR>i
+"map! , <ESC>:wincmd h<CR>i
 map! <M-C-Right> <ESC>:wincmd l<CR>i
-map! . <ESC>:wincmd l<CR>i
+"map! . <ESC>:wincmd l<CR>i
 map! <M-C-Up> <ESC>:wincmd k<CR>i
 map! <M-C-Down> <ESC>:wincmd j<CR>i
 
