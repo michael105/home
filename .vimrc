@@ -324,10 +324,10 @@ map! <F3> <ESC>:call Perl_SyntaxCheck()<CR><C-L>
 
 " minibufexplorer
 " mappings: Ctrl-Right/Left
-map  [1;5C :bn<CR>
-map  [1;5D :bp<CR>
-map! [1;5C <ESC>:bn<CR>i
-map! [1;5D <ESC>:bp<CR>i
+"map  [1;5C :bn<CR>
+"map  [1;5D :bp<CR>
+"map! [1;5C <ESC>:bn<CR>i
+"map! [1;5D <ESC>:bp<CR>i
 
 map   :bn<CR>
 map   :bp<CR>
@@ -406,18 +406,27 @@ map! Q <ESC>:q!<CR>
 
 
 
-
-"Split window movement
+" split window movement
 map <M-C-Left> :wincmd h<CR>
-"map , :wincmd h<CR>
+map <C-Left> :wincmd h<CR>
+map [1;5D :wincmd h<CR>
+
 map <M-C-Right> :wincmd l<CR>
+map <C-Right> :wincmd l<CR>
+map [1;5C :wincmd l<CR>
+
 "map . :wincmd l<CR>
 map <M-C-Up> :wincmd k<CR>
 map <M-C-Down> :wincmd j<CR>
 
 map! <M-C-Left> <ESC>:wincmd h<CR>i
-"map! , <ESC>:wincmd h<CR>i
+map! <C-Left> <ESC>:wincmd h<CR>i
+map! [1;5D <ESC>:wincmd h<CR>i
+
 map! <M-C-Right> <ESC>:wincmd l<CR>i
+map! <C-Right> <ESC>:wincmd l<CR>i
+map! [1;5C <ESC>:wincmd l<CR>i
+
 "map! . <ESC>:wincmd l<CR>i
 map! <M-C-Up> <ESC>:wincmd k<CR>i
 map! <M-C-Down> <ESC>:wincmd j<CR>i
