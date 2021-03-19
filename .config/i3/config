@@ -196,9 +196,11 @@ font pango:monospace Bold 8
 
 # change focus
 bindsym $mod+h focus left
+bindsym XF86Back focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym XF86Forward focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -303,10 +305,12 @@ bindsym $alt+0 workspace $ws0
 bindsym	$mod+Ctrl+Down workspace next
 bindsym	$mod+Ctrl+Right workspace next
 bindsym	$mod3+Right workspace next
+bindsym	$mod+XF86Forward workspace next
 bindsym	$mod+Page_Down workspace next
 bindsym	$mod+Ctrl+Up workspace prev
 bindsym	$mod+Ctrl+Left workspace prev
 bindsym	$mod3+Left workspace prev
+bindsym	$mod+XF86Back workspace prev
 bindsym	$mod+Page_Up workspace prev
 
 bindsym	$shift_r+Left workspace prev

@@ -51,9 +51,12 @@ font-2 = NimbusSans:Bold:size=8:antialias=true
 #font-2 = siji:pixelsize=6;1
 
 modules-left = i3  
+#modules-right = maxprocess maxprocess-mem systray freemem freedisk cpu cpuclock battery 
+#modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock battery fanstate temperature net popup-calendar powermenu
+modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock fanstate temperature net popup-calendar powermenu
+
 #modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
-modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock battery fanstate temperature net popup-calendar powermenu
 #modules-right = pulseaudio systray freemem freedisk cpu cpuclock backlight xkeyboard eth battery temperature popup-calendar powermenu
 #modules-right = memory xbacklight alsa pulseaudio xkeyboard cpu eth battery temperature date powermenu
 
