@@ -306,11 +306,13 @@ bindsym	$mod+Ctrl+Down workspace next
 bindsym	$mod+Ctrl+Right workspace next
 bindsym	$mod3+Right workspace next
 bindsym	$mod+XF86Forward workspace next
+bindsym	$alt+XF86Forward workspace next
 bindsym	$mod+Page_Down workspace next
 bindsym	$mod+Ctrl+Up workspace prev
 bindsym	$mod+Ctrl+Left workspace prev
 bindsym	$mod3+Left workspace prev
 bindsym	$mod+XF86Back workspace prev
+bindsym	$alt+XF86Back workspace prev
 bindsym	$mod+Page_Up workspace prev
 
 bindsym	$shift_r+Left workspace prev

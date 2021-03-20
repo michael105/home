@@ -1,8 +1,8 @@
 
 export DISPLAY=:0
-xhost +local:micha
+xhost +local:micha &
 #exec awesome
-exec i3
+exec i3 
 #exec urxvtd
 #exec polybar example
 #exec dockx
