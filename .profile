@@ -250,6 +250,15 @@ then
 				ZONE="%{$LCYAN%}@$ZONE"
 
 		fi
+else # chroot?
+		if [ -f /zone ]; then
+				ZONE="$NORM@`cat /zone`"
+				export PZONE=$ZONE
+		#else
+		#if [ -f /arch ]; then
+				#ZONE="%{$BLUE%}@arch"
+		#fi
+		fi
 fi
 
 gitdir=""

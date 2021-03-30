@@ -245,9 +245,13 @@ map! [1;5D <ESC>^ODi
 
 "LINUX
 "map [1;3C :bn<CR>
+map <C-PageDown> :bn<CR>
 "map [1;3D :bp<CR>
+map <C-PageUp> :bp<CR>
 "map! [1;3C <ESC>:bn<CR>i
+"map! [6~ <ESC>:bn<CR>i
 "map! [1;3D <ESC>:bp<CR>i
+"map! [5~ <ESC>:bp<CR>i
 "ELINUX
 
 
