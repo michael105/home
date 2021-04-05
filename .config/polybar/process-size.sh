@@ -7,4 +7,6 @@ size=`echo $proc | sed 's/ .*//'`
 if [ $(( $size>1000000 )) == 1 ]; then
 	echo -n $(( $size>>10 ))"MB " 
 	echo $proc | sed "s/\S* //"
+else
+	echo
 fi

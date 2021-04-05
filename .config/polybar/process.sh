@@ -6,4 +6,6 @@ pcpu=`echo $proc | sed 's/\..*//;s/ .*//;s/^0*//;s/^$/0/'`
 
 if [ $(( $pcpu>15 )) == 1 ]; then
 	echo $proc | sed "s/\.\S* /% /"
+else
+	echo 
 fi

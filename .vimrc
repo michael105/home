@@ -69,9 +69,9 @@ set hidden
 syntax on
 set autoindent
 set history=100
-set tabstop=2
+set tabstop=3
 " spaces for indenting, autoindent
-set shiftwidth=4
+set shiftwidth=3
 "set mouse=a
 set mouse=n
 
