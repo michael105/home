@@ -53,7 +53,7 @@ font-2 = NimbusSans:Bold:size=8:antialias=true
 modules-left = i3  
 #modules-right = maxprocess maxprocess-mem systray freemem freedisk cpu cpuclock battery 
 #modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock battery fanstate temperature net popup-calendar powermenu
-modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock fanstate temperature net popup-calendar powermenu
+modules-right = maxprocess maxprocess-mem alsa systray freemem freedisk cpu cpuclock fanrotation temperature net battery popup-calendar powermenu
 
 #modules-center = xwindow
 #modules-right = fs systray memory backlight pulseaudio xkeyboard cpu eth battery temperature date powermenu
@@ -127,6 +127,19 @@ format-prefix-foreground = ${colors.foreground-alt}
 #font = font-2
 #font = NimbusSans:Bold:size=7:antialias=true
 
+[module/fanrotation]
+type = custom/script
+exec = ~/.config/polybar/fanrotation.sh
+tail = true
+#click-left = ~/.config/i3/scripts/fanup.sh
+#click-right = ~/.config/i3/scripts/fandown.sh
+interval = 5
+format-prefix = "Fan: "
+format-prefix-foreground = ${colors.foreground-alt}
+#font = font-2
+#font = NimbusSans:Bold:size=7:antialias=true
+
+
 [module/maxprocess]
 type = custom/script
 exec = ~/.config/polybar/process.sh
@@ -191,8 +204,8 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 [module/cpuclock]
 type = custom/script
-exec = sed -n 's/^cpu MHz.*: \(\S*\)\..*/\1MHz/p;/^cache/q' /proc/cpuinfo
-tail = true
+exec = printf "%5dMHz" `sed -n 's/^cpu MHz.*: \(\S*\)\..*/\1/p;/^cache/q' /proc/cpuinfo`
+#tail = true
 click-left = ~/.config/polybar/cpujgmenu.sh
 interval = 3
 

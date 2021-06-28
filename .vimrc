@@ -122,6 +122,9 @@ set nofoldenable
 
 "Key Mappings ==========================================
 
+map Y :!xclip -in -filter -selection clipboard<CR>
+map P v:!xclip -selection clipboard -o<CR>
+
 
 "map (ö,ä .. mapped to {}, [], $ to $%, apostrophe to /, and oh. \ ) 
 source ~/.vim/mapping
@@ -246,8 +249,10 @@ map! [1;5D <ESC>^ODi
 "LINUX
 "map [1;3C :bn<CR>
 map <C-PageDown> :bn<CR>
+map <C-P> :bn<CR>
 "map [1;3D :bp<CR>
 map <C-PageUp> :bp<CR>
+
 "map! [1;3C <ESC>:bn<CR>i
 "map! [6~ <ESC>:bn<CR>i
 "map! [1;3D <ESC>:bp<CR>i

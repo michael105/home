@@ -1,6 +1,9 @@
-
-export DISPLAY=:0
-xhost +local:micha &
+echo Running xinitrc
+echo DISPLAY: $DISPLAY
+echo Args: $*
+id
+#export DISPLAY=:0
+xhost +local:micha
 #exec awesome
 exec i3 
 #exec urxvtd

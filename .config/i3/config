@@ -35,24 +35,26 @@ set $altgr mod5
 set $scriptdir $HOME/.config/i3/scripts
 set $inputfont "pango:monospace Bold 10"
 set $PAGER less
+set $TERMINAL /usr/local/bin/st
 
 #set $OPTS "-fg white -p -l 30 -e 'onstart=uncollapse,scrollhome,grabkeys;button5=scrolldown;key_Down=scrolldown;button4=scrollup;key_Up=scrollup;key_Page_Down=scrolldown:30;key_Page_Up=scrollup:30;key_Escape=exit;button3=exit;entertitle=grabkeys;enterslave=grabkeys'"
 
 # show help
 # ---------
-bindsym F1 exec $scriptdir/help.sh
-
+bindsym F1 exec sh $scriptdir/help.sh & focus
 #bindsym F1 exec sh -c "cat /home/micha/.config/i3/scripts/help.txt.dzen | dzen2 $OPTS"
+#set $HELPOPTS='-bg "#111111" -fg white -p -l 30 -e "onstart=raise,grabmouse,uncollapse,scrollhome,grabkeys;button5=scrolldown;key_Down=scrolldown;button4=scrollup;key_Up=scrollup;key_Page_Down=scrolldown:30;key_Page_Up=scrollup:30;key_Escape=exit;button3=exit;entertitle=grabkeys;enterslave=grabkeys;"'
 
-
-
+# bindsym F1 exec "sh -c '(echo \'^fg(#000000)^bg(#004AB7) i3 keys (scrollwheel, arrow keys, PgUP/PgDown scroll; Esc or right mouse button quit) \';cat $HOME/.config/i3/scripts/help.txt.dzen) | $HOME/.config/i3/scripts/dzen2 -bg \'#111111\' -fg white -p -l 30 -e \'onstart=raise,grabmouse,uncollapse,scrollhome,grabkeys;button5=scrolldown;key_Down=scrolldown;button4=scrollup;key_Up=scrollup;key_Page_Down=scrolldown:30;key_Page_Up=scrollup:30;key_Escape=exit;button3=exit;entertitle=grabkeys;enterslave=grabkeys;\'\'"
+#bindsym F1 exec 'sh -c \'(echo "^fg(#000000)^bg(#004AB7) i3 keys (scrollwheel, arrow keys, PgUP/PgDown scroll; Esc or right mouse button quit) "; cat $HOME/.config/i3/scripts/help.txt.dzen) | $HOME/.config/i3/scripts/dzen2 -bg "#111111" -fg white -p -l 30 -e "onstart=raise,grabmouse,uncollapse,scrollhome,grabkeys;button5=scrolldown;key_Down=scrolldown;button4=scrollup;key_Up=scrollup;key_Page_Down=scrolldown:30;key_Page_Up=scrollup:30;key_Escape=exit;button3=exit;entertitle=grabkeys;enterslave=grabkeys;"\''
 
 # Startup
 # -------
-#exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 exec_always --no-startup-id xset s 1800 1800 &
 #exec_always --no-startup-id xmodmap $HOME/.xmodmaprc&
-exec  --no-startup-id polybar example &
+exec polybar example &
+#exec  --no-startup-id polybar example &
+#exec_always --no-startup-id xsetroot -bg BLACK -mod 100 100&
 #exec  --no-startup-id xmodmap $HOME/.xmodmaprc &
 #exec  --no-startup-id orage &
 #exec --no-startup-id dockx &
@@ -60,8 +62,7 @@ exec  --no-startup-id polybar example &
 #exec --no-startup-id lxpolkit &
 #exec --no-startup-id  xplanet -config moon_orbit -latitude 46 -radius 20 -glare 1 -background stars.png & 
 exec_always  --no-startup-id ( sleep 3 && nbdo touch /tmp/runlazy ) &
-exec  --no-startup-id (sleep 3; /usr/local/bin/unclutter ) &
-
+#exec  --no-startup-id (sleep 3; /usr/local/bin/unclutter ) &
 bindsym F12 exec polybar-msg cmd toggle
 
 
@@ -90,6 +91,8 @@ floating_modifier $mod
 # mouse
 # -----
 bindsym button3 focus, exec sh -c 'i3-msg mark M && ((echo "e1,echo 1"; echo "Close,i3-msg [con_mark=M] kill") | jgmenu --vsimple --at-pointer)'
+bindsym --whole-window button4 exec sh -c "xdotool key Up && xdotool key Up"
+bindsym --whole-window button5 exec sh -c "xdotool key Down"
 
 #(i3-msg mark M && (echo 'e1,echo 1;\nClose,i3-msg [con_mark="M"] kill;echo 2' | jgmenu --vsimple --at-pointer))
 #bindsym button3 focus, exec (i3-msg mark M && (echo 'e1,echo 1;\nClose,i3-msg [con_mark="M"] kill;echo 2' | jgmenu --vsimple --at-pointer))
@@ -546,3 +549,11 @@ bindsym mod3+mod2+v exec i3-msg mark v && echo "Set Mark [v]" | dzen2 -w 100 -x 
 bindsym mod3+mod2+b exec i3-msg mark b && echo "Set Mark [b]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
 bindsym mod3+mod2+n exec i3-msg mark n && echo "Set Mark [n]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
 bindsym mod3+mod2+m exec i3-msg mark m && echo "Set Mark [m]" | dzen2 -w 100 -x 1300 -y 35 -p 2  -fn BOLD:Bold:pixelsize=12 -bg green -fg darkblue
+
+
+
+
+#exec i3-msg focus next 
+exec (polybar-msg cmd toggle && polybar-msg cmd toggle )&
+
+

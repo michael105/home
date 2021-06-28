@@ -1,3 +1,4 @@
+#!/bin/sh
 route -n | sed -n -e '/^[0.0.0.0|default]/{p;q}' | sed -re 's/.+[[:space:]](.*)/ifconfig \1/e' | \
 		sed -nE -e 's/.*inet ([^[:space:]]*).*/\1  /p' \
 		-e 's/.*RX.*\(([^[:space:]]*)[[:space:]](.).*/(\1\2/p' \

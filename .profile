@@ -11,6 +11,8 @@ export ZDOTDIR=$HOME/.zsh
 export PAGER=less
 
 export HISTSIZE=10000
+alias mini-gcc=/home/micha/prog/minilib/mini-gcc
+alias gcc-static=/home/micha/git/gcc-static/gcc-static.pl
 
 # read/write for owner and group. None for others.
 umask 006
