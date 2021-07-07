@@ -155,7 +155,7 @@ font = font-2
 
 [module/maxprocess-mem]
 type = custom/script
-exec = ~/.config/polybar/process-size.sh
+exec = "~/.config/polybar/process-size.sh 1000000"
 tail = true
 label-foreground = #88bb00
 #click-left = ~/.config/i3/scripts/fanup.sh
